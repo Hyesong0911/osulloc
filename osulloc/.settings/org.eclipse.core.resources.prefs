@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java/org/osulloc/controller/MemberController.java=UTF-8
+encoding//src/main/java/org/osulloc/controller/ProductController.java=UTF-8
+encoding//src/main/java/org/osulloc/domain/PageDTO.java=UTF-8
+encoding//src/main/java/org/osulloc/mapper/MemberMapper.java=UTF-8
+encoding//src/main/java/org/osulloc/service/MemberService.java=UTF-8
+encoding//src/main/java/org/osulloc/service/MemberServiceImpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/member/member.jsp=UTF-8
+encoding//src/main/webapp/resources/css/detailProduct.css=UTF-8
