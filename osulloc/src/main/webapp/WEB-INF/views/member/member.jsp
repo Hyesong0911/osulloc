@@ -41,7 +41,7 @@
     
                     <h3>비밀번호</h3>
                     <span class="signup-input">
-                        <input id="signup-pw"  type="password"  class ="password" name="password"  placeholder="비밀번호(영문 소문자.숫자,특수문자 조합)"></input>
+                        <input id="signup-pw"  type="password"  class ="password" name="password"  placeholder="비밀번호(영문 소문자.숫자 조합)"></input>
                         <span class="pw-lock"></span>
                     </span>
     				<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
@@ -121,7 +121,7 @@
                         
                     </span>
                     <span class="signup-input">
-                        <input id="signup-email" name = "email" type="text" placeholder="이메일 입력"></input>
+                        <input id="signup-email" name = "email" type="email" placeholder="이메일 입력"></input>
                     </span>
     				<span class="final_mail_ck">이메일을 입력해주세요.</span>
                 </div>

@@ -37,7 +37,7 @@ public class ProductReviewController {
 	@PostMapping("reviewWrite")
 	public String reviewWritePost(ProductReviewDTO review) {
 		pservice.write(review);
-		return "redirect:/page/detailProduct";
+		return "redirect:/page/detailProduct?prodnum=${prodnum}";
 	}
 	
 	@GetMapping("detailProduct")
