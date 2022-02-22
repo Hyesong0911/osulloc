@@ -29,7 +29,7 @@
             <div class="product">
                 <div class="left_detail">
                     <div class="left_i">
-                        <img src="../resources/img/달빛걷기 10입.png" alt="">
+                        <img src="/osulloc/display?fileName=${productse.filename}" alt="">
                     </div>
                     <div class="left_r">
                         <a href="#">
@@ -100,10 +100,11 @@
             	<div class="reviewDS">
             		<strong>리뷰</strong>
             	</div>
+            	
             	<c:if test="${login != null}">
-            	<div class="reviewW">
-            		<a href="/osulloc/page/reviewWrite">리뷰 작성하기</a>	
-            	</div>
+	            	<div class="reviewW">
+	            		<a href="/osulloc/page/reviewWrite">리뷰 작성하기</a>	
+	            	</div>
             	</c:if>
             	
             	<ul>
@@ -115,7 +116,7 @@
 	            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 	            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
 	            				<div class="pno" hidden>${productreview.pno}</div>
-	            				<div class="uploadResult"><img src="../resources/img/달빛걷기 10입.png" alt=""></div>
+	            				<div class="uploadResult"><img src="/osulloc/display?fileName=${productse.filename}" alt=""></div>
 		            			<div class="detail_right">
 		            				<p class="detail_right_writer">${productreview.writer}</p>
 		            				<p class="detail_right_regdate">${productreview.regdate}</p>

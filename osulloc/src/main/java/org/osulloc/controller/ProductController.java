@@ -206,7 +206,7 @@ public class ProductController {
 					
 					ProductDTO.setImage(true);
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));
-					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,200,200);
+					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,300,300);
 					// 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼓獄�袁⑹굲占쎈쐻占쎈짗占쎌굲 占쎄쾿占쎈쐻占쎈쑆�몴占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲100 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 100占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 
 					
 					thumbnail.close(); 
