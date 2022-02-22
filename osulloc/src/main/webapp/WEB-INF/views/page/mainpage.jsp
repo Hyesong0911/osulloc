@@ -89,7 +89,7 @@
 		        <form id="actionForm" action="/osulloc/page/mainpage" method="get"> 
 			        <div class="taste">
 			            <select name="kind" id="" class="t_kind">
-			                <option value="">종류</option>
+			                <option >종류</option>
 			                <option value="명차">명차</option>
 			                <option value="녹차">녹차</option>
 			                <option value="홍차">홍차</option>
@@ -99,7 +99,7 @@
 			                <option value="뷰티">뷰티</option>
 			            </select>
 			            <select name="scent" id="" class="t_scent">
-			                <option value="">향</option>
+			                <option >향</option>
 			                <option value="달달한향">달달한향</option>
 			                <option value="상큼한향">상큼한향</option>
 			                <option value="고소한향">고소한향</option>
@@ -107,7 +107,7 @@
 			                <option value="과일향">과일향</option>
 			            </select>
 			            <select name="type" id="" class="t_product">
-			                <option value="">상품타입</option>
+			                <option >상품타입</option>
 			                <option value="단품">단품</option>
 			                <option value="세트">세트</option>
 			            </select>

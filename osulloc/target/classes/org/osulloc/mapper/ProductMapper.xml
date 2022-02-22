@@ -20,7 +20,7 @@
 					 and type = #{type}
 				</when>
 				
-				<when test="kind != null and scent == null and type == null">
+<!-- 				<when test="kind != null and scent == null and type == null">
 				 	where  kind = #{kind}
 				</when>
 				
@@ -29,7 +29,7 @@
 				</when>
 				<when test="kind == null and scent == null and type != null">
 				 	where  type = #{type}
-				</when>
+				</when> -->
 			</choose>
   	</select>
   	
@@ -54,7 +54,11 @@
   	</insert>
   	
   	<select id="productse" resultType="org.osulloc.domain.ProductDTO">
-  		 select * from product where prodnum = #{prodnum}
+  		 <!-- select * from product 
+  		 where prodnum = #{prodnum} -->
+  		 
+  		select prodnum, name, petc, kind, scent, type, color, price, sale, number, concat(replace(uploadpath,'\\','/'),'/',uuid,'_',filename) as filename from product
+  		 where prodnum = #{prodnum}
   	</select>
   	
 <!--   	<select id="productall" resultType="org.osulloc.domain.ProductDTO">

@@ -4,25 +4,24 @@ import java.util.ArrayList;
 
 public class ProductReviewDTO {
 	private int pno;
-	private int prodnum;
+	private String writer;
 	private String title;
 	private String content;
-	private String writer;
-	private String regdate;
+	private String regdate;	
+	
 	private int good;
 	private ArrayList<AttachFileDTO> attachList;
-	
 	public int getPno() {
 		return pno;
 	}
 	public void setPno(int pno) {
 		this.pno = pno;
 	}
-	public int getProdnum() {
-		return prodnum;
+	public String getWriter() {
+		return writer;
 	}
-	public void setProdnum(int prodnum) {
-		this.prodnum = prodnum;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	public String getTitle() {
 		return title;
@@ -35,12 +34,6 @@ public class ProductReviewDTO {
 	}
 	public void setContent(String content) {
 		this.content = content;
-	}
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -60,12 +53,19 @@ public class ProductReviewDTO {
 	public void setAttachList(ArrayList<AttachFileDTO> attachList) {
 		this.attachList = attachList;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "ProductReviewDTO [pno=" + pno + ", prodnum=" + prodnum + ", title=" + title + ", content=" + content
-				+ ", writer=" + writer + ", regdate=" + regdate + ", good=" + good + ", attachList=" + attachList + "]";
+		return "ProductReviewDTO [pno=" + pno + ", writer=" + writer + ", title=" + title + ", content=" + content
+				+ ", regdate=" + regdate + ", good=" + good + ", attachList=" + attachList + "]";
 	}
-
-
+	
+	
+	
+	
+	
+	
+	
 	
 }

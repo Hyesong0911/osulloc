@@ -31,7 +31,7 @@
   	</select> -->
   	
   	<select id="productcri" resultType="org.osulloc.domain.ProductReviewDTO">
-  		 select*from(
+  		 select * from(
 				select @rownum:=@rownum+1 as rownum, b.*
 				from (select @rownum:=0) as tmp, productreview as b order by pno desc
 				) as productlist 
