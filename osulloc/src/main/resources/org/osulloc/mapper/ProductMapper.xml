@@ -12,21 +12,36 @@
   		 and type=#{type} -->
   		 <!-- and color=#{color} -->
   		 
-  		 select * from product 
+  		  select prodnum, name, petc, kind, scent, type, color, price, sale, number, concat(replace(uploadpath,'\\','/'),'/s_',uuid,'_',filename) as filename from product
 			<choose>
-			<when test="kind != null and scent != null and type != null">
-			 where  kind='녹차'
-			 and scent='고소한향'
-			 and type='단품'
-			</when>
+				<when test="kind != null and scent != null and type != null">
+					 where  kind = #{kind}
+					 and scent = #{scent}
+					 and type = #{type}
+				</when>
+				
+<!-- 				<when test="kind != null and scent == null and type == null">
+				 	where  kind = #{kind}
+				</when>
+				
+				<when test="kind == null and scent != null and type == null">
+				 	where scent = #{scent}
+				</when>
+				
+				<when test="kind == null and scent == null and type != null">
+				 	where  type = #{type}
+				</when> -->
 			</choose>
   	</select>
   	
   	<select id="product2" resultType="org.osulloc.domain.ProductDTO">
-  		 select * from product 
-  		 where  sale != 0
+  		 <!-- select * from product 
+  		 where  sale != 0 -->
+  		 select prodnum, name, petc, kind, scent, type, color, price, sale, number, concat(replace(uploadpath,'\\','/'),'/s_',uuid,'_',filename) as filename from product
+		where  sale != 0
 
   	</select>
+
   	
   	<select id="product3se" resultType="org.osulloc.domain.ProductDTO">
   		 select * from cart 

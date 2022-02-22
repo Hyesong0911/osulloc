@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     
     
-	<link href="../resources/css/merchandise.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/product.css" rel="stylesheet" type="text/css">
 	<link href="../resources/css/header.css" rel="stylesheet" type="text/css">
 	<link href="../resources/css/footer.css" rel="stylesheet" type="text/css">
 	

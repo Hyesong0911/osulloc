@@ -56,6 +56,7 @@ public class ProductController {
 	
 	
 	// post 占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�
+	/*
 	@PostMapping("uploadActionForm")
 	public void uploadActionPost(MultipartFile[] uploadFile, Model model) {
 		String uploadFolder ="C:\\upload";
@@ -79,7 +80,7 @@ public class ProductController {
 			}
 		}
 	}
-	
+	*/
 	
 	
 	////////////////////////////
@@ -90,9 +91,7 @@ public class ProductController {
 	public void addProduct(ProductDTO product) {
 		
 		System.out.println("controller="+product);
-		productService.addProduct(product);
-		
-		System.out.println("connect!");
+ 
 		
 		
 	}
@@ -236,7 +235,6 @@ public class ProductController {
 	
 
 	@GetMapping("display")
-	
 	public ResponseEntity<byte[]> getFile(String fileName){
 		System.out.println("fileName= " +fileName);
 		File file = new File("C:\\Users\\GreenArt\\Desktop\\upload\\"+fileName);
