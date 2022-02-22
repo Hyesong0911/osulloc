@@ -26,47 +26,47 @@ import net.coobird.thumbnailator.Thumbnailator;
 
 @Controller
 public class UploadController {
-	@GetMapping("upload")//form태그
+	@GetMapping("upload")//form�깭洹�
 	public void uploadForm() {
-		System.out.println("파일 업로드 화면");
+		System.out.println("�뙆�씪 �뾽濡쒕뱶 �솕硫�");
 	}
-	@GetMapping("uploadAjax")//div태그
+	@GetMapping("uploadAjax")//div�깭洹�
 	public void uploadAjaxForm() {
-		System.out.println("파일 업로드 화면");
+		System.out.println("�뙆�씪 �뾽濡쒕뱶 �솕硫�");
 	}
-	//upload.jsp에서 form태그를 이용해서 파일 업로드
+	//upload.jsp�뿉�꽌 form�깭洹몃�� �씠�슜�빐�꽌 �뙆�씪 �뾽濡쒕뱶
 	@PostMapping("uploadAction")
 	public void uploadAction(MultipartFile[] uploadFile) {
 		
-		//파일 업로드할 경로 지정
-		String uploadFolder="C:\\Users\\GreenArt\\Desktop\\upload\\";
+		//�뙆�씪 �뾽濡쒕뱶�븷 寃쎈줈 吏��젙
+		String uploadFolder="C:\\upload";
 		
-		for(MultipartFile multipartFile : uploadFile) {//uploadFile배열에 변수를 하나 만들어 값을  multipartFile에 저장하여 출력
-			System.out.println("업로드 파일 이름 = " + multipartFile.getOriginalFilename());//사용자가 업로드 한 실제 파일 이름
-			System.out.println("업로드 파일 크기 = " + multipartFile.getSize());//사용자가 업로드 한 실제 파일 크기
-			System.out.println("업로드 파일 형식 = " + multipartFile.getContentType());//사용자가 업로드 한 실제 파일 형식
+		for(MultipartFile multipartFile : uploadFile) {//uploadFile諛곗뿴�뿉 蹂��닔瑜� �븯�굹 留뚮뱾�뼱 媛믪쓣  multipartFile�뿉 ���옣�븯�뿬 異쒕젰
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �씠由� = " + multipartFile.getOriginalFilename());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �씠由�
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �겕湲� = " + multipartFile.getSize());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �겕湲�
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �삎�떇 = " + multipartFile.getContentType());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �삎�떇
 			
-			//File saveFile=new File();//File은 기본생성자가 없기 때문에 꼭 매개변수를 작성해야 한다.
-			//uploadFolder에 저장되어 있는 경로로 실제 파일명으로 저장.
-			//multipartFile.getOriginalFilename()을 uploadFolder경로에 저장
-			File saveFile=new File(uploadFolder,multipartFile.getOriginalFilename());//이름을 저장해야 하기 때문에
+			//File saveFile=new File();//File�� 湲곕낯�깮�꽦�옄媛� �뾾湲� �븣臾몄뿉 瑗� 留ㅺ컻蹂��닔瑜� �옉�꽦�빐�빞 �븳�떎.
+			//uploadFolder�뿉 ���옣�릺�뼱 �엳�뒗 寃쎈줈濡� �떎�젣 �뙆�씪紐낆쑝濡� ���옣.
+			//multipartFile.getOriginalFilename()�쓣 uploadFolder寃쎈줈�뿉 ���옣
+			File saveFile=new File(uploadFolder,multipartFile.getOriginalFilename());//�씠由꾩쓣 ���옣�빐�빞 �븯湲� �븣臾몄뿉
 			
 			try {
-				multipartFile.transferTo(saveFile);//transferTo : 실제로 지정한 폴더에 업로드를 시켜주는 역활, 예외처리 필수
+				multipartFile.transferTo(saveFile);//transferTo : �떎�젣濡� 吏��젙�븳 �뤃�뜑�뿉 �뾽濡쒕뱶瑜� �떆耳쒖＜�뒗 �뿭�솢, �삁�쇅泥섎━ �븘�닔
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}//end try
-		}//for문 end
+		}//for臾� end
 	}
 	
-	//년/월/일 단위의 폴더를 생성하기 위한 작업. 폴더 이름 추출하여 리턴
+	//�뀈/�썡/�씪 �떒�쐞�쓽 �뤃�뜑瑜� �깮�꽦�븯湲� �쐞�븳 �옉�뾽. �뤃�뜑 �씠由� 異붿텧�븯�뿬 由ы꽩
 	private String getFolder() {
-		//현재날짜를 추출(요일 월 일 시:분:초 KST 년도)
-		Date date = new Date();//util//기본생성자 호출
+		//�쁽�옱�궇吏쒕�� 異붿텧(�슂�씪 �썡 �씪 �떆:遺�:珥� KST �뀈�룄)
+		Date date = new Date();//util//湲곕낯�깮�꽦�옄 �샇異�
 		
-		//->2020-01-18로 출력하기(yyyy-mm-dd 형식으로 변경(시간 빼기))
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//MM은 대문자 필수 미닛하고 구별하기 위해
+		//->2020-01-18濡� 異쒕젰�븯湲�(yyyy-mm-dd �삎�떇�쑝濡� 蹂�寃�(�떆媛� 鍮쇨린))
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//MM�� ��臾몄옄 �븘�닔 誘몃떅�븯怨� 援щ퀎�븯湲� �쐞�빐
 		
 		//2020-01-18
 		String str = sdf.format(date);
@@ -74,15 +74,15 @@ public class UploadController {
 		System.out.println(str.replace("-", File.separator));
 		//str.replace("-", File.separator);
 		
-		//2020-01-18 -> 2022\01\18로 변경
+		//2020-01-18 -> 2022\01\18濡� 蹂�寃�
 		return str.replace("-", File.separator);
 	}
 	
-	//썸네일 이미지 생성을 할 것인지 안 할 것인지에 대한 판단하는 메소드(사용자가 업로드 한 파일이 이미지이면 생성, 그렇지 않으면 생성 안함)
-	private boolean checkImage(File file) {//이미지인지 아닌지 확인하기 위해 매개변수로 file을 받아야 함  //예외처리
+	//�뜽�꽕�씪 �씠誘몄� �깮�꽦�쓣 �븷 寃껋씤吏� �븞 �븷 寃껋씤吏��뿉 ���븳 �뙋�떒�븯�뒗 硫붿냼�뱶(�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �뙆�씪�씠 �씠誘몄��씠硫� �깮�꽦, 洹몃젃吏� �븡�쑝硫� �깮�꽦 �븞�븿)
+	private boolean checkImage(File file) {//�씠誘몄��씤吏� �븘�땶吏� �솗�씤�븯湲� �쐞�빐 留ㅺ컻蹂��닔濡� file�쓣 諛쏆븘�빞 �븿  //�삁�쇅泥섎━
 		try {
-			String contentType=Files.probeContentType(file.toPath());//파일의 타입을 알아내는 probeContentType메소드 호출하여 사용
-			return contentType.startsWith("image");//그 파일의 타입이 image이면 true, 그렇지 않으면 false
+			String contentType=Files.probeContentType(file.toPath());//�뙆�씪�쓽 ���엯�쓣 �븣�븘�궡�뒗 probeContentType硫붿냼�뱶 �샇異쒗븯�뿬 �궗�슜
+			return contentType.startsWith("image");//洹� �뙆�씪�쓽 ���엯�씠 image�씠硫� true, 洹몃젃吏� �븡�쑝硫� false
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,98 +90,98 @@ public class UploadController {
 		return false;
 	}
 	
-	//uploadAjax.js에서 ajax를 이용해서 파일 업로드 후 controller연결
+	//uploadAjax.js�뿉�꽌 ajax瑜� �씠�슜�빐�꽌 �뙆�씪 �뾽濡쒕뱶 �썑 controller�뿰寃�
 	@PostMapping(value="uploadAjaxAction",produces= {MediaType.APPLICATION_JSON_UTF8_VALUE})
-	//ajax를 통해서 호출하면 model을 사용하지 않고 ResponseEntity를 사용하여 웹페이지로 return 시킨다.
+	//ajax瑜� �넻�빐�꽌 �샇異쒗븯硫� model�쓣 �궗�슜�븯吏� �븡怨� ResponseEntity瑜� �궗�슜�븯�뿬 �쎒�럹�씠吏�濡� return �떆�궓�떎.
 	public ResponseEntity <ArrayList<AttachFileDTO>> uploadAjaxAction(MultipartFile[] uploadFile) {
-		//AttachFileDTO에 저장되는 값이 여러파일에 대한 값이면 배열로 처리가 되어야 하므로 ArrayList타입이 되어야 함. 배열에 저장하여 여러개가 나올 수 있게 함.
+		//AttachFileDTO�뿉 ���옣�릺�뒗 媛믪씠 �뿬�윭�뙆�씪�뿉 ���븳 媛믪씠硫� 諛곗뿴濡� 泥섎━媛� �릺�뼱�빞 �븯誘�濡� ArrayList���엯�씠 �릺�뼱�빞 �븿. 諛곗뿴�뿉 ���옣�븯�뿬 �뿬�윭媛쒓� �굹�삱 �닔 �엳寃� �븿.
 		ArrayList<AttachFileDTO> list = new ArrayList<>();
 		
-		//파일 업로드할 경로 지정
-		String uploadFolder="C:\\Users\\GreenArt\\Desktop\\upload\\";//날짜가 없는 것
+		//�뙆�씪 �뾽濡쒕뱶�븷 寃쎈줈 吏��젙
+		String uploadFolder="C:\\upload";//�궇吏쒓� �뾾�뒗 寃�
 		
-		//폴더 생성                                     		(기존 폴더, 현재 폴더)위치를 결합
-		File uploadPath = new File(uploadFolder, getFolder());//날짜가 있는 것 //실제 업로드 경로
+		//�뤃�뜑 �깮�꽦                                     		(湲곗〈 �뤃�뜑, �쁽�옱 �뤃�뜑)�쐞移섎�� 寃고빀
+		File uploadPath = new File(uploadFolder, getFolder());//�궇吏쒓� �엳�뒗 寃� //�떎�젣 �뾽濡쒕뱶 寃쎈줈
 		System.out.println("uploadAjaxAction osulloc uploadPath="+uploadPath);
 		
-		//날짜는 계속 바뀌기 때문에 날짜 부분만 저장
+		//�궇吏쒕뒗 怨꾩냽 諛붾�뚭린 �븣臾몄뿉 �궇吏� 遺�遺꾨쭔 ���옣
 		String uploadFolderPath=getFolder();
 		
-		//현재 만들려고 하는 폴더가 없으면
-		if(uploadPath.exists()==false) {//exists(), mkdirs() 인스턴스 매서드
-			//폴더 생성
-			uploadPath.mkdirs();//mkdirs:Make directory=>폴더를 만든다
+		//�쁽�옱 留뚮뱾�젮怨� �븯�뒗 �뤃�뜑媛� �뾾�쑝硫�
+		if(uploadPath.exists()==false) {//exists(), mkdirs() �씤�뒪�꽩�뒪 留ㅼ꽌�뱶
+			//�뤃�뜑 �깮�꽦
+			uploadPath.mkdirs();//mkdirs:Make directory=>�뤃�뜑瑜� 留뚮뱺�떎
 		}
 		
-		for(MultipartFile multipartFile : uploadFile) {//uploadFile배열에 변수를 하나 만들어 값을  multipartFile에 저장하여 출력
-			System.out.println("업로드 파일 이름 = " + multipartFile.getOriginalFilename());//사용자가 업로드 한 실제 파일 이름
-			System.out.println("업로드 파일 크기 = " + multipartFile.getSize());//사용자가 업로드 한 실제 파일 크기
-			System.out.println("업로드 파일 형식 = " + multipartFile.getContentType());//사용자가 업로드 한 실제 파일 형식
+		for(MultipartFile multipartFile : uploadFile) {//uploadFile諛곗뿴�뿉 蹂��닔瑜� �븯�굹 留뚮뱾�뼱 媛믪쓣  multipartFile�뿉 ���옣�븯�뿬 異쒕젰
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �씠由� = " + multipartFile.getOriginalFilename());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �씠由�
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �겕湲� = " + multipartFile.getSize());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �겕湲�
+			System.out.println("�뾽濡쒕뱶 �뙆�씪 �삎�떇 = " + multipartFile.getContentType());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �삎�떇
 			
-			//UploadController에 있는 uploadAjaxAction메소드에서 AttachFileDTO를 사용해서 값을 저장해야 된는데
-			//이럴 경우 UploadController에 AttachFileDTO가 없으면 사용을 할 수 없다.
-			//그래서 UploadController에 AttachFileDTO 포함 시켜서 사용하여 값을 저장함.
-			AttachFileDTO attachdto = new AttachFileDTO();//포함관계 사용법
+			//UploadController�뿉 �엳�뒗 uploadAjaxAction硫붿냼�뱶�뿉�꽌 AttachFileDTO瑜� �궗�슜�빐�꽌 媛믪쓣 ���옣�빐�빞 �맂�뒗�뜲
+			//�씠�윺 寃쎌슦 UploadController�뿉 AttachFileDTO媛� �뾾�쑝硫� �궗�슜�쓣 �븷 �닔 �뾾�떎.
+			//洹몃옒�꽌 UploadController�뿉 AttachFileDTO �룷�븿 �떆耳쒖꽌 �궗�슜�븯�뿬 媛믪쓣 ���옣�븿.
+			AttachFileDTO attachdto = new AttachFileDTO();//�룷�븿愿�怨� �궗�슜踰�
 			
-			//실제 파일명 저장
-			String uploadFileName= multipartFile.getOriginalFilename();//가공해야 함//uuid가 빠진 업로드된 파일 이름
+			//�떎�젣 �뙆�씪紐� ���옣
+			String uploadFileName= multipartFile.getOriginalFilename();//媛�怨듯빐�빞 �븿//uuid媛� 鍮좎쭊 �뾽濡쒕뱶�맂 �뙆�씪 �씠由�
 			
-			//실제 파일명(uploadFileName)을 AttachFileDTO클래스(attachdto)에 fileName에 저장(setFileName)
+			//�떎�젣 �뙆�씪紐�(uploadFileName)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 fileName�뿉 ���옣(setFileName)
 			attachdto.setFileName(uploadFileName);
 			
-			//중복이 되지 않는 임의의 문자열을 생성
-			UUID uuid = UUID.randomUUID();//.randomUUID(); : 클래스 메서드
+			//以묐났�씠 �릺吏� �븡�뒗 �엫�쓽�쓽 臾몄옄�뿴�쓣 �깮�꽦
+			UUID uuid = UUID.randomUUID();//.randomUUID(); : �겢�옒�뒪 硫붿꽌�뱶
 			
-			//UUID+"_"+getOriginalFilename()의 조합으로 파일명을 uploadFileName에 저장
+			//UUID+"_"+getOriginalFilename()�쓽 議고빀�쑝濡� �뙆�씪紐낆쓣 uploadFileName�뿉 ���옣
 			uploadFileName=uuid.toString()+"_"+uploadFileName;
 			
-			//File saveFile=new File();//File은 기본생성자가 없기 때문에 꼭 매개변수를 작성해야 한다.
-			//uploadFolder에 저장되어 있는 경로로 실제 파일명으로 저장.
-			File saveFile=new File(uploadPath,uploadFileName);//이름을 저장해야 하기 때문에
+			//File saveFile=new File();//File�� 湲곕낯�깮�꽦�옄媛� �뾾湲� �븣臾몄뿉 瑗� 留ㅺ컻蹂��닔瑜� �옉�꽦�빐�빞 �븳�떎.
+			//uploadFolder�뿉 ���옣�릺�뼱 �엳�뒗 寃쎈줈濡� �떎�젣 �뙆�씪紐낆쑝濡� ���옣.
+			File saveFile=new File(uploadPath,uploadFileName);//�씠由꾩쓣 ���옣�빐�빞 �븯湲� �븣臾몄뿉
 			
 			try {
-				//saveFile변수에 저장되어 있는 폴더명으로 파일을 보내라.
-				multipartFile.transferTo(saveFile);//transferTo : 실제로 지정한 폴더에 업로드를 시켜주는 역활, 예외처리 필수
+				//saveFile蹂��닔�뿉 ���옣�릺�뼱 �엳�뒗 �뤃�뜑紐낆쑝濡� �뙆�씪�쓣 蹂대궡�씪.
+				multipartFile.transferTo(saveFile);//transferTo : �떎�젣濡� 吏��젙�븳 �뤃�뜑�뿉 �뾽濡쒕뱶瑜� �떆耳쒖＜�뒗 �뿭�솢, �삁�쇅泥섎━ �븘�닔
 				
-				//실제 업로드 경로(uploadFolderPath)을 AttachFileDTO클래스(attachdto)에 uploadPath에 저장(setUploadPath)
-				attachdto.setUploadPath(uploadFolderPath); //try문 안에 없어도 된다. for문 안에만 있으면 된다.
+				//�떎�젣 �뾽濡쒕뱶 寃쎈줈(uploadFolderPath)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setUploadPath)
+				attachdto.setUploadPath(uploadFolderPath); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎.
 				
-				//uuid값(UUID)을 AttachFileDTO클래스(attachdto)에 uploadPath에 저장(setUuid)
-				attachdto.setUuid(uuid.toString()); //try문 안에 없어도 된다. for문 안에만 있으면 된다. //uuid는 클래스타입이므로 문자로 바꿔줘야 한다.
+				//uuid媛�(UUID)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setUuid)
+				attachdto.setUuid(uuid.toString()); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎. //uuid�뒗 �겢�옒�뒪���엯�씠誘�濡� 臾몄옄濡� 諛붽퓭以섏빞 �븳�떎.
 				
-				if(checkImage(saveFile)) {//이미지 파일이면
-					//FileType값(image)을 AttachFileDTO클래스(attachdto)에 uploadPath에 저장(setImage)
-					attachdto.setImage(true); //try문 안에 없어도 된다. for문 안에만 있으면 된다.
+				if(checkImage(saveFile)) {//�씠誘몄� �뙆�씪�씠硫�
+					//FileType媛�(image)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setImage)
+					attachdto.setImage(true); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎.
 					
-					//썸네일을 파일을 생성하기 전에 썸네일 파일 이름을 추출
-					FileOutputStream thumnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));//FileOutput 파일을 밖으로 A다
+					//�뜽�꽕�씪�쓣 �뙆�씪�쓣 �깮�꽦�븯湲� �쟾�뿉 �뜽�꽕�씪 �뙆�씪 �씠由꾩쓣 異붿텧
+					FileOutputStream thumnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));//FileOutput �뙆�씪�쓣 諛뽰쑝濡� 혯A�떎
 					
-					//썸네일을 파일을 생성함
+					//�뜽�꽕�씪�쓣 �뙆�씪�쓣 �깮�꽦�븿
 					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumnail, 100, 100);
-					thumnail.close();//썸네일 종료(메모리 공간 함수)
+					thumnail.close();//�뜽�꽕�씪 醫낅즺(硫붾え由� 怨듦컙 �븿�닔)
 				}
 				
-				list.add(attachdto);//add : 값을 넣을 때 사용하는 메서드 
+				list.add(attachdto);//add : 媛믪쓣 �꽔�쓣 �븣 �궗�슜�븯�뒗 硫붿꽌�뱶 
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}//end try
-		}//for문 end
-		//통신상태가 정상적(HttpStatus.OK)이면 ArrayList(list)에 저장되어 있는 값을 웹브라우저(uploadAjax.js에 있는 ajax에 success)에 보내라
-		return new ResponseEntity<>(list,HttpStatus.OK);//list는 uploadAjax.js의 ajax에 result로 넘어간다.
+		}//for臾� end
+		//�넻�떊�긽�깭媛� �젙�긽�쟻(HttpStatus.OK)�씠硫� ArrayList(list)�뿉 ���옣�릺�뼱 �엳�뒗 媛믪쓣 �쎒釉뚮씪�슦��(uploadAjax.js�뿉 �엳�뒗 ajax�뿉 success)�뿉 蹂대궡�씪
+		return new ResponseEntity<>(list,HttpStatus.OK);//list�뒗 uploadAjax.js�쓽 ajax�뿉 result濡� �꽆�뼱媛꾨떎.
 	}
 	
-	//파일 업로드한 파일타입이 이미지일 때 웹브라우저에 이미지를 띄우기 위해
+	//�뙆�씪 �뾽濡쒕뱶�븳 �뙆�씪���엯�씠 �씠誘몄��씪 �븣 �쎒釉뚮씪�슦���뿉 �씠誘몄�瑜� �쓣�슦湲� �쐞�빐
 	@GetMapping("display")
-	public ResponseEntity<byte[]> getFile(String fileName) {//getfile()은 문자열로 파일의 경로가 포함된 fileName을 매개변수 받고 byte[](이진수)를 전송
-		System.out.println("url주소를 통한 fileName="+fileName);
+	public ResponseEntity<byte[]> getFile(String fileName) {//getfile()�� 臾몄옄�뿴濡� �뙆�씪�쓽 寃쎈줈媛� �룷�븿�맂 fileName�쓣 留ㅺ컻蹂��닔 諛쏄퀬 byte[](�씠吏꾩닔)瑜� �쟾�넚
+		System.out.println("url二쇱냼瑜� �넻�븳 fileName="+fileName);
 		
-		File file = new File("C:\\Users\\GreenArt\\Desktop\\upload\\"+fileName);
+		File file = new File("C:\\upload\\"+fileName);
 		System.out.println("file="+file);
 		ResponseEntity<byte[]> result = null;
-		//byte[]로 이미지 파일의 데이터를 전송할 때 브라우저에 보내는 MIME타입이 파일의 종류(jpg, png, xls, ppt...)에 따라서 달라진다.
-		//이 부분을 해결하기 위해서 probeContentType()을 이용해서 MIME타입 데이터를 Http의 헤더 메세지에 포함할 수 있도록 처리
+		//byte[]濡� �씠誘몄� �뙆�씪�쓽 �뜲�씠�꽣瑜� �쟾�넚�븷 �븣 釉뚮씪�슦���뿉 蹂대궡�뒗 MIME���엯�씠 �뙆�씪�쓽 醫낅쪟(jpg, png, xls, ppt...)�뿉 �뵲�씪�꽌 �떖�씪吏꾨떎.
+		//�씠 遺�遺꾩쓣 �빐寃고븯湲� �쐞�빐�꽌 probeContentType()�쓣 �씠�슜�빐�꽌 MIME���엯 �뜲�씠�꽣瑜� Http�쓽 �뿤�뜑 硫붿꽭吏��뿉 �룷�븿�븷 �닔 �엳�룄濡� 泥섎━
 		try {
 			HttpHeaders header = new HttpHeaders();
 			result=new ResponseEntity<>(FileCopyUtils.copyToByteArray(file),header,HttpStatus.OK);
@@ -190,14 +190,14 @@ public class UploadController {
 		}
 		return result;
 	}
-	//파일 업로드한 파일타입이 이미지가 아닐때(.txt, .xls, .ppt) 웹브라우저를 통해서 download할 수 있도록 한다.
-	//consumes : 들어오는 데이터 타입 정의(생략가능) //produces : 반환하는 데이터 타입 정의(생략가능)//*생략을 하게 되면, 웹브라우저가 알아서 타입을 판단(내가 원하는 타입이 아닐 수도 있음)*
-	//웹브라우저가 '이 파일은 download해야 하는 파일입니다.' 라는 것을 인지할 수 있도록 반환이 되어야 한다. 그러기 위해서는 MediaType.APPLICATION_OCTET_STREAM_VALUE 타입으로 반환데이터 타입을 선언한다.
+	//�뙆�씪 �뾽濡쒕뱶�븳 �뙆�씪���엯�씠 �씠誘몄�媛� �븘�땺�븣(.txt, .xls, .ppt) �쎒釉뚮씪�슦��瑜� �넻�빐�꽌 download�븷 �닔 �엳�룄濡� �븳�떎.
+	//consumes : �뱾�뼱�삤�뒗 �뜲�씠�꽣 ���엯 �젙�쓽(�깮�왂媛��뒫) //produces : 諛섑솚�븯�뒗 �뜲�씠�꽣 ���엯 �젙�쓽(�깮�왂媛��뒫)//*�깮�왂�쓣 �븯寃� �릺硫�, �쎒釉뚮씪�슦��媛� �븣�븘�꽌 ���엯�쓣 �뙋�떒(�궡媛� �썝�븯�뒗 ���엯�씠 �븘�땺 �닔�룄 �엳�쓬)*
+	//�쎒釉뚮씪�슦��媛� '�씠 �뙆�씪�� download�빐�빞 �븯�뒗 �뙆�씪�엯�땲�떎.' �씪�뒗 寃껋쓣 �씤吏��븷 �닔 �엳�룄濡� 諛섑솚�씠 �릺�뼱�빞 �븳�떎. 洹몃윭湲� �쐞�빐�꽌�뒗 MediaType.APPLICATION_OCTET_STREAM_VALUE ���엯�쑝濡� 諛섑솚�뜲�씠�꽣 ���엯�쓣 �꽑�뼵�븳�떎.
 	@GetMapping(value="download",produces=MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	public ResponseEntity<Resource> downloadFile(String fileName){//Resource core로 import
+	public ResponseEntity<Resource> downloadFile(String fileName){//Resource core濡� import
 		System.out.println("download fileName="+fileName);
 		
-		Resource resource = new FileSystemResource("C:\\Users\\GreenArt\\Desktop\\upload\\"+fileName);
+		Resource resource = new FileSystemResource("C:\\upload\\"+fileName);
 		System.out.println("download resource="+resource);
 		
 		String resourceName = resource.getFilename();

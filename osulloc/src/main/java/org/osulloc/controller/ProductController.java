@@ -122,28 +122,22 @@ public class ProductController {
 	
 		// 占쎈쐻占쎈뼓獄�袁⑹굲占쎈쐻占쎈짗占쎌굲 占쏙옙占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼄占쎈솇占쎌굲  
 	
-		private boolean checkImageType(File file) {
-			try {
-			//  probeContentType :占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쏙옙占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼑占쎈툡占쎈꺋占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솭占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲
-				String contentType = Files.probeContentType(file.toPath());  
-				return contentType.startsWith("image");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return false;
+	private boolean checkImageType(File file) {
+		try {
+		//  probeContentType :占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쏙옙占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼑占쎈툡占쎈꺋占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솭占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲
+			String contentType = Files.probeContentType(file.toPath());  
+			return contentType.startsWith("image");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		return false;
+	}
 	
-	
-	
-	
-		
-		// ajax post (占쎌넅占쎈쐻占쎈짗占쎌굲)
+	// ajax post (占쎌넅占쎈쐻占쎈짗占쎌굲)
 	@PostMapping(value="productAjaxAction",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	
 	@ResponseBody
 	public ResponseEntity<List<ProductDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
-		
-		
-		
 		
 		System.out.println("aaa="+uploadFile);
 		
@@ -228,29 +222,5 @@ public class ProductController {
 		}// end for
 		return new ResponseEntity<>(list,HttpStatus.OK);
 	}  //uploadAjaxPost
-	
-	
-	
-	
-	
-	
-
-	@GetMapping("display")
-	public ResponseEntity<byte[]> getFile(String fileName){
-		System.out.println("fileName= " +fileName);
-		File file = new File("C:\\upload\\"+fileName);
-		System.out.println("file:" + file);
-		
-		ResponseEntity<byte[]> result=null;
-		try {
-			HttpHeaders header = new HttpHeaders();
-			header.add("Content-Type", Files.probeContentType(file.toPath()));
-			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file),header,HttpStatus.OK);
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-		return result;
-	 
-	}
 		
 }
