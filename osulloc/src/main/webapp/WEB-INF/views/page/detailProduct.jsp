@@ -110,6 +110,8 @@
             	<ul>
             	
             		<c:forEach items="${productcri}" var="productreview">
+            		<input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
+            		
 	            		<li>
 	            			
 	            			<div id="r_detail">
@@ -172,8 +174,10 @@
             	</ul>
             	
             	<form id = "actionForm" action="/osulloc/page/detailProduct" method="get">
+            		<input type="hidden" name="prodnum" value="${productse.prodnum}">
 	            	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 	            	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+
 	                <div class="page">    
 	                    <ul class="pagination">
 							 <!-- 조건문을 넣어주어 true일 떄 동작하도록 한다. test="조건" -->
@@ -188,7 +192,6 @@
 								<li class="paginate_button page-item pageC">
 								
 									<!-- form태그 사용 안할 시 .ver (js를 작성하고 사용하면 2번 적히게 되어 오류발생) -->
-									<!-- <a href="/board/list?pageNum=${num}&amount=${pageMaker.cri.amount}" class="page-link">${num}</a> -->
 									<a href="${num}" class="page-link PNum">${num}</a>
 								</li>
 							</c:forEach>
