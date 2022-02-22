@@ -26,10 +26,10 @@ input{
  
 /* 로고  */
 .image{
-   height: 250px;
+   height: 180px;
     width: 250px;
-    padding: 20px;
-    margin-bottom: 40px;
+    /* padding: 20px; */
+    /* margin-bottom: 40px; */
 
 }
 

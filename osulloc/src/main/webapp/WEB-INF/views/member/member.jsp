@@ -20,7 +20,7 @@
             <header>
                 <!--osulloc logo-->
                 <div class="logo">
-                    <a href="" target="_blank" title="오설록 홈페이지"><img src="../resources/img/오설록 로고.png" class="image"></a>
+                    <a href="../page/mainpage" target="_blank" title="오설록 홈페이지"><img src="../resources/img/오설록 로고.png" class="image"></a>
                 </div>
             </header>
     
