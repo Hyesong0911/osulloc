@@ -157,7 +157,9 @@
 			                <li>
 			                    <div class="m3_item_box">
 			                        <p class="m3_ib_img">
-			                            <a href="/osulloc/page/detailProduct?prodnum=${product.prodnum}"><img src="../resources/img/웨딩그린티 10입(피라미드).png" alt=""></a>
+			                            <a href="/osulloc/page/detailProduct?prodnum=${product.prodnum}">
+			                            	<img src="/osulloc/display?fileName=${product.filename}" alt="">
+			                            </a>
 			                        </p>
 			                        <p><input type="hidden" value="${product.prodnum}"></p>
 			                        <p class="m3_ib_name"><a href="">${product.name}</a></p>
@@ -218,11 +220,10 @@
 		            <ul  style="overflow: hidden">
 		            	<c:forEach items="${product2}" var="product2">
 			                <li>
-
 		                    	<div class="m4_item_box">
 			                        <p class="m4_ib_img">
  			                            <a href="/osulloc/page/detailProduct?prodnum=${product2.prodnum}">
- 			                            	<img src="C:\Users\GreenArt\Desktop\upload\\${product2.uploadpath}\\${product2.uuid}_${product2.filename}" />
+ 			                            	<img src="/osulloc/display?fileName=${product2.filename}" />
  			                            </a>	                        </p>
 			                        <p><input type="hidden" value="${product2.prodnum}" name="prodnum"></p>
 			                        <p class="m4_ib_name"><a href="">${product2.name}</a></p>

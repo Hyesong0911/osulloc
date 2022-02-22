@@ -20,9 +20,13 @@ public class MainController {
 	
 	@GetMapping("mainpage")
 	public void mainpage(Model model, ProductDTO prod) {
-		System.out.println(service.product(prod));
 		model.addAttribute("product", service.product(prod));
 		model.addAttribute("product2", service.product2(prod));
+
+		
+		System.out.println("maincontroller1="+service.product(prod));
+		System.out.println("maincontroller2="+service.product2(prod));
+		
 		//상품 전체를 가져오는 model
 /*		model.addAttribute("productall", service.productall(prod));
 */	}
