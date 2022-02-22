@@ -150,7 +150,7 @@ public class ProductController {
 		
 		List<ProductDTO>list = new ArrayList<>();
 		
-		String uploadFolder="C:\\Users\\GreenArt\\Desktop\\upload";
+		String uploadFolder="C:\\upload";
 		
 		
 				// make Folder......
@@ -239,7 +239,7 @@ public class ProductController {
 	
 	public ResponseEntity<byte[]> getFile(String fileName){
 		System.out.println("fileName= " +fileName);
-		File file = new File("C:\\Users\\GreenArt\\Desktop\\upload\\"+fileName);
+		File file = new File("C:\\upload\\"+fileName);
 		System.out.println("file:" + file);
 		
 		ResponseEntity<byte[]> result=null;
