@@ -101,12 +101,13 @@ public class BoardController {
 	
 	//글수정 버튼을 클릭하면
 	@PostMapping("modify")
-	public void modifyPost(AttachFileDTO aboard, BoardDTO board, RedirectAttributes rttr) {
-		service.delete(aboard);
-		/*service.ainsert(aboard);*/
+	public String modifyPost(BoardDTO board, RedirectAttributes rttr) {
 		
-		rttr.addAttribute("bno", board.getBno());
-		//return "redirect:/page/detail";
+		service.modify(board);
+		
+		/*rttr.addAttribute("bno", board.getBno());*/
+		
+		return "redirect:/page/detail?bno="+board.getBno();
 	}
 	
 	//글삭제 버튼을 클릭하면

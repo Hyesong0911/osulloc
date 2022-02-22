@@ -59,7 +59,8 @@ public class BoardServiceImpl implements BoardService{
 	@Transactional
 	public void modify(BoardDTO board) {
 		bmapper.modify(board);
-		board.getAttachList().forEach(attach->{
+		
+/*		board.getAttachList().forEach(attach->{
 			// 만약에 파일업로드 정보가 있으면
 			System.out.println(board.getAttachList());
 			if(board.getAttachList() != null) {
@@ -70,7 +71,7 @@ public class BoardServiceImpl implements BoardService{
 			}
 			
 			
-		});
+		});*/
 	}
 	
 	//게시판 글삭제 설계된 것 구현
