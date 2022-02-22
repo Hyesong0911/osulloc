@@ -20,7 +20,7 @@
 	<%@ include file="../Header&Footer/header.jsp" %>
 	<div class="wrap">
 		<div class="container">
-			<h1 class="titleW">게시판 글쓰기</h1>
+			<h1 class="titleW">상품 리뷰</h1>
 			<form action="/osulloc/page/reviewWrite" method="post" role="form">
 				<input type="hidden" name = "writer" value="${login.id}">
 				<div class = "modifyBtn">

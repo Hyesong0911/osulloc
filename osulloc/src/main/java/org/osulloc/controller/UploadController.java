@@ -26,47 +26,47 @@ import net.coobird.thumbnailator.Thumbnailator;
 
 @Controller
 public class UploadController {
-	@GetMapping("upload")//form�깭洹�
+	@GetMapping("upload")//form占쎄묶域뱄옙
 	public void uploadForm() {
-		System.out.println("�뙆�씪 �뾽濡쒕뱶 �솕硫�");
+		System.out.println("占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭� 占쎌넅筌롳옙");
 	}
-	@GetMapping("uploadAjax")//div�깭洹�
+	@GetMapping("uploadAjax")//div占쎄묶域뱄옙
 	public void uploadAjaxForm() {
-		System.out.println("�뙆�씪 �뾽濡쒕뱶 �솕硫�");
+		System.out.println("占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭� 占쎌넅筌롳옙");
 	}
-	//upload.jsp�뿉�꽌 form�깭洹몃�� �씠�슜�빐�꽌 �뙆�씪 �뾽濡쒕뱶
+	//upload.jsp占쎈퓠占쎄퐣 form占쎄묶域밸챶占쏙옙 占쎌뵠占쎌뒠占쎈퉸占쎄퐣 占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭�
 	@PostMapping("uploadAction")
 	public void uploadAction(MultipartFile[] uploadFile) {
 		
-		//�뙆�씪 �뾽濡쒕뱶�븷 寃쎈줈 吏��젙
+		//占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭띰옙釉� 野껋럥以� 筌욑옙占쎌젟
 		String uploadFolder="C:\\upload";
 		
-		for(MultipartFile multipartFile : uploadFile) {//uploadFile諛곗뿴�뿉 蹂��닔瑜� �븯�굹 留뚮뱾�뼱 媛믪쓣  multipartFile�뿉 ���옣�븯�뿬 異쒕젰
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �씠由� = " + multipartFile.getOriginalFilename());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �씠由�
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �겕湲� = " + multipartFile.getSize());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �겕湲�
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �삎�떇 = " + multipartFile.getContentType());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �삎�떇
+		for(MultipartFile multipartFile : uploadFile) {//uploadFile獄쏄퀣肉댐옙肉� 癰귨옙占쎈땾�몴占� 占쎈릭占쎄돌 筌띾슢諭억옙堉� 揶쏅�れ뱽  multipartFile占쎈퓠 占쏙옙占쎌삢占쎈릭占쎈연 �빊�뮆�젾
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎌뵠�뵳占� = " + multipartFile.getOriginalFilename());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎌뵠�뵳占�
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎄쾿疫뀐옙 = " + multipartFile.getSize());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎄쾿疫뀐옙
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎌굨占쎈뻼 = " + multipartFile.getContentType());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎌굨占쎈뻼
 			
-			//File saveFile=new File();//File�� 湲곕낯�깮�꽦�옄媛� �뾾湲� �븣臾몄뿉 瑗� 留ㅺ컻蹂��닔瑜� �옉�꽦�빐�빞 �븳�떎.
-			//uploadFolder�뿉 ���옣�릺�뼱 �엳�뒗 寃쎈줈濡� �떎�젣 �뙆�씪紐낆쑝濡� ���옣.
-			//multipartFile.getOriginalFilename()�쓣 uploadFolder寃쎈줈�뿉 ���옣
-			File saveFile=new File(uploadFolder,multipartFile.getOriginalFilename());//�씠由꾩쓣 ���옣�빐�빞 �븯湲� �븣臾몄뿉
+			//File saveFile=new File();//File占쏙옙 疫꿸퀡�궚占쎄문占쎄쉐占쎌쁽揶쏉옙 占쎈씨疫뀐옙 占쎈르�눧紐꾨퓠 �몭占� 筌띲끆而삭퉪占쏙옙�땾�몴占� 占쎌삂占쎄쉐占쎈퉸占쎈튊 占쎈립占쎈뼄.
+			//uploadFolder占쎈퓠 占쏙옙占쎌삢占쎈┷占쎈선 占쎌뿳占쎈뮉 野껋럥以덃에占� 占쎈뼄占쎌젫 占쎈솁占쎌뵬筌뤿굞�몵嚥∽옙 占쏙옙占쎌삢.
+			//multipartFile.getOriginalFilename()占쎌뱽 uploadFolder野껋럥以덌옙肉� 占쏙옙占쎌삢
+			File saveFile=new File(uploadFolder,multipartFile.getOriginalFilename());//占쎌뵠�뵳袁⑹뱽 占쏙옙占쎌삢占쎈퉸占쎈튊 占쎈릭疫뀐옙 占쎈르�눧紐꾨퓠
 			
 			try {
-				multipartFile.transferTo(saveFile);//transferTo : �떎�젣濡� 吏��젙�븳 �뤃�뜑�뿉 �뾽濡쒕뱶瑜� �떆耳쒖＜�뒗 �뿭�솢, �삁�쇅泥섎━ �븘�닔
+				multipartFile.transferTo(saveFile);//transferTo : 占쎈뼄占쎌젫嚥∽옙 筌욑옙占쎌젟占쎈립 占쎈쨨占쎈쐭占쎈퓠 占쎈씜嚥≪뮆諭띄몴占� 占쎈뻻�녹뮇竊쒙옙�뮉 占쎈열占쎌넞, 占쎌굙占쎌뇚筌ｌ꼶�봺 占쎈툡占쎈땾
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}//end try
-		}//for臾� end
+		}//for�눧占� end
 	}
 	
-	//�뀈/�썡/�씪 �떒�쐞�쓽 �뤃�뜑瑜� �깮�꽦�븯湲� �쐞�븳 �옉�뾽. �뤃�뜑 �씠由� 異붿텧�븯�뿬 由ы꽩
+	//占쎈��/占쎌뜞/占쎌뵬 占쎈뼊占쎌맄占쎌벥 占쎈쨨占쎈쐭�몴占� 占쎄문占쎄쉐占쎈릭疫뀐옙 占쎌맄占쎈립 占쎌삂占쎈씜. 占쎈쨨占쎈쐭 占쎌뵠�뵳占� �빊遺욱뀱占쎈릭占쎈연 �뵳�뗪쉘
 	private String getFolder() {
-		//�쁽�옱�궇吏쒕�� 異붿텧(�슂�씪 �썡 �씪 �떆:遺�:珥� KST �뀈�룄)
-		Date date = new Date();//util//湲곕낯�깮�꽦�옄 �샇異�
+		//占쎌겱占쎌삺占쎄텊筌욎뮆占쏙옙 �빊遺욱뀱(占쎌뒄占쎌뵬 占쎌뜞 占쎌뵬 占쎈뻻:�겫占�:�룯占� KST 占쎈�덌옙猷�)
+		Date date = new Date();//util//疫꿸퀡�궚占쎄문占쎄쉐占쎌쁽 占쎌깈�빊占�
 		
-		//->2020-01-18濡� 異쒕젰�븯湲�(yyyy-mm-dd �삎�떇�쑝濡� 蹂�寃�(�떆媛� 鍮쇨린))
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//MM�� ��臾몄옄 �븘�닔 誘몃떅�븯怨� 援щ퀎�븯湲� �쐞�빐
+		//->2020-01-18嚥∽옙 �빊�뮆�젾占쎈릭疫뀐옙(yyyy-mm-dd 占쎌굨占쎈뻼占쎌몵嚥∽옙 癰귨옙野껓옙(占쎈뻻揶쏉옙 �뜮�눊由�))
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//MM占쏙옙 占쏙옙�눧紐꾩쁽 占쎈툡占쎈땾 沃섎챶�뻺占쎈릭�⑨옙 �뤃�됲�롳옙釉�疫뀐옙 占쎌맄占쎈퉸
 		
 		//2020-01-18
 		String str = sdf.format(date);
@@ -74,15 +74,15 @@ public class UploadController {
 		System.out.println(str.replace("-", File.separator));
 		//str.replace("-", File.separator);
 		
-		//2020-01-18 -> 2022\01\18濡� 蹂�寃�
+		//2020-01-18 -> 2022\01\18嚥∽옙 癰귨옙野껓옙
 		return str.replace("-", File.separator);
 	}
 	
-	//�뜽�꽕�씪 �씠誘몄� �깮�꽦�쓣 �븷 寃껋씤吏� �븞 �븷 寃껋씤吏��뿉 ���븳 �뙋�떒�븯�뒗 硫붿냼�뱶(�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �뙆�씪�씠 �씠誘몄��씠硫� �깮�꽦, 洹몃젃吏� �븡�쑝硫� �깮�꽦 �븞�븿)
-	private boolean checkImage(File file) {//�씠誘몄��씤吏� �븘�땶吏� �솗�씤�븯湲� �쐞�빐 留ㅺ컻蹂��닔濡� file�쓣 諛쏆븘�빞 �븿  //�삁�쇅泥섎━
+	//占쎈쑞占쎄퐬占쎌뵬 占쎌뵠沃섎챷占� 占쎄문占쎄쉐占쎌뱽 占쎈막 野껉퍔�뵥筌욑옙 占쎈툧 占쎈막 野껉퍔�뵥筌욑옙占쎈퓠 占쏙옙占쎈립 占쎈솇占쎈뼊占쎈릭占쎈뮉 筌롫뗄�꺖占쎈굡(占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈솁占쎌뵬占쎌뵠 占쎌뵠沃섎챷占쏙옙�뵠筌롳옙 占쎄문占쎄쉐, 域밸챶�쟽筌욑옙 占쎈륫占쎌몵筌롳옙 占쎄문占쎄쉐 占쎈툧占쎈맙)
+	private boolean checkImage(File file) {//占쎌뵠沃섎챷占쏙옙�뵥筌욑옙 占쎈툡占쎈빒筌욑옙 占쎌넇占쎌뵥占쎈릭疫뀐옙 占쎌맄占쎈퉸 筌띲끆而삭퉪占쏙옙�땾嚥∽옙 file占쎌뱽 獄쏆룇釉섓옙鍮� 占쎈맙  //占쎌굙占쎌뇚筌ｌ꼶�봺
 		try {
-			String contentType=Files.probeContentType(file.toPath());//�뙆�씪�쓽 ���엯�쓣 �븣�븘�궡�뒗 probeContentType硫붿냼�뱶 �샇異쒗븯�뿬 �궗�슜
-			return contentType.startsWith("image");//洹� �뙆�씪�쓽 ���엯�씠 image�씠硫� true, 洹몃젃吏� �븡�쑝硫� false
+			String contentType=Files.probeContentType(file.toPath());//占쎈솁占쎌뵬占쎌벥 占쏙옙占쎌뿯占쎌뱽 占쎈르占쎈툡占쎄땀占쎈뮉 probeContentType筌롫뗄�꺖占쎈굡 占쎌깈�빊�뮉釉�占쎈연 占쎄텢占쎌뒠
+			return contentType.startsWith("image");//域뱄옙 占쎈솁占쎌뵬占쎌벥 占쏙옙占쎌뿯占쎌뵠 image占쎌뵠筌롳옙 true, 域밸챶�쟽筌욑옙 占쎈륫占쎌몵筌롳옙 false
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,98 +90,98 @@ public class UploadController {
 		return false;
 	}
 	
-	//uploadAjax.js�뿉�꽌 ajax瑜� �씠�슜�빐�꽌 �뙆�씪 �뾽濡쒕뱶 �썑 controller�뿰寃�
+	//uploadAjax.js占쎈퓠占쎄퐣 ajax�몴占� 占쎌뵠占쎌뒠占쎈퉸占쎄퐣 占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭� 占쎌뜎 controller占쎈염野껓옙
 	@PostMapping(value="uploadAjaxAction",produces= {MediaType.APPLICATION_JSON_UTF8_VALUE})
-	//ajax瑜� �넻�빐�꽌 �샇異쒗븯硫� model�쓣 �궗�슜�븯吏� �븡怨� ResponseEntity瑜� �궗�슜�븯�뿬 �쎒�럹�씠吏�濡� return �떆�궓�떎.
+	//ajax�몴占� 占쎈꽰占쎈퉸占쎄퐣 占쎌깈�빊�뮉釉�筌롳옙 model占쎌뱽 占쎄텢占쎌뒠占쎈릭筌욑옙 占쎈륫�⑨옙 ResponseEntity�몴占� 占쎄텢占쎌뒠占쎈릭占쎈연 占쎌럲占쎈읂占쎌뵠筌욑옙嚥∽옙 return 占쎈뻻占쎄텚占쎈뼄.
 	public ResponseEntity <ArrayList<AttachFileDTO>> uploadAjaxAction(MultipartFile[] uploadFile) {
-		//AttachFileDTO�뿉 ���옣�릺�뒗 媛믪씠 �뿬�윭�뙆�씪�뿉 ���븳 媛믪씠硫� 諛곗뿴濡� 泥섎━媛� �릺�뼱�빞 �븯誘�濡� ArrayList���엯�씠 �릺�뼱�빞 �븿. 諛곗뿴�뿉 ���옣�븯�뿬 �뿬�윭媛쒓� �굹�삱 �닔 �엳寃� �븿.
+		//AttachFileDTO占쎈퓠 占쏙옙占쎌삢占쎈┷占쎈뮉 揶쏅�れ뵠 占쎈연占쎌쑎占쎈솁占쎌뵬占쎈퓠 占쏙옙占쎈립 揶쏅�れ뵠筌롳옙 獄쏄퀣肉닸에占� 筌ｌ꼶�봺揶쏉옙 占쎈┷占쎈선占쎈튊 占쎈릭沃섓옙嚥∽옙 ArrayList占쏙옙占쎌뿯占쎌뵠 占쎈┷占쎈선占쎈튊 占쎈맙. 獄쏄퀣肉댐옙肉� 占쏙옙占쎌삢占쎈릭占쎈연 占쎈연占쎌쑎揶쏆뮄占� 占쎄돌占쎌궞 占쎈땾 占쎌뿳野껓옙 占쎈맙.
 		ArrayList<AttachFileDTO> list = new ArrayList<>();
 		
-		//�뙆�씪 �뾽濡쒕뱶�븷 寃쎈줈 吏��젙
-		String uploadFolder="C:\\upload";//�궇吏쒓� �뾾�뒗 寃�
+		//占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭띰옙釉� 野껋럥以� 筌욑옙占쎌젟
+		String uploadFolder="C:\\upload";//占쎄텊筌욎뮄占� 占쎈씨占쎈뮉 野껓옙
 		
-		//�뤃�뜑 �깮�꽦                                     		(湲곗〈 �뤃�뜑, �쁽�옱 �뤃�뜑)�쐞移섎�� 寃고빀
-		File uploadPath = new File(uploadFolder, getFolder());//�궇吏쒓� �엳�뒗 寃� //�떎�젣 �뾽濡쒕뱶 寃쎈줈
+		//占쎈쨨占쎈쐭 占쎄문占쎄쉐                                     		(疫꿸퀣�� 占쎈쨨占쎈쐭, 占쎌겱占쎌삺 占쎈쨨占쎈쐭)占쎌맄燁살꼶占쏙옙 野껉퀬鍮�
+		File uploadPath = new File(uploadFolder, getFolder());//占쎄텊筌욎뮄占� 占쎌뿳占쎈뮉 野껓옙 //占쎈뼄占쎌젫 占쎈씜嚥≪뮆諭� 野껋럥以�
 		System.out.println("uploadAjaxAction osulloc uploadPath="+uploadPath);
 		
-		//�궇吏쒕뒗 怨꾩냽 諛붾�뚭린 �븣臾몄뿉 �궇吏� 遺�遺꾨쭔 ���옣
+		//占쎄텊筌욎뮆�뮉 �④쑴�꺗 獄쏅뗀占쎈슡由� 占쎈르�눧紐꾨퓠 占쎄텊筌욑옙 �겫占썽겫袁⑥춸 占쏙옙占쎌삢
 		String uploadFolderPath=getFolder();
 		
-		//�쁽�옱 留뚮뱾�젮怨� �븯�뒗 �뤃�뜑媛� �뾾�쑝硫�
-		if(uploadPath.exists()==false) {//exists(), mkdirs() �씤�뒪�꽩�뒪 留ㅼ꽌�뱶
-			//�뤃�뜑 �깮�꽦
-			uploadPath.mkdirs();//mkdirs:Make directory=>�뤃�뜑瑜� 留뚮뱺�떎
+		//占쎌겱占쎌삺 筌띾슢諭억옙�젻�⑨옙 占쎈릭占쎈뮉 占쎈쨨占쎈쐭揶쏉옙 占쎈씨占쎌몵筌롳옙
+		if(uploadPath.exists()==false) {//exists(), mkdirs() 占쎌뵥占쎈뮞占쎄쉘占쎈뮞 筌띲끉苑뚳옙諭�
+			//占쎈쨨占쎈쐭 占쎄문占쎄쉐
+			uploadPath.mkdirs();//mkdirs:Make directory=>占쎈쨨占쎈쐭�몴占� 筌띾슢諭븝옙�뼄
 		}
 		
-		for(MultipartFile multipartFile : uploadFile) {//uploadFile諛곗뿴�뿉 蹂��닔瑜� �븯�굹 留뚮뱾�뼱 媛믪쓣  multipartFile�뿉 ���옣�븯�뿬 異쒕젰
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �씠由� = " + multipartFile.getOriginalFilename());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �씠由�
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �겕湲� = " + multipartFile.getSize());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �겕湲�
-			System.out.println("�뾽濡쒕뱶 �뙆�씪 �삎�떇 = " + multipartFile.getContentType());//�궗�슜�옄媛� �뾽濡쒕뱶 �븳 �떎�젣 �뙆�씪 �삎�떇
+		for(MultipartFile multipartFile : uploadFile) {//uploadFile獄쏄퀣肉댐옙肉� 癰귨옙占쎈땾�몴占� 占쎈릭占쎄돌 筌띾슢諭억옙堉� 揶쏅�れ뱽  multipartFile占쎈퓠 占쏙옙占쎌삢占쎈릭占쎈연 �빊�뮆�젾
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎌뵠�뵳占� = " + multipartFile.getOriginalFilename());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎌뵠�뵳占�
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎄쾿疫뀐옙 = " + multipartFile.getSize());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎄쾿疫뀐옙
+			System.out.println("占쎈씜嚥≪뮆諭� 占쎈솁占쎌뵬 占쎌굨占쎈뻼 = " + multipartFile.getContentType());//占쎄텢占쎌뒠占쎌쁽揶쏉옙 占쎈씜嚥≪뮆諭� 占쎈립 占쎈뼄占쎌젫 占쎈솁占쎌뵬 占쎌굨占쎈뻼
 			
-			//UploadController�뿉 �엳�뒗 uploadAjaxAction硫붿냼�뱶�뿉�꽌 AttachFileDTO瑜� �궗�슜�빐�꽌 媛믪쓣 ���옣�빐�빞 �맂�뒗�뜲
-			//�씠�윺 寃쎌슦 UploadController�뿉 AttachFileDTO媛� �뾾�쑝硫� �궗�슜�쓣 �븷 �닔 �뾾�떎.
-			//洹몃옒�꽌 UploadController�뿉 AttachFileDTO �룷�븿 �떆耳쒖꽌 �궗�슜�븯�뿬 媛믪쓣 ���옣�븿.
-			AttachFileDTO attachdto = new AttachFileDTO();//�룷�븿愿�怨� �궗�슜踰�
+			//UploadController占쎈퓠 占쎌뿳占쎈뮉 uploadAjaxAction筌롫뗄�꺖占쎈굡占쎈퓠占쎄퐣 AttachFileDTO�몴占� 占쎄텢占쎌뒠占쎈퉸占쎄퐣 揶쏅�れ뱽 占쏙옙占쎌삢占쎈퉸占쎈튊 占쎈쭆占쎈뮉占쎈쑓
+			//占쎌뵠占쎌쑛 野껋럩�뒭 UploadController占쎈퓠 AttachFileDTO揶쏉옙 占쎈씨占쎌몵筌롳옙 占쎄텢占쎌뒠占쎌뱽 占쎈막 占쎈땾 占쎈씨占쎈뼄.
+			//域밸챶�삋占쎄퐣 UploadController占쎈퓠 AttachFileDTO 占쎈７占쎈맙 占쎈뻻�녹뮇苑� 占쎄텢占쎌뒠占쎈릭占쎈연 揶쏅�れ뱽 占쏙옙占쎌삢占쎈맙.
+			AttachFileDTO attachdto = new AttachFileDTO();//占쎈７占쎈맙�꽴占썸�⑨옙 占쎄텢占쎌뒠甕곤옙
 			
-			//�떎�젣 �뙆�씪紐� ���옣
-			String uploadFileName= multipartFile.getOriginalFilename();//媛�怨듯빐�빞 �븿//uuid媛� 鍮좎쭊 �뾽濡쒕뱶�맂 �뙆�씪 �씠由�
+			//占쎈뼄占쎌젫 占쎈솁占쎌뵬筌륅옙 占쏙옙占쎌삢
+			String uploadFileName= multipartFile.getOriginalFilename();//揶쏉옙�⑤벏鍮먲옙鍮� 占쎈맙//uuid揶쏉옙 �뜮醫롮춭 占쎈씜嚥≪뮆諭띰옙留� 占쎈솁占쎌뵬 占쎌뵠�뵳占�
 			
-			//�떎�젣 �뙆�씪紐�(uploadFileName)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 fileName�뿉 ���옣(setFileName)
+			//占쎈뼄占쎌젫 占쎈솁占쎌뵬筌륅옙(uploadFileName)占쎌뱽 AttachFileDTO占쎄깻占쎌삋占쎈뮞(attachdto)占쎈퓠 fileName占쎈퓠 占쏙옙占쎌삢(setFileName)
 			attachdto.setFileName(uploadFileName);
 			
-			//以묐났�씠 �릺吏� �븡�뒗 �엫�쓽�쓽 臾몄옄�뿴�쓣 �깮�꽦
-			UUID uuid = UUID.randomUUID();//.randomUUID(); : �겢�옒�뒪 硫붿꽌�뱶
+			//餓λ쵎�궗占쎌뵠 占쎈┷筌욑옙 占쎈륫占쎈뮉 占쎌뿫占쎌벥占쎌벥 �눧紐꾩쁽占쎈였占쎌뱽 占쎄문占쎄쉐
+			UUID uuid = UUID.randomUUID();//.randomUUID(); : 占쎄깻占쎌삋占쎈뮞 筌롫뗄苑뚳옙諭�
 			
-			//UUID+"_"+getOriginalFilename()�쓽 議고빀�쑝濡� �뙆�씪紐낆쓣 uploadFileName�뿉 ���옣
+			//UUID+"_"+getOriginalFilename()占쎌벥 鈺곌퀬鍮�占쎌몵嚥∽옙 占쎈솁占쎌뵬筌뤿굞�뱽 uploadFileName占쎈퓠 占쏙옙占쎌삢
 			uploadFileName=uuid.toString()+"_"+uploadFileName;
 			
-			//File saveFile=new File();//File�� 湲곕낯�깮�꽦�옄媛� �뾾湲� �븣臾몄뿉 瑗� 留ㅺ컻蹂��닔瑜� �옉�꽦�빐�빞 �븳�떎.
-			//uploadFolder�뿉 ���옣�릺�뼱 �엳�뒗 寃쎈줈濡� �떎�젣 �뙆�씪紐낆쑝濡� ���옣.
-			File saveFile=new File(uploadPath,uploadFileName);//�씠由꾩쓣 ���옣�빐�빞 �븯湲� �븣臾몄뿉
+			//File saveFile=new File();//File占쏙옙 疫꿸퀡�궚占쎄문占쎄쉐占쎌쁽揶쏉옙 占쎈씨疫뀐옙 占쎈르�눧紐꾨퓠 �몭占� 筌띲끆而삭퉪占쏙옙�땾�몴占� 占쎌삂占쎄쉐占쎈퉸占쎈튊 占쎈립占쎈뼄.
+			//uploadFolder占쎈퓠 占쏙옙占쎌삢占쎈┷占쎈선 占쎌뿳占쎈뮉 野껋럥以덃에占� 占쎈뼄占쎌젫 占쎈솁占쎌뵬筌뤿굞�몵嚥∽옙 占쏙옙占쎌삢.
+			File saveFile=new File(uploadPath,uploadFileName);//占쎌뵠�뵳袁⑹뱽 占쏙옙占쎌삢占쎈퉸占쎈튊 占쎈릭疫뀐옙 占쎈르�눧紐꾨퓠
 			
 			try {
-				//saveFile蹂��닔�뿉 ���옣�릺�뼱 �엳�뒗 �뤃�뜑紐낆쑝濡� �뙆�씪�쓣 蹂대궡�씪.
-				multipartFile.transferTo(saveFile);//transferTo : �떎�젣濡� 吏��젙�븳 �뤃�뜑�뿉 �뾽濡쒕뱶瑜� �떆耳쒖＜�뒗 �뿭�솢, �삁�쇅泥섎━ �븘�닔
+				//saveFile癰귨옙占쎈땾占쎈퓠 占쏙옙占쎌삢占쎈┷占쎈선 占쎌뿳占쎈뮉 占쎈쨨占쎈쐭筌뤿굞�몵嚥∽옙 占쎈솁占쎌뵬占쎌뱽 癰귣�沅∽옙�뵬.
+				multipartFile.transferTo(saveFile);//transferTo : 占쎈뼄占쎌젫嚥∽옙 筌욑옙占쎌젟占쎈립 占쎈쨨占쎈쐭占쎈퓠 占쎈씜嚥≪뮆諭띄몴占� 占쎈뻻�녹뮇竊쒙옙�뮉 占쎈열占쎌넞, 占쎌굙占쎌뇚筌ｌ꼶�봺 占쎈툡占쎈땾
 				
-				//�떎�젣 �뾽濡쒕뱶 寃쎈줈(uploadFolderPath)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setUploadPath)
-				attachdto.setUploadPath(uploadFolderPath); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎.
+				//占쎈뼄占쎌젫 占쎈씜嚥≪뮆諭� 野껋럥以�(uploadFolderPath)占쎌뱽 AttachFileDTO占쎄깻占쎌삋占쎈뮞(attachdto)占쎈퓠 uploadPath占쎈퓠 占쏙옙占쎌삢(setUploadPath)
+				attachdto.setUploadPath(uploadFolderPath); //try�눧占� 占쎈툧占쎈퓠 占쎈씨占쎈선占쎈즲 占쎈쭆占쎈뼄. for�눧占� 占쎈툧占쎈퓠筌랃옙 占쎌뿳占쎌몵筌롳옙 占쎈쭆占쎈뼄.
 				
-				//uuid媛�(UUID)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setUuid)
-				attachdto.setUuid(uuid.toString()); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎. //uuid�뒗 �겢�옒�뒪���엯�씠誘�濡� 臾몄옄濡� 諛붽퓭以섏빞 �븳�떎.
+				//uuid揶쏉옙(UUID)占쎌뱽 AttachFileDTO占쎄깻占쎌삋占쎈뮞(attachdto)占쎈퓠 uploadPath占쎈퓠 占쏙옙占쎌삢(setUuid)
+				attachdto.setUuid(uuid.toString()); //try�눧占� 占쎈툧占쎈퓠 占쎈씨占쎈선占쎈즲 占쎈쭆占쎈뼄. for�눧占� 占쎈툧占쎈퓠筌랃옙 占쎌뿳占쎌몵筌롳옙 占쎈쭆占쎈뼄. //uuid占쎈뮉 占쎄깻占쎌삋占쎈뮞占쏙옙占쎌뿯占쎌뵠沃섓옙嚥∽옙 �눧紐꾩쁽嚥∽옙 獄쏅떽�벊餓μ꼷鍮� 占쎈립占쎈뼄.
 				
-				if(checkImage(saveFile)) {//�씠誘몄� �뙆�씪�씠硫�
-					//FileType媛�(image)�쓣 AttachFileDTO�겢�옒�뒪(attachdto)�뿉 uploadPath�뿉 ���옣(setImage)
-					attachdto.setImage(true); //try臾� �븞�뿉 �뾾�뼱�룄 �맂�떎. for臾� �븞�뿉留� �엳�쑝硫� �맂�떎.
+				if(checkImage(saveFile)) {//占쎌뵠沃섎챷占� 占쎈솁占쎌뵬占쎌뵠筌롳옙
+					//FileType揶쏉옙(image)占쎌뱽 AttachFileDTO占쎄깻占쎌삋占쎈뮞(attachdto)占쎈퓠 uploadPath占쎈퓠 占쏙옙占쎌삢(setImage)
+					attachdto.setImage(true); //try�눧占� 占쎈툧占쎈퓠 占쎈씨占쎈선占쎈즲 占쎈쭆占쎈뼄. for�눧占� 占쎈툧占쎈퓠筌랃옙 占쎌뿳占쎌몵筌롳옙 占쎈쭆占쎈뼄.
 					
-					//�뜽�꽕�씪�쓣 �뙆�씪�쓣 �깮�꽦�븯湲� �쟾�뿉 �뜽�꽕�씪 �뙆�씪 �씠由꾩쓣 異붿텧
-					FileOutputStream thumnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));//FileOutput �뙆�씪�쓣 諛뽰쑝濡� 혯A�떎
+					//占쎈쑞占쎄퐬占쎌뵬占쎌뱽 占쎈솁占쎌뵬占쎌뱽 占쎄문占쎄쉐占쎈릭疫뀐옙 占쎌읈占쎈퓠 占쎈쑞占쎄퐬占쎌뵬 占쎈솁占쎌뵬 占쎌뵠�뵳袁⑹뱽 �빊遺욱뀱
+					FileOutputStream thumnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));//FileOutput 占쎈솁占쎌뵬占쎌뱽 獄쏅쉼�몵嚥∽옙 �삸A占쎈뼄
 					
-					//�뜽�꽕�씪�쓣 �뙆�씪�쓣 �깮�꽦�븿
-					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumnail, 100, 100);
-					thumnail.close();//�뜽�꽕�씪 醫낅즺(硫붾え由� 怨듦컙 �븿�닔)
+					//占쎈쑞占쎄퐬占쎌뵬占쎌뱽 占쎈솁占쎌뵬占쎌뱽 占쎄문占쎄쉐占쎈맙
+					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumnail, 200, 200);
+					thumnail.close();//占쎈쑞占쎄퐬占쎌뵬 �넫�굝利�(筌롫뗀�걟�뵳占� �⑤벀而� 占쎈맙占쎈땾)
 				}
 				
-				list.add(attachdto);//add : 媛믪쓣 �꽔�쓣 �븣 �궗�슜�븯�뒗 硫붿꽌�뱶 
+				list.add(attachdto);//add : 揶쏅�れ뱽 占쎄퐫占쎌뱽 占쎈르 占쎄텢占쎌뒠占쎈릭占쎈뮉 筌롫뗄苑뚳옙諭� 
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}//end try
-		}//for臾� end
-		//�넻�떊�긽�깭媛� �젙�긽�쟻(HttpStatus.OK)�씠硫� ArrayList(list)�뿉 ���옣�릺�뼱 �엳�뒗 媛믪쓣 �쎒釉뚮씪�슦��(uploadAjax.js�뿉 �엳�뒗 ajax�뿉 success)�뿉 蹂대궡�씪
-		return new ResponseEntity<>(list,HttpStatus.OK);//list�뒗 uploadAjax.js�쓽 ajax�뿉 result濡� �꽆�뼱媛꾨떎.
+		}//for�눧占� end
+		//占쎈꽰占쎈뻿占쎄맒占쎄묶揶쏉옙 占쎌젟占쎄맒占쎌읅(HttpStatus.OK)占쎌뵠筌롳옙 ArrayList(list)占쎈퓠 占쏙옙占쎌삢占쎈┷占쎈선 占쎌뿳占쎈뮉 揶쏅�れ뱽 占쎌럲�뇡�슢�뵬占쎌뒭占쏙옙(uploadAjax.js占쎈퓠 占쎌뿳占쎈뮉 ajax占쎈퓠 success)占쎈퓠 癰귣�沅∽옙�뵬
+		return new ResponseEntity<>(list,HttpStatus.OK);//list占쎈뮉 uploadAjax.js占쎌벥 ajax占쎈퓠 result嚥∽옙 占쎄퐜占쎈선揶쏄쑬�뼄.
 	}
 	
-	//�뙆�씪 �뾽濡쒕뱶�븳 �뙆�씪���엯�씠 �씠誘몄��씪 �븣 �쎒釉뚮씪�슦���뿉 �씠誘몄�瑜� �쓣�슦湲� �쐞�빐
+	//占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭띰옙釉� 占쎈솁占쎌뵬占쏙옙占쎌뿯占쎌뵠 占쎌뵠沃섎챷占쏙옙�뵬 占쎈르 占쎌럲�뇡�슢�뵬占쎌뒭占쏙옙占쎈퓠 占쎌뵠沃섎챷占썹몴占� 占쎌뱽占쎌뒭疫뀐옙 占쎌맄占쎈퉸
 	@GetMapping("display")
-	public ResponseEntity<byte[]> getFile(String fileName) {//getfile()�� 臾몄옄�뿴濡� �뙆�씪�쓽 寃쎈줈媛� �룷�븿�맂 fileName�쓣 留ㅺ컻蹂��닔 諛쏄퀬 byte[](�씠吏꾩닔)瑜� �쟾�넚
-		System.out.println("url二쇱냼瑜� �넻�븳 fileName="+fileName);
+	public ResponseEntity<byte[]> getFile(String fileName) {//getfile()占쏙옙 �눧紐꾩쁽占쎈였嚥∽옙 占쎈솁占쎌뵬占쎌벥 野껋럥以덂첎占� 占쎈７占쎈맙占쎈쭆 fileName占쎌뱽 筌띲끆而삭퉪占쏙옙�땾 獄쏆룄�� byte[](占쎌뵠筌욊쑴�땾)�몴占� 占쎌읈占쎈꽊
+		System.out.println("url雅뚯눘�꺖�몴占� 占쎈꽰占쎈립 fileName="+fileName);
 		
 		File file = new File("C:\\upload\\"+fileName);
 		System.out.println("file="+file);
 		ResponseEntity<byte[]> result = null;
-		//byte[]濡� �씠誘몄� �뙆�씪�쓽 �뜲�씠�꽣瑜� �쟾�넚�븷 �븣 釉뚮씪�슦���뿉 蹂대궡�뒗 MIME���엯�씠 �뙆�씪�쓽 醫낅쪟(jpg, png, xls, ppt...)�뿉 �뵲�씪�꽌 �떖�씪吏꾨떎.
-		//�씠 遺�遺꾩쓣 �빐寃고븯湲� �쐞�빐�꽌 probeContentType()�쓣 �씠�슜�빐�꽌 MIME���엯 �뜲�씠�꽣瑜� Http�쓽 �뿤�뜑 硫붿꽭吏��뿉 �룷�븿�븷 �닔 �엳�룄濡� 泥섎━
+		//byte[]嚥∽옙 占쎌뵠沃섎챷占� 占쎈솁占쎌뵬占쎌벥 占쎈쑓占쎌뵠占쎄숲�몴占� 占쎌읈占쎈꽊占쎈막 占쎈르 �뇡�슢�뵬占쎌뒭占쏙옙占쎈퓠 癰귣�沅∽옙�뮉 MIME占쏙옙占쎌뿯占쎌뵠 占쎈솁占쎌뵬占쎌벥 �넫�굝履�(jpg, png, xls, ppt...)占쎈퓠 占쎈뎡占쎌뵬占쎄퐣 占쎈뼎占쎌뵬筌욊쑬�뼄.
+		//占쎌뵠 �겫占썽겫袁⑹뱽 占쎈퉸野껉퀬釉�疫뀐옙 占쎌맄占쎈퉸占쎄퐣 probeContentType()占쎌뱽 占쎌뵠占쎌뒠占쎈퉸占쎄퐣 MIME占쏙옙占쎌뿯 占쎈쑓占쎌뵠占쎄숲�몴占� Http占쎌벥 占쎈엘占쎈쐭 筌롫뗄苑�筌욑옙占쎈퓠 占쎈７占쎈맙占쎈막 占쎈땾 占쎌뿳占쎈즲嚥∽옙 筌ｌ꼶�봺
 		try {
 			HttpHeaders header = new HttpHeaders();
 			result=new ResponseEntity<>(FileCopyUtils.copyToByteArray(file),header,HttpStatus.OK);
@@ -190,11 +190,11 @@ public class UploadController {
 		}
 		return result;
 	}
-	//�뙆�씪 �뾽濡쒕뱶�븳 �뙆�씪���엯�씠 �씠誘몄�媛� �븘�땺�븣(.txt, .xls, .ppt) �쎒釉뚮씪�슦��瑜� �넻�빐�꽌 download�븷 �닔 �엳�룄濡� �븳�떎.
-	//consumes : �뱾�뼱�삤�뒗 �뜲�씠�꽣 ���엯 �젙�쓽(�깮�왂媛��뒫) //produces : 諛섑솚�븯�뒗 �뜲�씠�꽣 ���엯 �젙�쓽(�깮�왂媛��뒫)//*�깮�왂�쓣 �븯寃� �릺硫�, �쎒釉뚮씪�슦��媛� �븣�븘�꽌 ���엯�쓣 �뙋�떒(�궡媛� �썝�븯�뒗 ���엯�씠 �븘�땺 �닔�룄 �엳�쓬)*
-	//�쎒釉뚮씪�슦��媛� '�씠 �뙆�씪�� download�빐�빞 �븯�뒗 �뙆�씪�엯�땲�떎.' �씪�뒗 寃껋쓣 �씤吏��븷 �닔 �엳�룄濡� 諛섑솚�씠 �릺�뼱�빞 �븳�떎. 洹몃윭湲� �쐞�빐�꽌�뒗 MediaType.APPLICATION_OCTET_STREAM_VALUE ���엯�쑝濡� 諛섑솚�뜲�씠�꽣 ���엯�쓣 �꽑�뼵�븳�떎.
+	//占쎈솁占쎌뵬 占쎈씜嚥≪뮆諭띰옙釉� 占쎈솁占쎌뵬占쏙옙占쎌뿯占쎌뵠 占쎌뵠沃섎챷占썲첎占� 占쎈툡占쎈빜占쎈르(.txt, .xls, .ppt) 占쎌럲�뇡�슢�뵬占쎌뒭占쏙옙�몴占� 占쎈꽰占쎈퉸占쎄퐣 download占쎈막 占쎈땾 占쎌뿳占쎈즲嚥∽옙 占쎈립占쎈뼄.
+	//consumes : 占쎈굶占쎈선占쎌궎占쎈뮉 占쎈쑓占쎌뵠占쎄숲 占쏙옙占쎌뿯 占쎌젟占쎌벥(占쎄문占쎌셽揶쏉옙占쎈뮟) //produces : 獄쏆꼹�넎占쎈릭占쎈뮉 占쎈쑓占쎌뵠占쎄숲 占쏙옙占쎌뿯 占쎌젟占쎌벥(占쎄문占쎌셽揶쏉옙占쎈뮟)//*占쎄문占쎌셽占쎌뱽 占쎈릭野껓옙 占쎈┷筌롳옙, 占쎌럲�뇡�슢�뵬占쎌뒭占쏙옙揶쏉옙 占쎈르占쎈툡占쎄퐣 占쏙옙占쎌뿯占쎌뱽 占쎈솇占쎈뼊(占쎄땀揶쏉옙 占쎌뜚占쎈릭占쎈뮉 占쏙옙占쎌뿯占쎌뵠 占쎈툡占쎈빜 占쎈땾占쎈즲 占쎌뿳占쎌벉)*
+	//占쎌럲�뇡�슢�뵬占쎌뒭占쏙옙揶쏉옙 '占쎌뵠 占쎈솁占쎌뵬占쏙옙 download占쎈퉸占쎈튊 占쎈릭占쎈뮉 占쎈솁占쎌뵬占쎌뿯占쎈빍占쎈뼄.' 占쎌뵬占쎈뮉 野껉퍔�뱽 占쎌뵥筌욑옙占쎈막 占쎈땾 占쎌뿳占쎈즲嚥∽옙 獄쏆꼹�넎占쎌뵠 占쎈┷占쎈선占쎈튊 占쎈립占쎈뼄. 域밸챶�쑎疫뀐옙 占쎌맄占쎈퉸占쎄퐣占쎈뮉 MediaType.APPLICATION_OCTET_STREAM_VALUE 占쏙옙占쎌뿯占쎌몵嚥∽옙 獄쏆꼹�넎占쎈쑓占쎌뵠占쎄숲 占쏙옙占쎌뿯占쎌뱽 占쎄퐨占쎈섧占쎈립占쎈뼄.
 	@GetMapping(value="download",produces=MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	public ResponseEntity<Resource> downloadFile(String fileName){//Resource core濡� import
+	public ResponseEntity<Resource> downloadFile(String fileName){//Resource core嚥∽옙 import
 		System.out.println("download fileName="+fileName);
 		
 		Resource resource = new FileSystemResource("C:\\upload\\"+fileName);
