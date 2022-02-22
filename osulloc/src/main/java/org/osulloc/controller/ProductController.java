@@ -91,7 +91,9 @@ public class ProductController {
 	public void addProduct(ProductDTO product) {
 		
 		System.out.println("controller="+product);
- 
+		productService.addProduct(product);
+		
+		System.out.println("connect!");
 		
 		
 	}

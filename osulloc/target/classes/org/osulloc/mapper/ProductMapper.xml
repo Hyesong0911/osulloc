@@ -20,17 +20,16 @@
 					 and type = #{type}
 				</when>
 				
-<!-- 				<when test="kind != null and scent == null and type == null">
+				<when test="kind != null and scent == null and type == null">
 				 	where  kind = #{kind}
 				</when>
 				
 				<when test="kind == null and scent != null and type == null">
 				 	where scent = #{scent}
 				</when>
-				
 				<when test="kind == null and scent == null and type != null">
 				 	where  type = #{type}
-				</when> -->
+				</when>
 			</choose>
   	</select>
   	
