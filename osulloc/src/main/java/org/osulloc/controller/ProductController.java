@@ -89,9 +89,10 @@ public class ProductController {
 	
 	@PostMapping("product")
 	public void addProduct(ProductDTO product) {
+		productService.addProduct(product);
 		
-		System.out.println("controller="+product);
-		
+		System.out.println("connect!");
+
 		
 		
 	}
