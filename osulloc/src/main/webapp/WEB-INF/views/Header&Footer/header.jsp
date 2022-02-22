@@ -21,7 +21,9 @@
 			               
 			               
 			               	<!-- 특정 아이디(관리자)에만 생기도록 한다. -->
+			               	<c:if test="${login.id == 'osulloc' }">
 			               <li><a href="/osulloc/page/product">상품등록</a></li>
+			               </c:if>
 			           	</ul>
 			       </div><!--.member-->
 	
