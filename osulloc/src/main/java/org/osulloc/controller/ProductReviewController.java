@@ -31,13 +31,19 @@ public class ProductReviewController {
 
 	//리뷰글쓰기 화면으로
 	@GetMapping("reviewWrite")
-	public void reviewWrite() {}
+	public void reviewWrite(Model model, ProductDTO prod) {
+		model.addAttribute("productse", service.productse(prod));
+	}
 	
 	//글쓰기 버튼을 클릭하면
 	@PostMapping("reviewWrite")
 	public String reviewWritePost(ProductReviewDTO review) {
+		System.out.println("getprod1=" + review);
+		System.out.println("getprod2=" + review.getProdnum());
 		pservice.write(review);
-		return "redirect:/page/detailProduct?prodnum=${prodnum}";
+		
+		
+		return "redirect:/page/detailProduct?prodnum="+review.getProdnum();
 	}
 	
 	@GetMapping("detailProduct")
@@ -56,7 +62,7 @@ public class ProductReviewController {
 /*		model.addAttribute("productreview", pservice.productreview(review));
 		System.out.println(pservice.productreview(review));*/
 		
-		
+		System.out.println("prodnum=" + pservice.productcri(cri));
 		model.addAttribute("productcri", pservice.productcri(cri));
 		System.out.println(pservice.productcri(cri));
 

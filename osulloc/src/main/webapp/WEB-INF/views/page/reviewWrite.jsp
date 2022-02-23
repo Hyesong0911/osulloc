@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/reviewWrite.css">
 	<link rel="stylesheet" href="../resources/css/header.css" type="text/css">
     <link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
+    
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
 	<script src="../resources/js/header.js"></script>
 </head>
 <body>
@@ -22,10 +22,19 @@
 		<div class="container">
 			<h1 class="titleW">상품 리뷰</h1>
 			<form action="/osulloc/page/reviewWrite" method="post" role="form">
+				<input type="hidden" name="prodnum" value="${productse.prodnum}">
 				<input type="hidden" name = "writer" value="${login.id}">
 				<div class = "modifyBtn">
-			    	<button class="write"><input type="submit" value="글쓰기" ></button>
-			    	<button class="list"><a href="/osulloc/page/detailProduct" >목록으로</a></button>
+			    	<button class="write" type="submit">
+			    		<%-- <a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}"> --%>
+			    			글쓰기
+			    		<!-- </a> -->	
+			    	</button>
+			    	<button class="list">
+			    		<a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}">목록으로</a>
+			    		
+			    	</button>
+			    	
 			    </div>
 				<div>
 				    <div >

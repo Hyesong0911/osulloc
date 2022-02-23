@@ -22,6 +22,7 @@
 		set reply=#{reply}, replydate=now() 
 		where rno=#{rno}
 	</update>
+	
 	<delete id="remove">
 		delete from reviewreply
 		where rno=#{rno}

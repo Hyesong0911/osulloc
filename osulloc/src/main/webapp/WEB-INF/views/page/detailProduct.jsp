@@ -103,46 +103,54 @@
             	
             	<c:if test="${login != null}">
 	            	<div class="reviewW">
-	            		<a href="/osulloc/page/reviewWrite">리뷰 작성하기</a>	
+	            		<a href="/osulloc/page/reviewWrite?prodnum=${productse.prodnum}">리뷰 작성하기</a>	
 	            	</div>
             	</c:if>
             	
             	<ul>
-            	
+<%--             		${productse.prodnum} --%>
             		<c:forEach items="${productcri}" var="productreview">
-            		<input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
             		
-	            		<li>
-	            			
-	            			<div id="r_detail">
-	            				<%-- <input class="pno" value="${productreview.pno}"> --%>
-	            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
-	            				<div class="pno" hidden>${productreview.pno}</div>
-	            				<div class="uploadResult"><img src="/osulloc/display?fileName=${productse.filename}" alt=""></div>
-		            			<div class="detail_right">
-		            				<p class="detail_right_writer">${productreview.writer}</p>
-		            				<p class="detail_right_regdate">${productreview.regdate}</p>
-		            				<p class="detail_right_content">${productreview.content}</p>
-		            			</div>
-	            			</div>
-	            			
-	            			<button class="mrebtn addReplyBtn" data-pno="${productreview.pno}">
-					               	댓글
-					        </button>
-					        <div class="relist" id="reply${productreview.pno}"><ul id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
-					        <div class="rewrite" id="rewrite${productreview.pno}" data-pno="${productreview.pno}"></div>
-	            			
-	            			
-	            			
-	            			<%-- <div class="replyList">
-			                	
-					            
-					            <div class="rerewrite" id="rerewrite${productreview.pno}" data-pno="${productreview.pno}">
-					           	
-
-			                </div>
-			                 --%>
-	            		</li>
+            		
+            			<c:if test="${productreview.prodnum == productse.prodnum}">
+            			
+            				<input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
+		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
+		            		
+			            		<li>
+			            			
+			            			<div id="r_detail">
+			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
+			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
+			            				<div class="pno" hidden>${productreview.pno}</div>
+			            				<div class="uploadResult"><img src="/osulloc/display?fileName=${productse.filename}" alt=""></div>
+				            			<div class="detail_right">
+				            				<p class="detail_right_writer">${productreview.writer}</p>
+				            				<p class="detail_right_regdate">${productreview.regdate}</p>
+				            				<p class="detail_right_content">${productreview.content}</p>
+				            			</div>
+			            			</div>
+			            			
+			            			<button class="mrebtn addReplyBtn" data-pno="${productreview.pno}">
+							               	댓글
+							        </button>
+							        <div class="relist" id="reply${productreview.pno}">
+							        <ul id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
+							        <div class="rewrite" id="rewrite${productreview.pno}" data-pno="${productreview.pno}"></div>
+			            			
+			            			
+			            			
+			            			<%-- <div class="replyList">
+					                	
+							            
+							            <div class="rerewrite" id="rerewrite${productreview.pno}" data-pno="${productreview.pno}">
+							           	
+		
+					                </div>
+					                 --%>
+			            		</li>
+            			</c:if>
+            			
             		</c:forEach>
             		
             			<!--  <div class="rewrite">

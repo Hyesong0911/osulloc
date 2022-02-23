@@ -33,7 +33,7 @@ public class BoardController {
 	//글쓰기 버튼을 클릭하면
 	@PostMapping("write")
 	public String writePost(BoardDTO board) {
-		
+		System.out.println(board);
 		service.write(board);
 		
 		return "redirect:/page/detail?bno="+board.getBno();

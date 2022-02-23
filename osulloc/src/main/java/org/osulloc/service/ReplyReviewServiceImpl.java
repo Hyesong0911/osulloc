@@ -32,6 +32,8 @@ public class ReplyReviewServiceImpl implements ReplyReviewService{
 	public int update(ReplyReviewDTO rdto) {
 		//update 성공시 ReplyMapper.java로 부터 1,
 		//update 실패시 ReplyMapper.java로 부터 0
+		
+		System.out.println("rdto222="+rdto);
 		return rmapper.update(rdto);
 	}
 	
