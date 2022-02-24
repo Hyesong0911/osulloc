@@ -17,6 +17,7 @@ let ReplyReviewService=(function(){
 	//댓글 목록리스트를하기 위한 함수 선언
 	function getList(param,callback){
 		let pno=param.pno;
+		let rno=param.rno;
 		//console.log(pno);
 		$.getJSON(
 			"/osulloc/replies/list/"+pno+".json",
@@ -118,8 +119,7 @@ $(document).ready(function(){
 		actionForm.submit();	
 	})
 
-	//pno값
-	var pno = 0;
+	
 	
 //	//상세페이지가 시작되자마자 이미지를 출력하기위한 ajax
 //	$.getJSON("/osulloc/page/fileList/"+pno+".json",
@@ -146,15 +146,27 @@ $(document).ready(function(){
 		
 	$(".rewrite").hide();
 	
+	//pno값
+	//let pno = $(".relistPno").val();
+	
 	// 댓글 버튼을 클릭하면
 	$(".addReplyBtn").on("click",function(){
-		pno = $(this).data("pno");
-		console.log(pno);
+		
+		$(".relistPno").val($(this).data("pno"));
+		
+		
+		pno = $(".relistPno").val();
+		
+		
+		
+		
+		$("#rewrite"+pno).show();
+		$("#relist"+pno).show();
 		
 		var str="";
 	
 		//str+="<div class='replyBox'><h4>댓글쓰기"+"</h4><input type='hidden' name='rno'>"
-		str+="<h4>댓글쓰기"+"</h4><input type='text' name='rno' readonly><input type='text' name='pno' readonly>"
+		str+="<h4>댓글쓰기"+"</h4><input type='text' name='rno'><input type='text' name='pno' value='" + pno + "'>"
 		str+="<div class='replyBox_replyer'><label>작성자"+"</label><br><input type='text' name='replyer' id='replyer"+pno+"'></div>"
 		str+="<div class='replyBox_reply'><label>내용"+"</label><br>"
 		str+="<textarea rows='' cols='' name='reply' id='reply"+pno+"'></textarea></div>"
@@ -168,16 +180,8 @@ $(document).ready(function(){
 //		str+="<button type='button' class='rebtn' id='close"+pno+" data-pno=" + pno + "'>Close"+"</button></div>"
 		//str+="</div>"
 		
-		
-		/*$("#rerewrite"+pno).html(str);*/
 		$("#rewrite"+pno).html(str);
-
-		//$("#relist").show();
-		$("#rewrite"+pno).show();
-		$("#relist"+pno).show();
 		
-		//$(this).show();
-		//Replyer input 내용 초기화
 		$("input[name='replyer']").val("")
 		//Reply input 내용 초기화
 		$(".reply").val("")
@@ -188,12 +192,14 @@ $(document).ready(function(){
 		//댓글 삭제 버튼 비활성화
 		$("#replyRemoveBtn"+pno).hide();
 		
-		pnoValue(pno);
+		//pnoValue(pno);
 		showList(pno);
 		
+		
+		//str="";
+		
 	});
-
-
+	
 
 	
 	$(document).on("click","#close",function(){
@@ -245,40 +251,41 @@ $(document).ready(function(){
 	//$("#replyRegisterBtn"+$(".addReplyBtn").data("pno")).on("click",function(){
 	//$(".rewrite").on("click",$(this),function(){
 	//$("#rewrite2").on("click","#replyRegisterBtn2",function(){
-	function pnoValue(pno){
+	
+	
+	
+	
+	//function pnoValue(pno){
+	
+	pno = $(".relistPno").val();
+	console.log("송송송=" + pno);
 
-		//console.log(pno);
+
 		$("#rewrite"+pno).on("click","#replyRegisterBtn"+pno,function(){
-		//$("#replyRegisterBtn"+pno).on("click",function(){
-			alert("aa");
+
 			
-			//$(".rewrite").show();
 			$("#rewrite"+pno).show();
-			//replyService.add({replyer:"정자바",reply:"2번 게시판에 대한 댓글쓰기",bno:bno});//인수     자바문법을 자바스크립트 문법으로 바꿈:json
 			
 			//사용자가 입력한 댓글내용을 저장
-			//let reply = $("textarea[name='reply']").val()//클릭할 때 나타나야함
-			//let reply = $("#reply"+pno).val();
 			let reply = $("textarea[id=reply"+pno+"]").val()
 			
 			console.log(reply);
 			
 			//사용자가 입력한 댓글작성자를 저장
-			//let replyer = $("input[name='replyer']").val()//클릭할 때 나타나야함
-			//let replyer = $("#replyer"+pno).val();
+
 			let replyer = $("input[id=replyer"+pno+"]").val();
 
-			console.log(replyer);
+			
 			
 			//ajax로 보내고자하는 json 타입 
-			ReplyReviewService.add({replyer:replyer,reply:reply,pno:pno}, 
+			ReplyReviewService.add({replyer:replyer,reply:reply,pno:pno,rno: $("input[name='rno']").val()}, 
+					
+					
 					
 					// callback(익명함수) 함수호출
 					function(result){
 				
 						alert("insert 작업 : " + result)
-						
-						console.log(showList(pno));
 						
 						//목록리스트를 처리
 						showList(pno);  //작성 후에도 바로 댓글이 올라오도록 한다.
@@ -303,14 +310,14 @@ $(document).ready(function(){
 		/*$(document).on("click","#replyModBtn"+ pno,function(){*/
 		$("#rewrite"+pno).on("click","#replyModBtn"+pno,function(){
 
-			rno = $(this).data("rno");
 			pno = $(this).data("pno");
-			console.log(pno);
+			pnoR = $("#rewrite" + pno).find("input[name='rno']").val();
+			console.log("pnoR=" + pnoR);
+
 			
 			/*let reply = $("textarea[id=reply"+pno+"]").val()*/
 			
-			/*var reply = {pno: $("input[name='pno']").val(),rno: $("input[name='rno']").val() ,reply:$("textarea[name='reply']").val()}*/
-			var reply = {pno: $("input[name='pno']").val(),rno: $("input[name='rno']").val() ,reply:$("textarea[id=reply"+pno+"]").val()}
+			var reply = {pno: pno ,rno:pnoR  ,reply:$("textarea[id=reply"+pno+"]").val()}
 			
 			
 			
@@ -324,11 +331,15 @@ $(document).ready(function(){
 				alert("update 작업 : " + update);
 					
 				showList(pno);  //작성 후에도 바로 댓글이 올라오도록 한다.(목록리스트 실행)
-				showList(rno);
+				/*showList(rno);*/
 				$("input[name='replyer']").val("")
 				$("textarea[name='reply']").val("")
+				/*$("#rewrite" + pno).find("input[name='rno']").val("")
+				$("#rewrite" + pno).find("input[name='pno']").val("")*/
 				//$("#rewrite"+pno).hide();
 				$("#rewrite"+pno).show();
+				
+
 				
 			})
 		}
@@ -336,39 +347,30 @@ $(document).ready(function(){
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
+	
+
 	
 	
-	$(document).on("click","#menu", function(){
+	
+	
+
+	$("#relist"+pno).on("click","#menu", function(){
 		
 		//rno값 가져오기
 		var rno = $(this).data("rno");
 		console.log(rno)
 		
-		var pno = $(this).data("pno");
-		console.log(pno)
+		/*var pno = $(this).data("pno");
+		console.log(pno)*/
 		
-		var reply = {pno: pno, rno: rno ,reply:$("input[name='reply']").val()}//함수에는 json타입으로 보내주어야 한다. <=> reDetail과 비교
+		var reply = {/*pno: pno,*/ rno: rno ,reply:$("input[name='reply']").val()}//함수에는 json타입으로 보내주어야 한다. <=> reDetail과 비교
 		
 		ReplyReviewService.reDetail(rno,function(detail){ //redetail함수의 data가 json형식으로 안되어 있다! <=> reply과 비교
 
 
-			console.log("#rewrite" + pno);
+			console.log(detail.rno);
 			$("#rewrite" + pno).find("input[name='rno']").val(detail.rno)
-			$("#rewrite" + pno).find("input[name='pno']").val(detail.pno)
+			/*$("#rewrite" + pno).find("input[name='pno']").val(detail.pno)*/
 			$("#rewrite" + pno).find("input[name='replyer']").val(detail.replyer)
 			$("#rewrite" + pno).find("textarea[name='reply']").val(detail.reply)
 			
@@ -382,6 +384,22 @@ $(document).ready(function(){
 	})
 	
 
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	//}
+	
 	
 	
 	

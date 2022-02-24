@@ -5,8 +5,8 @@
   
 <mapper namespace="org.osulloc.mapper.ReplyReviewMapper">
 	<insert id="write">
-		insert into reviewreply(pno,reply,replyer)
-		values(#{pno},#{reply},#{replyer})
+		insert into reviewreply( pno,reply,replyer)
+		values( #{pno},#{reply},#{replyer})
 	</insert>
 	<!-- select는 resulType이 있지만  insesrt는 0,1로 값이 이동한다. -->
 	
@@ -20,7 +20,7 @@
 	<update id="update">
 		update reviewreply 
 		set reply=#{reply}, replydate=now() 
-		where rno=#{rno}
+		where rno=#{rno} and pno=#{pno}
 	</update>
 	
 	<delete id="remove">

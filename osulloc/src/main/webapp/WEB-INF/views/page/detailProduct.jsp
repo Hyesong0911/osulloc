@@ -118,7 +118,7 @@
 		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
 		            		
 			            		<li>
-			            			
+			            			<input class="relistPno" value="0">
 			            			<div id="r_detail">
 			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
@@ -136,6 +136,7 @@
 							               	댓글
 							        </button>
 							        <div class="relist" id="reply${productreview.pno}">
+							 
 							        <ul id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
 							        <div class="rewrite" id="rewrite${productreview.pno}" data-pno="${productreview.pno}"></div>
 			            			

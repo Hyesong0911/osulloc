@@ -31,7 +31,7 @@ public class ReplyReviewController {
 		//insert 실패시 ReplyServiceImpl.java로 부터 0
 		//값을 리턴받는다.
 		int result = rservice.write(rdto);
-		System.out.println(result);
+		System.out.println("ReplyReviewDTO2222=" + rdto);
 								//insert가 정상적으로 처리되었을 때 1          :              insert가 비정상적으로 처리되었을 때 0 
 								// detail.js의 success문 실행                                                            detail.js의 error문 실행
 		return result==1?new ResponseEntity<>("success",HttpStatus.OK):new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -48,7 +48,7 @@ public class ReplyReviewController {
 	//댓글 수정을 하기 위해 댓글 내용 가져오는 함수 선언
 	@GetMapping(value="{rno}",produces= {MediaType.APPLICATION_JSON_UTF8_VALUE})
 	public ResponseEntity<ReplyReviewDTO> getDetail(@PathVariable int rno){
-		System.out.println(rno);
+		System.out.println("rrrrrno = " + rno);
 		return new ResponseEntity<>(rservice.detail(rno),HttpStatus.OK);
 	}
 	
