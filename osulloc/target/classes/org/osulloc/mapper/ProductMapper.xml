@@ -46,10 +46,17 @@
   		 select * from cart 
   	</select>
   	
-  	<insert id="product3in">
+  	<!-- <insert id="product3in">
   	
 	  	insert into cart (prodnum, name, price, number)
 		values (#{prodnum}, #{name}, #{price}, #{number});
+  		 
+  	</insert> -->
+  	
+  	<insert id="product3in">
+  	
+	  	insert into cart (prodnum, name, price, number,filename)
+		values (#{prodnum}, #{name}, #{price}, #{number},#{filename});
   		 
   	</insert>
   	

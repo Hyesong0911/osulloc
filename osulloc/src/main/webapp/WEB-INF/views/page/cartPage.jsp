@@ -84,7 +84,7 @@
                     	<c:forEach items="${product3}" var="product3">
 	                        <li>
 	                            <p class="cart-num"><input type="hidden" class="cart-num2" value="${product3.number}">${product3.number}</p>
-	                            <a href="#" class="pic2"><img src="../resources/img/산도롱 산딸기 10.png" alt=""></a>
+	                            <a href="#" class="pic2"><img src="/osulloc/display?fileName=${product3.filename}" alt=""></a>
 	                            <p class="cm cmName">${product3.name}</p>
 	                            <p class="cm"><input type="text" class="cmPrice" value="${product3.price}"><span>원</span></p>
 	                        </li>

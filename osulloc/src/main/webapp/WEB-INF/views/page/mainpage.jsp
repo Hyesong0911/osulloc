@@ -187,6 +187,7 @@
 				                    	<input type="hidden" name="sale"  value="${product.sale}">
 				                    	<input type="hidden" name="price"  value="${product.price}">
 				                    	<input type="hidden" name="number"  value="${product.number}">
+				                    	<input type="text" name="filename" value="${product.filename}">
 			                   		 </div>
 			                   		 
 			                        </form>
@@ -223,7 +224,7 @@
 		                    	<div class="m4_item_box">
 			                        <p class="m4_ib_img">
  			                            <a href="/osulloc/page/detailProduct?prodnum=${product2.prodnum}">
- 			                            	<img src="/osulloc/display?fileName=${product2.filename}" />
+											<img src="/osulloc/display?fileName=${product2.filename}" />
  			                            </a>	                        </p>
 			                        <p><input type="hidden" value="${product2.prodnum}" name="prodnum"></p>
 			                        <p class="m4_ib_name"><a href="">${product2.name}</a></p>
@@ -258,6 +259,7 @@
 				                    	<input type="hidden" name="price"  value="${product2.price}">
 				                    	<input type="hidden" name="sale"  value="${product2.sale}">
 				                    	<input type="hidden" name="number"  value="${product2.number}">
+				                    	<input type="text" name="filename" value="${product2.filename}">
 			                   		 </div>
 			                            
 			                        </form>
