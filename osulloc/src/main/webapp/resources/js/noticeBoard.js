@@ -115,6 +115,52 @@ $(document).ready(function(){
 			actionForm.submit();
 
 		})
+		
+		
+		
+		//===================================================================
+		// 게시글 수 
+		
+		let boardNum = $(".contain td").length-1;
+	
+		console.log(boardNum);
+	
+		$(".totalCon").find("input").val(boardNum);
+	
+	
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	
 })

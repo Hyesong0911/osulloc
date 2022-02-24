@@ -108,6 +108,16 @@ h2{
 
 }
 
+.totalCon input{
+	width : 15px;
+	border : none;
+	
+	font-size : 20px;
+	/* font-weight : light; */
+
+
+}
+
 .blind{
 
   

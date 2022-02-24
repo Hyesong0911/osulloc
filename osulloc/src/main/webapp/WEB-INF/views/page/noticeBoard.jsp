@@ -57,7 +57,8 @@
               </div>
               
               <div class="conTop">
-                    <p class="totalCon"><span>2</span>개의 글</p>
+                    <!-- <p class="totalCon"><span>2</span>개의 글</p> -->
+                    <p class="totalCon"> <input type="text" value="0"> 개의 글</p>
 
                     <p class="blind"><input type="checkbox"></input> 공지 숨기기</p>
 
