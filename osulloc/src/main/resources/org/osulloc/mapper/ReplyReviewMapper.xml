@@ -25,6 +25,6 @@
 	
 	<delete id="remove">
 		delete from reviewreply
-		where rno=#{rno}
+		where rno=#{rno} and pno=#{pno}
 	</delete>
 </mapper>

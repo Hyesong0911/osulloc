@@ -147,19 +147,19 @@ $(document).ready(function(){
 	$(".rewrite").hide();
 	
 	//pno값
-	//let pno = $(".relistPno").val();
+	let pno = $(".relistPno").val();
 	
 	// 댓글 버튼을 클릭하면
 	$(".addReplyBtn").on("click",function(){
 		
-		$(".relistPno").val($(this).data("pno"));
+		$(".relistPno").val($(this).data("pno"))
+		pno = $(this).data("pno");
 		
 		
-		pno = $(".relistPno").val();
+		//pno = $(".relistPno").val();
 		
-		
-		
-		
+		$(".rewrite").hide();
+		$(".relist").hide();
 		$("#rewrite"+pno).show();
 		$("#relist"+pno).show();
 		
@@ -171,13 +171,13 @@ $(document).ready(function(){
 		str+="<div class='replyBox_reply'><label>내용"+"</label><br>"
 		str+="<textarea rows='' cols='' name='reply' id='reply"+pno+"'></textarea></div>"
 		str+="<div class='replyFooter'>"
-		str+="<button type='button' class='rebtn' id='replyRegisterBtn"+pno+"'>댓글쓰기"+"</button>"
-		str+="<button type='button' class='rebtn' id='replyModBtn"+pno+"' data-pno=" + pno + ">댓글수정"+"</button>"
+		str+="<button type='button' class='rebtn' id='replyRegisterBtn'>댓글쓰기"+"</button>"
+		str+="<button type='button' class='rebtn' id='replyModBtn' data-pno=" + pno + ">댓글수정"+"</button>"
 		//str+="<button type='button' class='rebtn' id='replyModBtn"+pno+"'>댓글수정"+"</button>"
-		str+="<button type='button' class='rebtn' id='replyRemoveBtn"+pno+"' data-pno=" + pno + ">댓글삭제"+"</button>"
+		str+="<button type='button' class='rebtn' id='replyRemoveBtn' data-pno=" + pno + ">댓글삭제"+"</button>"
 		//str+="<button type='button' class='rebtn' id='replyRemoveBtn"+pno+"'>댓글삭제"+"</button>"
 		str+="<button type='button' class='rebtn' id='close' data-pno=" + pno + ">Close"+"</button></div>"
-//		str+="<button type='button' class='rebtn' id='close"+pno+" data-pno=" + pno + "'>Close"+"</button></div>"
+		//str+="<button type='button' class='rebtn' id='close"+pno+" data-pno=" + pno + "'>Close"+"</button></div>"
 		//str+="</div>"
 		
 		$("#rewrite"+pno).html(str);
@@ -185,12 +185,13 @@ $(document).ready(function(){
 		$("input[name='replyer']").val("")
 		//Reply input 내용 초기화
 		$(".reply").val("")
+		
 		// 상세페이지가 실행되면 댓글 글쓰기 버튼 활성화
-		$("#replyRegisterBtn"+pno).show();
+		$("#rewrite"+pno).find("#replyRegisterBtn").show();
 		// 댓글 수정 버튼 비활성화
-		$("#replyModBtn"+pno).hide();
+		$("#rewrite"+pno).find("#replyModBtn").hide();
 		//댓글 삭제 버튼 비활성화
-		$("#replyRemoveBtn"+pno).hide();
+		$("#rewrite"+pno).find("#replyRemoveBtn").hide();
 		
 		//pnoValue(pno);
 		showList(pno);
@@ -199,6 +200,7 @@ $(document).ready(function(){
 		//str="";
 		
 	});
+
 	
 
 	
@@ -257,11 +259,10 @@ $(document).ready(function(){
 	
 	//function pnoValue(pno){
 	
-	pno = $(".relistPno").val();
-	console.log("송송송=" + pno);
 
 
-		$("#rewrite"+pno).on("click","#replyRegisterBtn"+pno,function(){
+		/*$("#rewrite"+pno).on("click","#replyRegisterBtn"+pno,function(){*/
+			$(document).on("click","#replyRegisterBtn",function(){
 
 			
 			$("#rewrite"+pno).show();
@@ -308,7 +309,8 @@ $(document).ready(function(){
 		//댓글수정버튼을 클릭하면
 	
 		/*$(document).on("click","#replyModBtn"+ pno,function(){*/
-		$("#rewrite"+pno).on("click","#replyModBtn"+pno,function(){
+			$(document).on("click","#replyModBtn",function(){
+		/*$("#rewrite"+pno).on("click","#replyModBtn"+pno,function(){*/
 
 			pno = $(this).data("pno");
 			pnoR = $("#rewrite" + pno).find("input[name='rno']").val();
@@ -354,7 +356,8 @@ $(document).ready(function(){
 	
 	
 
-	$("#relist"+pno).on("click","#menu", function(){
+	/*$("#relist"+pno).on("click","#menu", function(){*/
+		$(document).on("click","#menu", function(){
 		
 		//rno값 가져오기
 		var rno = $(this).data("rno");
@@ -362,24 +365,23 @@ $(document).ready(function(){
 		
 		/*var pno = $(this).data("pno");
 		console.log(pno)*/
-		
+
 		var reply = {/*pno: pno,*/ rno: rno ,reply:$("input[name='reply']").val()}//함수에는 json타입으로 보내주어야 한다. <=> reDetail과 비교
 		
 		ReplyReviewService.reDetail(rno,function(detail){ //redetail함수의 data가 json형식으로 안되어 있다! <=> reply과 비교
 
 
-			console.log(detail.rno);
 			$("#rewrite" + pno).find("input[name='rno']").val(detail.rno)
 			/*$("#rewrite" + pno).find("input[name='pno']").val(detail.pno)*/
 			$("#rewrite" + pno).find("input[name='replyer']").val(detail.replyer)
 			$("#rewrite" + pno).find("textarea[name='reply']").val(detail.reply)
 			
 			//상세페이지가 실행되면 댓글 글쓰기 버튼 활성화
-			$("#replyRegisterBtn"+pno).hide();
+			$("#rewrite"+pno).find("#replyRegisterBtn").hide();
 			//상세페이지가 실행되면 댓글 글수정 버튼 활성화
-			$("#replyModBtn"+pno).show();
+			$("#rewrite"+pno).find("#replyModBtn").show();
 			//상세페이지가 실행되면 댓글 글삭제 버튼 활성화
-			$("#replyRemoveBtn"+pno).show();			
+			$("#rewrite"+pno).find("#replyRemoveBtn").show();			
 		})
 	})
 	
@@ -407,12 +409,16 @@ $(document).ready(function(){
 	//댓글삭제버튼을 클릭하면
 	
 		$(document).on("click","#replyRemoveBtn",function(){
+
 			
 			pno = $(this).data("pno");
-			console.log(pno);
+			pnoR = $("#rewrite" + pno).find("input[name='rno']").val();
+			console.log("pnoR=" + pnoR);
+			
 			
 		 if (confirm("삭제하시겠습니까?")) {
-			 var reply = {rno: $("input[name='rno']").val()}
+			 
+			 var reply = {rno: pnoR, pno : pno}
 				
 			//댓글 삭제함수를 호출해서 처리
 	 		ReplyReviewService.remove(reply, function(remove){

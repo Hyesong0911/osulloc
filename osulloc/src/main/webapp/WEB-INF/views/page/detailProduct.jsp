@@ -128,16 +128,16 @@
 				            				<p class="detail_right_writer">${productreview.writer}</p>
 				            				<p class="detail_right_regdate">${productreview.regdate}</p>
 				            				<p class="detail_right_title">${productreview.title}</p>
-				            				<p class="detail_right_content">${productreview.content}</p>
+				            				<p class="detail_right_content">${sSproductreview.content}</p>
 				            			</div>
 			            			</div>
 			            			
 			            			<button class="mrebtn addReplyBtn" data-pno="${productreview.pno}">
 							               	댓글
 							        </button>
-							        <div class="relist" id="reply${productreview.pno}">
+							        <div class="reply" id="reply${productreview.pno}">
 							 
-							        <ul id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
+							        <ul  class="relist" id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
 							        <div class="rewrite" id="rewrite${productreview.pno}" data-pno="${productreview.pno}"></div>
 			            			
 			            			
