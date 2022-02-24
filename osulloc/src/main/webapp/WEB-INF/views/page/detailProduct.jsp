@@ -118,11 +118,9 @@
 		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
 		            		
 			            		<li>
-<<<<<<< HEAD
+
 			            			<input type="hidden" class="relistPno" value="0">
-=======
-			            			<input class="relistPno" value="0" type="hidden">
->>>>>>> branch 'master' of https://github.com/osulloc4/osulloc.git
+
 			            			<div id="r_detail">
 			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
