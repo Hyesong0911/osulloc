@@ -154,7 +154,7 @@ $(document).ready(function(){
 		var str="";
 	
 		//str+="<div class='replyBox'><h4>댓글쓰기"+"</h4><input type='hidden' name='rno'>"
-		str+="<h4>댓글쓰기"+"</h4><input type='text' name='rno'><input type='text' name='pno'>"
+		str+="<h4>댓글쓰기"+"</h4><input type='text' name='rno' readonly><input type='text' name='pno' readonly>"
 		str+="<div class='replyBox_replyer'><label>작성자"+"</label><br><input type='text' name='replyer' id='replyer"+pno+"'></div>"
 		str+="<div class='replyBox_reply'><label>내용"+"</label><br>"
 		str+="<textarea rows='' cols='' name='reply' id='reply"+pno+"'></textarea></div>"
@@ -201,7 +201,7 @@ $(document).ready(function(){
 		pno = $(this).data("pno");
 		console.log(pno);
 			
-		alert("aa");
+	/*	alert("aa");*/
 	
 			$("#rewrite"+pno).hide();
 			$("#relist"+pno).hide();
@@ -303,7 +303,7 @@ $(document).ready(function(){
 		/*$(document).on("click","#replyModBtn"+ pno,function(){*/
 		$("#rewrite"+pno).on("click","#replyModBtn"+pno,function(){
 
-			
+			rno = $(this).data("rno");
 			pno = $(this).data("pno");
 			console.log(pno);
 			
@@ -324,9 +324,11 @@ $(document).ready(function(){
 				alert("update 작업 : " + update);
 					
 				showList(pno);  //작성 후에도 바로 댓글이 올라오도록 한다.(목록리스트 실행)
+				showList(rno);
 				$("input[name='replyer']").val("")
 				$("textarea[name='reply']").val("")
 				//$("#rewrite"+pno).hide();
+				$("#rewrite"+pno).show();
 				
 			})
 		}

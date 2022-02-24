@@ -293,6 +293,10 @@ img{
 	right : 20px;
 }
 
+.detail_right_title{
+	font-weight: bold;
+}
+
 .detail_right_content{
 	font-size : 25px;
 }
