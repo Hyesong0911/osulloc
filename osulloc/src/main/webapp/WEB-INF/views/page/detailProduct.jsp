@@ -26,91 +26,72 @@
         
         	<form id="productForm" method="post">
         	
-        			<div><input type="hidden" name="prodnum" value="${productse.prodnum}"></div>
-					<div><input type="hidden" name="name" value="${productse.name}"></div>
-					<div><input type="hidden" name="price" value="${productse.price}"></div>
-					<div><input type="hidden" name="sale" value="${productse.sale}"></div>
+      			<div><input type="hidden" name="prodnum" value="${productse.prodnum}"></div>
+				<div><input type="hidden" name="name" value="${productse.name}"></div>
+				<div><input type="hidden" name="price" value="${productse.price}"></div>
+				<div><input type="hidden" name="sale" value="${productse.sale}"></div>
 		
 		
-            <div class="product">
-                <div class="left_detail">
-                    <div class="left_i">
-                        <img src="/osulloc/display?fileName=${productse.filename}" alt="">
-                    </div>
-                    <div class="left_r">
-                        <a href="#">
-                            <p class="review">리뷰보기</p>
-                        </a>
-                    </div>
-                </div><!--.left_detail-->
-                <div class="right_detail">
-                
-                    <form action="" method="get">
-                    	<div class="detail_t">
-	                        <p class="detail_t_name" >${productse.name}</p>
-	                        <p class="detail_t_write">${productse.petc}</p>
-	                        <p class="detail_t_price">${productse.price}원</p>
-	                        <p class="detail_t_discount">${productse.sale}원</p>
-                    	</div><!--.detail_t-->
-                    </form>
-                    
-                    
-                    <div class="detail_c">
-                        <div class="detail_buy">
-                            <p>구매수량</p>
-                            <div class="b_num">
-                                <p id="minus">-</p>
-                                <input type="text" value="1" id="num" name="number">
-                                <p id="plus">+</p>
-                            </div>
-                        </div>
-                        <!-- <div>
-                            <select name="shopping_bag" id="" class="shopping_bag">
-                                <option value="">쇼핑백 (+100원)</option>
-                                <option value="0">쇼핑백 동봉 안함</option>
-                                <option value="100">쇼핑백 동봉 함</option>
-                            </select>
-                        </div>
-                        <div>
-                            <select name="packaging" id="" class="packaging">
-                                <option value="">포장가능 (+2000원)</option>
-                                <option value="0">포장 안함</option>
-                                <option value="2000">포장함</option>
-                            </select>
-                        </div> -->
-                    </div><!--.detail_c-->
-                    <div class="detail_b">
-                        <div class="total_b">
-                            <p>상품금액 합계</p>
-                            <input type="hidden" value= "${productse.sale}" id="total">
-                            <p class="total">
-                            	<strong class="price">${productse.sale}</strong>원
-                            </p>
-                        </div>
-                        <div class="button_b">
-                            <button type="button" name="cart" id="cart">
-                                <!-- <a href="/osulloc/page/cartPage" class="btn"> -->
-                                <p class="btn">
-                                    <span>장바구니</span>
-                                </p>
-                            </button>
-                            <button type="button" name="buy" id="buy">
-                                <a href="#" class="btn">
-                                    <span>바로구매</span>
-                                </a> 
-                            </button>
-                        </div>
-                    </div><!--.detail_b-->
-                </div><!--.right_detail-->
-            </div><!--.product-->
+	            <div class="product">
+	                <div class="left_detail">
+	                    <div class="left_i">
+	                        <img src="/osulloc/display?fileName=${productse.filename}" alt="">
+	                    </div>
+	                    <div class="left_r">
+	                        <a href="#">
+	                            <p class="review">리뷰보기</p>
+	                        </a>
+	                    </div>
+	                </div><!--.left_detail-->
+	                <div class="right_detail">
+	                
+	                   <form action="" method="get">
+		                   	<div class="detail_t">
+		                        <p class="detail_t_name" >${productse.name}</p>
+		                        <p class="detail_t_write">${productse.petc}</p>
+		                        <p class="detail_t_price">${productse.price}원</p>
+		                        <p class="detail_t_discount">${productse.sale}원</p>
+		                   	</div><!--.detail_t-->
+	                   </form>
+	                    
+	                    
+	                    <div class="detail_c">
+	                        <div class="detail_buy">
+	                            <p>구매수량</p>
+	                            <div class="b_num">
+	                                <p id="minus">-</p>
+	                                <input type="text" value="1" id="num" name="number">
+	                                <p id="plus">+</p>
+	                            </div>
+	                        </div>
+	                    </div><!--.detail_c-->
+	                    <div class="detail_b">
+	                        <div class="total_b">
+	                            <p>상품금액 합계</p>
+	                            <input type="hidden" value= "${productse.sale}" id="total">
+	                            <p class="total">
+	                            	<strong class="price">${productse.sale}</strong>원
+	                            </p>
+	                        </div>
+	                        <div class="button_b">
+	                            <button type="button" name="cart" id="cart">
+	                                <!-- <a href="/osulloc/page/cartPage" class="btn"> -->
+	                                <p class="btn">
+	                                    <span>장바구니</span>
+	                                </p>
+	                            </button>
+	                            <button type="button" name="buy" id="buy">
+	                                <a href="#" class="btn">
+	                                    <span>바로구매</span>
+	                                </a> 
+	                            </button>
+	                        </div>
+	                    </div><!--.detail_b-->
+	                </div><!--.right_detail-->
+	            </div><!--.product-->
             </form> 
             
-            
-            
-            
-            
-            
-            
+     
             <div id="reviewD">
             	<div class="reviewDS">
             		<strong>리뷰</strong>
@@ -123,7 +104,7 @@
             	</c:if>
             	
             	<ul>
-<%--             		${productse.prodnum} --%>
+					<%-- ${productse.prodnum} --%>
             		<c:forEach items="${productcri}" var="productreview">
             		
             		

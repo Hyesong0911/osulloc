@@ -50,7 +50,7 @@
                         <p>장바구니 금액 = </p> -->
 
                         <!-- <p>상품 총 금액 (할인가 포함) =</p><p id="total">0</p><br> -->
-                        <p>상품 총 금액 (할인가 포함) =</p><input type="text" id="total" value="0" style="width : 60px"><br>
+                        <p>상품 총 금액 (할인가 포함) =</p><input type="text" id="total" value="0" style="width : 70px"><br>
                         
                         <!-- <div> -->
                         <p>
@@ -67,7 +67,7 @@
                         	배송비 =1000
                         </p><br>
                         <!-- <p>장바구니 금액 = </p><p id="cartPrice">0</p> -->
-						<p>장바구니 금액 = </p><input type="text" id="cartPrice" value="0" style="width : 60px">
+						<p>장바구니 금액 = </p><input type="text" id="cartPrice" value="0" style="width : 70px">
 
 						
                     </div>
@@ -86,7 +86,7 @@
 	                            <p class="cart-num"><input type="hidden" class="cart-num2" value="${product3.number}">${product3.number}</p>
 	                            <a href="#" class="pic2"><img src="/osulloc/display?fileName=${product3.filename}" alt=""></a>
 	                            <p class="cm cmName">${product3.name}</p>
-	                            <p class="cm"><input type="text" class="cmPrice" value="${product3.price}"><span>원</span></p>
+	                            <p class="cm"><input type="text" class="cmPrice" value="${product3.sale}" style="width : 70px"><span>원</span></p>
 	                        </li>
 						</c:forEach>
                     </ul>

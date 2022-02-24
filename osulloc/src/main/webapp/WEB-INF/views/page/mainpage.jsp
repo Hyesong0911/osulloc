@@ -187,7 +187,7 @@
 				                    	<input type="hidden" name="sale"  value="${product.sale}">
 				                    	<input type="hidden" name="price"  value="${product.price}">
 				                    	<input type="hidden" name="number"  value="${product.number}">
-				                    	<input type="text" name="filename" value="${product.filename}">
+				                    	<input type="hidden" name="filename" value="${product.filename}">
 			                   		 </div>
 			                   		 
 			                        </form>
@@ -259,7 +259,7 @@
 				                    	<input type="hidden" name="price"  value="${product2.price}">
 				                    	<input type="hidden" name="sale"  value="${product2.sale}">
 				                    	<input type="hidden" name="number"  value="${product2.number}">
-				                    	<input type="text" name="filename" value="${product2.filename}">
+				                    	<input type="hidden" name="filename" value="${product2.filename}">
 			                   		 </div>
 			                            
 			                        </form>

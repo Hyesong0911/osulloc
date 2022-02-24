@@ -55,8 +55,8 @@
   	
   	<insert id="product3in">
   	
-	  	insert into cart (prodnum, name, price, number,filename)
-		values (#{prodnum}, #{name}, #{price}, #{number},#{filename});
+	  	insert into cart (prodnum, name, sale, number,filename)
+		values (#{prodnum}, #{name}, #{sale}, #{number},#{filename});
   		 
   	</insert>
   	
