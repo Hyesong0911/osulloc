@@ -89,7 +89,7 @@ $(document).ready(function(){
 
 		
     	//받는 값은 val(), 고정값 value는 지정해 놓은 후  attr을 사용하여 가져오기
-        if(price == 0){
+        if($("#total") == 0){
         	
             $("#cartPrice").val(0);
             
