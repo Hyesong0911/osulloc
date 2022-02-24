@@ -118,7 +118,7 @@
 		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
 		            		
 			            		<li>
-			            			<input class="relistPno" value="0">
+			            			<input type="hidden" class="relistPno" value="0">
 			            			<div id="r_detail">
 			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
