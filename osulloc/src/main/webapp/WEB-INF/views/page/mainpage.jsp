@@ -162,7 +162,7 @@
 			                            </a>
 			                        </p>
 			                        <p><input type="hidden" value="${product.prodnum}"></p>
-			                        <p class="m3_ib_name"><a href="">${product.name}</a></p>
+			                        <p class="m3_ib_name"><a href="/osulloc/page/detailProduct?prodnum=${product.prodnum}">${product.name}</a></p>
 			                        <p class="m3_ib_prise">${product.price}원</p>
 			                    </div>
 			                    

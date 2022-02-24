@@ -34,28 +34,28 @@ $(document).ready(function(){
 
     //본문 페이지 제품 칸 슬라이드
 
-    $(".main3_l a").on("click", function(e){
+    $(".main3_r a").on("click", function(e){
 
     	e.preventDefault();
         $(".m3_item li").first().appendTo(".m3_item ul");
 
     })
 
-    $(".main3_r a").on("click", function(e){
+    $(".main3_l a").on("click", function(e){
 
     	e.preventDefault();
         $(".m3_item li").last().prependTo(".m3_item ul");
 
     })
 
-    $(".main4_l a").on("click", function(e){
+    $(".main4_r a").on("click", function(e){
 
     	e.preventDefault();
         $(".m4_item li").first().appendTo(".m4_item ul");
 
     })
 
-    $(".main4_r a").on("click", function(e){
+    $(".main4_l a").on("click", function(e){
 
     	e.preventDefault();
         $(".m4_item li").last().prependTo(".m4_item ul");

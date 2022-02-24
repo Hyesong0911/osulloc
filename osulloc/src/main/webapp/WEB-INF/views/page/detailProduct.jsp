@@ -126,7 +126,7 @@
 				            				<p class="detail_right_writer">${productreview.writer}</p>
 				            				<p class="detail_right_regdate">${productreview.regdate}</p>
 				            				<p class="detail_right_title">${productreview.title}</p>
-				            				<p class="detail_right_content">${sSproductreview.content}</p>
+				            				<p class="detail_right_content">${productreview.content}</p>
 				            			</div>
 			            			</div>
 			            			

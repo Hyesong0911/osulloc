@@ -343,7 +343,13 @@ label::after{
     margin-bottom: 20px;
 }
 
+.m3_item_box .m3_ib_img a, .m4_item_box .m4_ib_img a{
+	display: inline-block;
+	width: 100%;
+}
+
 .m3_item_box .m3_ib_img a img, .m4_item_box .m4_ib_img a img{
+	display: inline-block;
     width: 100%;
     height: 283px;
 }
