@@ -39,7 +39,7 @@
 	    <table border="1" id="table">
 			
 				<!-- <tr><td>상품코드</td><td><input type="text" id="pcode" name="pcode" size="6"></td></tr> -->
-				<tr><td>상품코드</td><td><input type="text" id="pcode" name="pcode" size="6"></td></tr>
+				<!-- <tr><td>상품코드</td><td> --><input type="hidden" id="pcode" name="pcode" size="6"><!-- </td></tr> -->
 				<!-- <tr><td>상품이름</td><td><input type="text" name="pname" size="20"></td></tr> -->
 				<tr><td>상품이름</td><td><input type="text" name="name" size="20"></td></tr>
 				<tr><td>상품사진</td><td> <input type="file" name="uploadFile" > </td></tr>
@@ -100,7 +100,7 @@
 				</tr>
 				<tr><td>가격</td><td> <input type="text" name="price" > </td></tr>
 				<tr><td>할인가</td><td> <input type="text" name="sale" > </td></tr>
-				<tr><td>특이사항</td><td><textarea rows="5" cols="30" name="petc"></textarea></td></tr>
+				<tr><td>설명</td><td><textarea rows="5" cols="30" name="petc"></textarea></td></tr>
 				<!-- <tr><td>등록날짜</td><td><input type ="text" name="pdate"></td></tr> -->
 				<tr><td colspan=2 align="center">
 	    		<input id="uploadBtn" type="button" value="등록">&emsp;

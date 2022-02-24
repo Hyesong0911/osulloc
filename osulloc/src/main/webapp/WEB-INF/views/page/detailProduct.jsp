@@ -42,7 +42,7 @@
                     <form action="" method="get">
                     	<div class="detail_t">
 	                        <p class="detail_t_name">${productse.name}</p>
-	                        <p class="detail_t_write">달큰한 배향이 달빛처럼 은은하게 감도는 후발효차를 소중한 사람에게 선물해보세요.</p>
+	                        <p class="detail_t_write">${productse.petc}</p>
 	                        <p class="detail_t_price">${productse.price}원</p>
 	                        <p class="detail_t_discount">${productse.sale}원</p>
                     	</div><!--.detail_t-->
@@ -118,7 +118,11 @@
 		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
 		            		
 			            		<li>
+<<<<<<< HEAD
 			            			<input type="hidden" class="relistPno" value="0">
+=======
+			            			<input class="relistPno" value="0" type="hidden">
+>>>>>>> branch 'master' of https://github.com/osulloc4/osulloc.git
 			            			<div id="r_detail">
 			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">

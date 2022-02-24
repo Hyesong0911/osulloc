@@ -88,6 +88,10 @@ img{
     color: #333;
 }
 
+.right_detail{
+	width: 620px;
+}
+
 .detail_t{
     margin-bottom: 30px;
 }

@@ -336,10 +336,17 @@ $(document).ready(function(){
 				/*showList(rno);*/
 				$("input[name='replyer']").val("")
 				$("textarea[name='reply']").val("")
+				
 				/*$("#rewrite" + pno).find("input[name='rno']").val("")
 				$("#rewrite" + pno).find("input[name='pno']").val("")*/
 				//$("#rewrite"+pno).hide();
 				$("#rewrite"+pno).show();
+				// 상세페이지가 실행되면 댓글 글쓰기 버튼 활성화
+				$("#rewrite"+pno).find("#replyRegisterBtn").show();
+				// 댓글 수정 버튼 비활성화
+				$("#rewrite"+pno).find("#replyModBtn").hide();
+				//댓글 삭제 버튼 비활성화
+				$("#rewrite"+pno).find("#replyRemoveBtn").hide();
 				
 
 				
