@@ -163,7 +163,7 @@
 			                        </p>
 			                        <p><input type="hidden" value="${product.prodnum}"></p>
 			                        <p class="m3_ib_name"><a href="">${product.name}</a></p>
-			                        <p class="m3_ib_prise">${product.sale}원</p>
+			                        <p class="m3_ib_prise">${product.price}원</p>
 			                    </div>
 			                    
 			                    <div class="num_cart">

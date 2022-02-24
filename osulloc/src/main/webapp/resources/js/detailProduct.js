@@ -80,6 +80,21 @@ let ReplyReviewService=(function(){
 	};
 })()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let num = document.querySelector("#num");
 let total = document.querySelector("#total").value;
 
@@ -391,19 +406,7 @@ $(document).ready(function(){
 			$("#rewrite"+pno).find("#replyRemoveBtn").show();			
 		})
 	})
-	
 
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -441,6 +444,20 @@ $(document).ready(function(){
 		 }
 	})
 	
+	
+	
+	
+	
+	
+	
+	//=======================================================================
+	
+	//장바구니
+	$("#cart").on("click", function(){
+		
+		$("#productForm").submit();
+		
+	})
 	
 	
 	

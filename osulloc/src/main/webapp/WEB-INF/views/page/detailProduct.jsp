@@ -21,11 +21,17 @@
 <body>
 	<%@ include file="../Header&Footer/header.jsp" %>
 	<div class="wrap">
-		<div><input type="hidden" value="${productse.prodnum}"></div>
-		<div><input type="hidden" value="${productse.name}"></div>
-		<div><input type="hidden" value="${productse.price}"></div>
-		<div><input type="hidden" value="${productse.sale}"></div>
+
         <div class="container">
+        
+        	<form id="productForm" method="post">
+        	
+        			<div><input type="hidden" name="prodnum" value="${productse.prodnum}"></div>
+					<div><input type="hidden" name="name" value="${productse.name}"></div>
+					<div><input type="hidden" name="price" value="${productse.price}"></div>
+					<div><input type="hidden" name="sale" value="${productse.sale}"></div>
+		
+		
             <div class="product">
                 <div class="left_detail">
                     <div class="left_i">
@@ -41,7 +47,7 @@
                 
                     <form action="" method="get">
                     	<div class="detail_t">
-	                        <p class="detail_t_name">${productse.name}</p>
+	                        <p class="detail_t_name" >${productse.name}</p>
 	                        <p class="detail_t_write">${productse.petc}</p>
 	                        <p class="detail_t_price">${productse.price}원</p>
 	                        <p class="detail_t_discount">${productse.sale}원</p>
@@ -54,7 +60,7 @@
                             <p>구매수량</p>
                             <div class="b_num">
                                 <p id="minus">-</p>
-                                <input type="text" value="1" id="num">
+                                <input type="text" value="1" id="num" name="number">
                                 <p id="plus">+</p>
                             </div>
                         </div>
@@ -83,9 +89,10 @@
                         </div>
                         <div class="button_b">
                             <button type="button" name="cart" id="cart">
-                                <a href="/osulloc/page/cartPage" class="btn">
+                                <!-- <a href="/osulloc/page/cartPage" class="btn"> -->
+                                <p class="btn">
                                     <span>장바구니</span>
-                                </a>
+                                </p>
                             </button>
                             <button type="button" name="buy" id="buy">
                                 <a href="#" class="btn">
@@ -96,6 +103,14 @@
                     </div><!--.detail_b-->
                 </div><!--.right_detail-->
             </div><!--.product-->
+            </form> 
+            
+            
+            
+            
+            
+            
+            
             <div id="reviewD">
             	<div class="reviewDS">
             		<strong>리뷰</strong>

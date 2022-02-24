@@ -69,6 +69,20 @@ public class ProductReviewController {
 		
 		int total = pservice.getTotalCount(cri);
 		model.addAttribute("pageMaker", new PageDTO(cri, pservice.getTotalCount(cri)));
+		
+		
+	}
+	
+	@PostMapping("detailProduct")
+	public String detailProductPost(ProductDTO prod) {
+		
+		System.out.println("장바구니목록=" + prod );
+		
+		service.product3in(prod);
+		
+		System.out.println("장바구니에 담겼습니다.");
+		
+		return "redirect:/page/cartPage";
 	}
 	
 //	//게시판 상세페이지에서 이미지를 출력하기 위한 select된 결과를 javascript로
@@ -77,6 +91,8 @@ public class ProductReviewController {
 //		//System.out.println("fileList");
 //		return new ResponseEntity<>(pservice.fileList(bno),HttpStatus.OK);
 //	}
+	
+	
 	
 	
 }
