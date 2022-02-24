@@ -51,7 +51,6 @@
 			and rownum <= #{pageNum}*#{amount} 
 		]]> 
   	</select>
-  	
 
   	
   	<select id="detail" resultType="org.osulloc.domain.BoardDTO">

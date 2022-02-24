@@ -11,6 +11,7 @@ public class BoardDTO{
 	private int cnt;
 	private int good;
 	private ArrayList<AttachFileDTO> attachList;//BoardDTO에 AttachFileDTO를 포함시킴
+
 	
 	public int getBno() {
 		return bno;
@@ -61,9 +62,20 @@ public class BoardDTO{
 		this.attachList = attachList;
 	}
 	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "BoardDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", regdate=" + regdate + ", cnt=" + cnt + ", good=" + good + ", attachList=" + attachList + "]";
 	}
+
+	
+	
+	
+	
+	
+	
+	
 }
