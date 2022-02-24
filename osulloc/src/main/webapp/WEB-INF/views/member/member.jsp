@@ -45,6 +45,7 @@
                         <span class="pw-lock"></span>
                     </span>
     				<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
+    				<label class="pw-valid"></label>
     				
                     <h3>비밀번호 재확인</h3>
                     <span class="signup-input">

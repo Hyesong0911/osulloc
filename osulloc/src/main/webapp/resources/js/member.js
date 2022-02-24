@@ -237,20 +237,25 @@ $(document).ready(function(){
 		        
 		        
 		        /* 비밀번호 정규식*/		        
+		        $("#signup-pw").blur(function(){
 		        
-		        
-		        
-		        
-    /*var pwRegex =  /^.*(?=^.{5,10}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/; 
-    $("#signup-pww").blur(function(){
-    	
-    	if(!pwRegex($('input[name=password]').val()!==$('input[name=signup-pwCheck]').val()){
-    		$('.pwreg').html("비밀번호가 형식에 맞지않습니다.")
-    		
-    	}
-    });
-		        */
+		        	var reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
+		        	if(!reg.test($("#signup-pw").val())){
+		        		 
+		        		 $('.pw-valid').html("'영문, 숫자, 특수문자 혼합하여 8~20자리 이내의 비밀번호 사용해야합니다.'");
+				         $('.pw-valid').css('color','red')
+				        
+				         
+		        	}else{
+		        		
+		        		 $("#signup-pw").val() !=(""); 
+		        		 $('.pw-valid').html("알맞은 비밀번호입니다.")
+		        	}
+
+		        });
+
+		        
 	/* 가입하기 버튼 눌럿을 때  빈칸 alert창  띄우기 */
 	
 	$(".regist").on("click", function(){
