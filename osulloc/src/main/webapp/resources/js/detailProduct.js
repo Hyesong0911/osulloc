@@ -166,7 +166,7 @@ $(document).ready(function(){
 		var str="";
 	
 		//str+="<div class='replyBox'><h4>댓글쓰기"+"</h4><input type='hidden' name='rno'>"
-		str+="<h4>댓글쓰기"+"</h4><input type='text' name='rno'><input type='text' name='pno' value='" + pno + "'>"
+		str+="<h4>댓글쓰기"+"</h4><input type='hidden' name='rno'><input type='hidden' name='pno' value='" + pno + "'>"
 		str+="<div class='replyBox_replyer'><label>작성자"+"</label><br><input type='text' name='replyer' id='replyer"+pno+"'></div>"
 		str+="<div class='replyBox_reply'><label>내용"+"</label><br>"
 		str+="<textarea rows='' cols='' name='reply' id='reply"+pno+"'></textarea></div>"
@@ -336,10 +336,17 @@ $(document).ready(function(){
 				/*showList(rno);*/
 				$("input[name='replyer']").val("")
 				$("textarea[name='reply']").val("")
+				
 				/*$("#rewrite" + pno).find("input[name='rno']").val("")
 				$("#rewrite" + pno).find("input[name='pno']").val("")*/
 				//$("#rewrite"+pno).hide();
 				$("#rewrite"+pno).show();
+				// 상세페이지가 실행되면 댓글 글쓰기 버튼 활성화
+				$("#rewrite"+pno).find("#replyRegisterBtn").show();
+				// 댓글 수정 버튼 비활성화
+				$("#rewrite"+pno).find("#replyModBtn").hide();
+				//댓글 삭제 버튼 비활성화
+				$("#rewrite"+pno).find("#replyRemoveBtn").hide();
 				
 
 				
