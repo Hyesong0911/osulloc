@@ -17,5 +17,7 @@ public interface AttachMapper {
 	public void modify(AttachFileDTO board);
 	
 	public ArrayList<AttachFileDTO> fileListPost(int bno);
+	
+	public boolean fileDelete(AttachFileDTO attach);
 
 }

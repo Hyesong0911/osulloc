@@ -24,7 +24,7 @@ $(document).ready(function(){
 					str+="<li data-path='"+obj.uploadPath+"'";
 					str+="data-uuid='"+obj.uuid+"'data-filename='"+obj.fileName+"'data-type='"+obj.image+"'>"; 
 					str += "<button type='button' data-file=\'"+fileCallPath+"\' data-type='"+obj.image+"' class='btn'>";
-					str +="<span>X</span></button><br>"
+					str +="<a href='/osulloc/page/fileDelete?bno=" +bno+"'>X</a></button><br>"
 					str+="<img src='/osulloc/display?fileName="+fileCallPath+"'>"
 //					str+="<input type='text' value='" +obj.uuid+"'>"
 //					str+="<input type='text' value='" +obj.fileName+"'>"

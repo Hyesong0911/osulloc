@@ -19,9 +19,9 @@
   		select*from attach where bno=#{bno};
   	</select>
   	
-<!--   	<delete id="fileListPost" >넘겨야 하는 곳
+  	<delete id="fileDelete" >
   		delete from attach where bno=#{bno};
-  	</delete> -->
+  	</delete>
   	
   	<update id="fileListPost" ><!-- 넘겨야 하는 곳 -->
 	  	update attach

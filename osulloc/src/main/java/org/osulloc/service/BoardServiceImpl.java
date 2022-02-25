@@ -103,11 +103,16 @@ public class BoardServiceImpl implements BoardService{
 		 amapper.delete(aboard);
 	}
 	
-	/*public void ainsert(AttachFileDTO aboard) {
-		amapper.insert(aboard);
-	}*/
+	
+	
+	
+	
+	
+	
+	public boolean fileDelete(AttachFileDTO attach) {
+		return amapper.fileDelete(attach);
+	}
 
 		
-	
 	
 }

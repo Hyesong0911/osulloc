@@ -40,7 +40,11 @@ public interface BoardService {
 	
 	
 	public void delete(AttachFileDTO aboard);
-	/*public void ainsert(AttachFileDTO aboard);*/
+	
+	
+	
+	
+	public boolean fileDelete(AttachFileDTO attach);
 
 
 	
