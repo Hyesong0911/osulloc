@@ -328,24 +328,13 @@ label::after{
 
 }
 
-.m3_item ul:before, .m4_item ul:before{
-	content: "";
-	margin-left: 20px;
-}
-
-
 .m3_item li, .m4_item li{
     width: 300px;
     height: auto;
-    /* padding : 0 40px 10px 40px; */
+    /* padding-bottom: 10px; */
+    padding : 0 40px 10px 40px;
     box-sizing: border-box;
     text-align: center;
-    z-index: 1;
-}
-
-.m3_item ul:after, .m4_item ul:after{
-	content: "";
-	margin-left: 20px;
 }
 
 .m3_item li:hover, .m4_item li:hover{
