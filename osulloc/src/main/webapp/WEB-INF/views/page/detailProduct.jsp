@@ -30,6 +30,7 @@
 				<div><input type="hidden" name="name" value="${productse.name}"></div>
 				<div><input type="hidden" name="price" value="${productse.price}"></div>
 				<div><input type="hidden" name="sale" value="${productse.sale}"></div>
+				<div><input type="hidden" name="filename" value="${productse.filename}"></div>
 		
 		
 	            <div class="product">

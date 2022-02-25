@@ -46,7 +46,7 @@ public class MainController {
 	@GetMapping("cartPage")
 	public void cartpagePost(Model model, ProductDTO prod) {
 		
-		System.out.println(service.product3se(prod));
+		System.out.println("dkjslkjlsf=" + service.product3se(prod));
 		
 		
 		model.addAttribute("product3", service.product3se(prod));
