@@ -163,7 +163,7 @@
 			                        </p>
 			                        <p><input type="hidden" value="${product.prodnum}"></p>
 			                        <p class="m3_ib_name"><a href="/osulloc/page/detailProduct?prodnum=${product.prodnum}">${product.name}</a></p>
-			                        <p class="m3_ib_prise">${product.price}원</p>
+			                        <p class="m3_ib_prise">${product.sale}원</p>
 			                    </div>
 			                    
 			                    <div class="num_cart">
@@ -216,7 +216,7 @@
 		    </section><!--.main3-->
 		
 		    <section class="main4">
-		        <h2 class="m4_title"><a href="#">▽</a> 이번주 할인상품</h2>
+		        <h2 class="m4_title"><a href="#">▽</a> 이번주 할인상품 <p>(전제품 할인!!!)</p></h2>
 		        <div class="m4_item" >
 		            <ul  style="overflow: hidden">
 		            	<c:forEach items="${product2}" var="product2">

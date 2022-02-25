@@ -305,6 +305,24 @@ img{
 	font-size : 25px;
 }
 
+.detail_right_more{
+	position : absolute;
+	top : 15px;
+	right : 10px;
+}
+
+.more{
+	position : absolute;
+	top : 50px;
+	right : 10px;
+}
+
+.more a{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
 /* .replyList{
 	margin-bottom: 20px;
 	width : 1200px;

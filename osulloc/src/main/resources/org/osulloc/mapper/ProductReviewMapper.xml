@@ -35,5 +35,20 @@
   		select count(*) from productreview
   	</select>
   	
+  	<select id="productreview" resultType="org.osulloc.domain.ProductReviewDTO">
+  		select*from productreview where pno=#{pno}
+  	</select>
+  	
+  	<update id="modify">
+  		update productreview
+		set title=#{title}, 
+			content=#{content}, 
+			regdate=now()
+		where pno=#{pno} and prodnum=#{prodnum}
+  	</update>
+  	
+  	<delete id="delete">
+  		delete from productreview where pno=#{pno}
+  	</delete>
   	
 </mapper>

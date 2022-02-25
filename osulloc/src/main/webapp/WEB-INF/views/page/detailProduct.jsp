@@ -107,7 +107,6 @@
 					<%-- ${productse.prodnum} --%>
             		<c:forEach items="${productcri}" var="productreview">
             		
-            		
             			<c:if test="${productreview.prodnum == productse.prodnum}">
             			
             				<input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
@@ -127,6 +126,13 @@
 				            				<p class="detail_right_regdate">${productreview.regdate}</p>
 				            				<p class="detail_right_title">${productreview.title}</p>
 				            				<p class="detail_right_content">${productreview.content}</p>
+				            				<c:if test="${login != null}">
+					            				<button type="button"class="detail_right_more" id="detail_right_more${productreview.pno}"  data-pno="${productreview.pno}">:</button>
+					            				<div class="more" id="more${productreview.pno}" data-pno="${productreview.pno}">
+					            					<a href="/osulloc/page/reviewModify?prodnum=${productse.prodnum}&pno=${productreview.pno}">수정</a>
+					            					<a href="/osulloc/page/reviewdelete?prodnum=${productse.prodnum}&pno=${productreview.pno}">삭제</a>
+					            				</div>
+					            			</c:if>
 				            			</div>
 			            			</div>
 			            			

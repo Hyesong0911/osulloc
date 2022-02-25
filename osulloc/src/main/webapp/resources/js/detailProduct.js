@@ -120,6 +120,17 @@ $(document).ready(function(){
 		$(".price").html(price)
 	})
 	
+	//pno값
+	let pno = $(".relistPno").val();
+	
+	$(".more").hide();
+	
+	$(".detail_right_more").click(function(){
+		$(".relistPno").val($(this).data("pno"))
+		pno = $(this).data("pno");
+		$("#more"+pno).toggle();
+	})
+	
 	$('.review').click(function(){
 		let offset = $('#reviewD').offset(); 
         $('html').animate({scrollTop : offset.top}, 400);
@@ -133,36 +144,10 @@ $(document).ready(function(){
 		actionForm.find("input[name='pageNum']").val($(this).attr("href"));	
 		actionForm.submit();	
 	})
-
-	
-	
-//	//상세페이지가 시작되자마자 이미지를 출력하기위한 ajax
-//	$.getJSON("/osulloc/page/fileList/"+pno+".json",
-//		function(data){
-//			var str="";
-//			$(data).each(function(i,obj){
-//				console.log(data)
-//				if(!obj.image){
-//					var fileCallPath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
-//					str+="<div data-path='"+obj.uploadPath+"'";
-//					str+="data-uuid='"+obj.uuid+"'data-filename='"+obj.fileName+"'data-type='"+obj.image+"'>"; 
-//					str+="<a href='/osulloc/download?fileName="+fileCallPath+"'>"+obj.fileName+"</a></div>"
-//				}else{
-//					var fileCallPath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
-//					console.log(fileCallPath)
-//					//img태그를 사용해서 웹브라우저 이미지 출력
-//					str+="<div data-path='"+obj.uploadPath+"'";
-//					str+="data-uuid='"+obj.uuid+"'data-filename='"+obj.fileName+"'data-type='"+obj.image+"'>"; 
-//					str+="<img src='/osulloc/display?fileName="+fileCallPath+"'></div>"
-//				}
-//			})
-//			$("#uploadResult").html(str)
-//		})
 		
 	$(".rewrite").hide();
 	
-	//pno값
-	let pno = $(".relistPno").val();
+
 	
 	// 댓글 버튼을 클릭하면
 	$(".addReplyBtn").on("click",function(){

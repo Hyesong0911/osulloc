@@ -2,7 +2,7 @@ package org.osulloc.controller;
 
 import java.util.ArrayList;
 
-import org.osulloc.domain.AttachFileDTO;
+
 import org.osulloc.domain.Criteria;
 import org.osulloc.domain.PageDTO;
 import org.osulloc.domain.ProductDTO;
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("page")
@@ -47,7 +48,7 @@ public class ProductReviewController {
 	}
 	
 	@GetMapping("detailProduct")
-	public void detailProduct(Model model, Criteria cri, ProductReviewDTO review, ProductDTO prod) {
+	public void detailProduct(Model model, Criteria cri/*, ProductReviewDTO review*/, ProductDTO prod) {
 		
 
 		System.out.println(prod);
@@ -59,8 +60,8 @@ public class ProductReviewController {
 		
 		//리뷰
 		
-/*		model.addAttribute("productreview", pservice.productreview(review));
-		System.out.println(pservice.productreview(review));*/
+		/*model.addAttribute("productreview", pservice.productreview(review));
+		System.out.println("productreview="+review);*/
 		
 		System.out.println("prodnum=" + pservice.productcri(cri));
 		model.addAttribute("productcri", pservice.productcri(cri));
@@ -72,6 +73,10 @@ public class ProductReviewController {
 		
 		
 	}
+	
+	
+	
+	
 	
 	@PostMapping("detailProduct")
 	public String detailProductPost(ProductDTO prod) {
@@ -85,14 +90,34 @@ public class ProductReviewController {
 		return "redirect:/page/cartPage";
 	}
 	
-//	//게시판 상세페이지에서 이미지를 출력하기 위한 select된 결과를 javascript로
-//	@GetMapping(value="/fileList/{bno}",produces= MediaType.APPLICATION_JSON_UTF8_VALUE)//ajax
-//	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(@PathVariable int bno){
-//		//System.out.println("fileList");
-//		return new ResponseEntity<>(pservice.fileList(bno),HttpStatus.OK);
-//	}
+	//글 수정 화면으로
+	@GetMapping("reviewModify")
+	public void reviewModify(ProductReviewDTO review, Model model, ProductDTO prod) {		
+		System.out.println("pno="+review.getPno());
+		//System.out.println("productse송송 = " + service.productse(prod));
+		model.addAttribute("pno", review.getPno());
+		model.addAttribute("productse", service.productse(prod));
+
+		model.addAttribute("productreview", pservice.productreview(review));
+		
+	}
 	
+	//글수정 버튼을 클릭하면
+	@PostMapping("reviewModify")
+	public String reviewModifyPost(ProductReviewDTO review) {
+		
+		pservice.modify(review);
 	
+		System.out.println("reviewModify 수정이 완료됨");
+		
+		return "redirect:/page/detailProduct?prodnum="+review.getProdnum();
+	}
 	
-	
+	//글삭제 버튼을 클릭하면
+	@GetMapping("reviewdelete")
+	public String reviewdelete(ProductReviewDTO review) {
+		pservice.delete(review);
+		
+		return "redirect:/page/detailProduct?prodnum="+review.getProdnum();
+	}
 }
