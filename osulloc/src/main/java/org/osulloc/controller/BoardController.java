@@ -29,26 +29,12 @@ public class BoardController {
 	//글쓰기 화면으로
 	@GetMapping("write")
 	public void write() {}
-	
-	//글쓰기 버튼을 클릭하면
-/*	@PostMapping("write")
-	public String writePost(BoardDTO board, AttachFileDTO aboard) {
-		System.out.println(board);
-		service.write(board);
-		
-		System.out.println(aboard);
-		service.delete(aboard);
-		
-		return "redirect:/page/detail?bno="+board.getBno();
-	}*/
+
 	
 	@PostMapping("write")
 	public String writePost(BoardDTO board) {
 		System.out.println(board);
 		service.write(board);
-		
-		/*System.out.println(board);
-		service.delete(board);*/
 		
 		return "redirect:/page/detail?bno="+board.getBno();
 	}
@@ -65,13 +51,7 @@ public class BoardController {
 		int total = service.getTotalCount(cri);
 		model.addAttribute("pageMaker", new PageDTO(cri, service.getTotalCount(cri)));
 	}
-/*	
-	@PostMapping("noticeBoardPost")
-	public void noticeBoardPost(Model model, Criteria cri) {
-		model.addAttribute("list", service.noticeBoard(cri));
-		int total = service.getTotalCount(cri);
-		model.addAttribute("pageMaker", new PageDTO(cri, service.getTotalCount(cri)));
-	}*/
+
 	
 	//게시판 목록 리스트에서 제목을 클릭하면
 	@GetMapping("detail")
@@ -84,30 +64,13 @@ public class BoardController {
 	//게시판 상세페이지에서 이미지를 출력하기 위한 select된 결과를 javascript로
 	@GetMapping(value="/fileList/{bno}",produces= MediaType.APPLICATION_JSON_UTF8_VALUE)//ajax
 	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(@PathVariable int bno){
-		//System.out.println("fileList");
+
 		System.out.println(service.fileList(bno));
 		
 		return new ResponseEntity<>(service.fileList(bno),HttpStatus.OK);
 		
 	}
 	
-	/*@PostMapping(value="/fileList/{bno}",produces= MediaType.APPLICATION_JSON_UTF8_VALUE)//ajax
-	public ResponseEntity<ArrayList<AttachFileDTO>> fileListPost(@PathVariable int bno){
-		//System.out.println("fileList");
-		System.out.println(service.fileListPost(bno));
-		
-		return new ResponseEntity<>(service.fileListPost(bno),HttpStatus.OK);
-		
-	}*/
-	
-/*	@PostMapping(value="/fileList/{bno}",produces= MediaType.APPLICATION_JSON_UTF8_VALUE)//ajax
-	public ResponseEntity<ArrayList<AttachFileDTO>> fileListPost(@PathVariable int bno){
-		//System.out.println("fileList");
-		System.out.println(service.fileListPost(bno));
-		
-		return new ResponseEntity<>(service.fileListPost(bno),HttpStatus.OK);
-		
-	}*/
 	
 	//글 수정 화면으로
 	@GetMapping("modify")
@@ -122,7 +85,6 @@ public class BoardController {
 		
 		service.fileDelete(attach);
 		System.out.println("boolean = " + service.fileDelete(attach));
-		System.out.println("bnooooooo=" + board.getBno());
 		
 		/*rttr.addAttribute("bno", board.getBno());*/
 		
@@ -130,10 +92,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("modify")
-	public String modifyPost(BoardDTO board, RedirectAttributes rttr) {
-		
-		
-		//rttr.addAttribute("bno", board.getBno());
+	public String modifyPost(BoardDTO board) {
 		
 		service.modify(board);
 		
@@ -148,14 +107,6 @@ public class BoardController {
 		service.remove(board);
 		return "redirect:/page/noticeBoard";
 	}
-	
-/*	@GetMapping("cartPage")
-	public void cartPage() {
-		System.out.println("cartPage.jsp");
-
-
-	}*/
-	
 
 
 	

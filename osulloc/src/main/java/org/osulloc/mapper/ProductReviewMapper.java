@@ -15,7 +15,6 @@ public interface ProductReviewMapper {
 	
 	//府轰 格废府胶飘
 	public ArrayList<ProductReviewDTO> productreview(ProductReviewDTO review);
-	//public void productreview (ProductReviewDTO review);
 	
 	//府轰 格废府胶飘 其捞隆
 	public ArrayList<ProductReviewDTO> productcri(Criteria cri);

@@ -48,7 +48,7 @@ public class ProductReviewController {
 	}
 	
 	@GetMapping("detailProduct")
-	public void detailProduct(Model model, Criteria cri/*, ProductReviewDTO review*/, ProductDTO prod) {
+	public void detailProduct(Model model, Criteria cri, ProductDTO prod) {
 		
 
 		System.out.println(prod);
@@ -56,16 +56,10 @@ public class ProductReviewController {
 		model.addAttribute("productse", service.productse(prod));
 
 		
-		//=========================================================
-		
 		//¸®ºä
-		
-		/*model.addAttribute("productreview", pservice.productreview(review));
-		System.out.println("productreview="+review);*/
 		
 		System.out.println("prodnum=" + pservice.productcri(cri));
 		model.addAttribute("productcri", pservice.productcri(cri));
-		System.out.println(pservice.productcri(cri));
 
 		
 		int total = pservice.getTotalCount(cri);
@@ -73,10 +67,7 @@ public class ProductReviewController {
 		
 		
 	}
-	
-	
-	
-	
+
 	
 	@PostMapping("detailProduct")
 	public String detailProductPost(ProductDTO prod) {
@@ -94,10 +85,9 @@ public class ProductReviewController {
 	@GetMapping("reviewModify")
 	public void reviewModify(ProductReviewDTO review, Model model, ProductDTO prod) {		
 		System.out.println("pno="+review.getPno());
-		//System.out.println("productse¼Û¼Û = " + service.productse(prod));
 		model.addAttribute("pno", review.getPno());
+		
 		model.addAttribute("productse", service.productse(prod));
-
 		model.addAttribute("productreview", pservice.productreview(review));
 		
 	}

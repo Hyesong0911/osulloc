@@ -22,9 +22,6 @@ public interface ProductService {
 	//力前 惑技其捞瘤 select
 	public ProductDTO productse(ProductDTO prod);
 	
-/*	public ArrayList<ProductDTO> productall(ProductDTO prod);
-*/	
-	
 	public void addProduct(ProductDTO product);
 
 

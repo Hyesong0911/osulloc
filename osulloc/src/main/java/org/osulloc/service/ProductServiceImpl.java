@@ -37,21 +37,10 @@ public class ProductServiceImpl implements ProductService{
 			return pmapper.productse(prod);
 			
 		}
-		
-		
-/*		public ArrayList<ProductDTO> productall(ProductDTO prod) {
-			
-			return pmapper.productall(prod);
-			
-		}*/
-		
-		
+
 		
 		public void addProduct(ProductDTO product) {
 			System.out.println("service="+product);
-			
-			// MerchandiseDTO에 있는 prod변수를 가지고 와서 Product변수 타입의 prod에 저장
-			//ProductDTO prod=product.getProd();
 			
 			pmapper.addProduct(product);
 

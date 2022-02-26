@@ -92,22 +92,12 @@ public class BoardServiceImpl implements BoardService{
 	public ArrayList<AttachFileDTO> fileListPost(int bno){
 		return amapper.fileListPost(bno);
 	}
-	
-	
-	
-	
-	
-	
+
 	
 	public void delete(AttachFileDTO aboard) {
 		 amapper.delete(aboard);
 	}
-	
-	
-	
-	
-	
-	
+
 	
 	public boolean fileDelete(AttachFileDTO attach) {
 		return amapper.fileDelete(attach);

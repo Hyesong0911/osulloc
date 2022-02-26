@@ -2,17 +2,11 @@ package org.osulloc.domain;
 
 public class PageDTO {
 
-	//?‹œ?‘ ?˜?´ì§? ë²ˆí˜¸
 	private int startPage;
-	//? ?˜?´ì§? ë²ˆí˜¸
 	private int endPage;
-	//?´? „ ?˜?´ì§? ?œ ë¬?
 	private boolean prev;
-	//?‹¤?Œ ?˜?´ì§? ?œ ë¬?
 	private boolean next;
-	//board?…Œ?´ë¸”ì˜ ì´? ?°?´?„° ê±´ìˆ˜
 	private int total;
-	//endPage?˜?´ì§?ë¥? ê³„ì‚°?•˜ê¸? ?œ„?•œ pageNum?´ ?•„?š”?•˜ë¯?ë¡? Criteria?´?˜?Š¤ë¥? ?¬?•¨.
 	private Criteria cri;
 	
 	
@@ -61,9 +55,7 @@ public class PageDTO {
 	public void setNext(boolean next) {
 		this.next = next;
 	}
-	
-	//==================================================
-	
+		
 	public int getTotal() {
 		return total;
 	}
