@@ -12,63 +12,157 @@
 
 </head>
 <body>
-    <div id="#wrap">
-        <header id="header">
+    <body>
+ 
+        <div class="main-signup">
+            <!--웹페이지 상단-->
             
-                <h1 class="page_tit">회원 가입</h1>
-               
-            
-
-        </header>
-
-        <div id="container">
-
-            <div class="topArea">
-
-                <h2 > 오설록에 오신것을 환영합니다. </h2>
-                <p>오설록 회원가입을 위해서 아이디와 비밀번호를 입력해주세요 </p>
-
-
-            </div>
-            
-            
+            <header>
+                <!--osulloc logo-->
+                <div class="logo">
+                    <a href="../page/mainpage" target="_blank" title="오설록 홈페이지"><img src="../resources/img/오설록 로고.png" class="image"></a>
+                </div>
+            </header>
+    
+           <!--회원가입 부분-->
            <form action="/osulloc/member/member" method="post" id="target">
-           
-            <div class="inputForm">
-                <input type="text" class="name" name="Name" id="name" placeholder="이름을 입력해주세요">
-                
-            </div>
-            <div class="idInput">
-                <label id="idmsg"></label>
-                <br>
-                <input type="text"  name="id"   id="id" placeholder="아이디(영문 또는 숫자)">
-               
-            </div>
+            <section class="signup-wrap">
+    
+                <div>
+                    <!--아이디,비번,비번재확인-->
+    
+                    <h3>아이디</h3>
+                    <span class="signup-input">
+                        <input id="signup-id" type="text" name="id"  placeholder="아이디(영문 또는 숫자)"></input>
+                       
+                    </span>
+                    <span class="final_id_ck">아이디를 입력해주세요.</span>
+                    <label class="id-correct"></label>
+    
+                    <h3>비밀번호</h3>
+                    <span class="signup-input">
+                        <input id="signup-pw"  type="password"  class ="password" name="password"  placeholder="비밀번호(영문 소문자.숫자 조합)"></input>
+                        <span class="pw-lock"></span>
+                    </span>
+    				<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
+    				<label class="pw-valid"></label>
+    				
+                    <h3>비밀번호 재확인</h3>
+                    <span class="signup-input">
+                        <input id="signup-pww" name=signup-pwCheck type="password" placeholder="한번 더 입력해주세요"></input>
+                        <span class="pww-lock"></span>
+                    </span>
+    				<label class="pw-correct"></label>
+    				<label class="pwreg"></label>
+                </div> 
+       
+                <div style="margin-top: 35px;">
+                    <!--이름,생년월일,성별,이메일-->
+                    <h3>이름</h3>
+                    <span class="signup-input">
+                        <input id="signup-name" type="text" class="name" name="Name"  placeholder="이름을 입력해주세요"></input>
+                    </span>
+                    
+    				<span class="final_name_ck">이름을 입력해주세요.</span>
+    				
+    				
+                    <h3>생년월일</h3>
+                    <span style="display: flex;">
+                        <span class="signup-input-birth">
+                            <input id="signup-birth-yy" type="text" name="year" placeholder="년(4자)"></input>
+                        </span>
+                       
+                        
+                        <span class="signup-input-birth" style="margin-left: 10px;">
+                            <select id="signup-birth-mm" class="selectbox" name="month" required>
+                                <option value="월">월</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                       
+                        
+                        
+                        <span class="signup-input-birth" style="margin-left: 10px;">
+                            <input id="signup-birth-dd" name="day" type="text" placeholder="일"></input>
+                        </span>
+                        
+                        
+                        
+                    </span>
+                    <span class="final_birth-yy_ck">태어난 년도 4자리를 정확하게 입력하세요.</span>
+                    <span class="final_birth-mm_ck">태어난 월을 선택하세요</span>
+                    <span class="final_birth-dd_ck">태어난 일(날짜) 2자리를 정확하게 입력하세요.</span>
+                    
+    
+                    <h3>성별</h3>
+                    <span class="signup-input">
+                        <select id="signup-gender" class="selectbox" name="gender" onchange="">
+                            <option value="성별">성별</option>
+                            <option value="man">남자</option>
+                            <option value="woman">여자</option>
+                            <option value="no">선택 안함</option>
+                        </select>
+                    </span>
+    			<span class="final_gender_ck">성별을 선택해주세요.</span>
+    			
+    			
+                    <span class="choice">
+                        <h3>본인 확인 이메일</h3>
+                        
+                    </span>
+                    <span class="signup-input">
+                        <input id="signup-email" name = "email" type="email" placeholder="이메일 입력"></input>
+                    </span>
+    				<span class="final_mail_ck">이메일을 입력해주세요.</span>
+                </div>
+    
+                <div style="margin-top: 35px;">
+                    <!--휴대전화-->
+                    <!-- <h3>휴대전화</h3>
+                    <span class="signup-input">
+                        <select id="signup-country" class="selectbox" name="country" onchange="">
+                            <option value="ko">대한민국 +82</option>
+                        </select>
+                    </span>
+                    <div style="display: flex;">
+                        <span class="signup-input" style="width:100%; margin: 10px 0px 0px 0px">
+                            <input id="signup-phone" type="text" placeholder="전화번호 입력"></input>
+                        </span>
+                        <span class="cnum-btn-wrap">
+                            <button id="cnum-btn">인증번호 받기</button>
+                        </span>
+                    </div>
+                    
+                    <span class="signup-input-c" style="margin-top: 10px;">
+                        <input id="signup-cnum" type="text" placeholder="인증번호 입력하세요"></input>
+                    </span>
+                </div>
+    
+                <div> -->
+                    <!--가입하기-->
+                    <div class="signup-btn-wrap">
+                        <button type="submit"  id="signup-btn" name ="submit" class=regist>가입하기</button>
+                    </div>
+                </div>
+            </section>           
+           </form> 
+    
+
+    
+        </div>
+    
+    </body>
    
-            
+    </html>
 
-            <div class="pwInput">
-                
-                <br>
-                <input name="password" id="pw" type="password" placeholder="비밀번호(영문 소문자.숫자,특수문자 조합)">
-
-            </div>
-            <div class="pwConfirm">
-               
-                <br>
-                <input type="password" id="pwc" placeholder="비밀번호 확인 ">
-            </div>
-
-            
-            <div class="confirm">
-                <input type="submit"  class="regist" value="회원가입 " >
-            </div>
-        
-        </form>
-          <!--  <a href="/osulloc/member/login"> -->
-    </div><!--#container-->
-</div><!--#wrap-->
-</body>
-	
-
-</html>

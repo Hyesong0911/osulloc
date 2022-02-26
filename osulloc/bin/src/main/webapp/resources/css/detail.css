@@ -171,10 +171,10 @@ img{
 	
 }
 
-.replyList{
+/* .replyList{
 	margin-bottom: 20px;
 	width : 1200px;
-	/* background-color : #9ac4a1; */
+	background-color : #9ac4a1;
 }
 
 .rebtn{  
@@ -216,6 +216,11 @@ img{
 	border-bottom : 1px solid #bbb;
 	
 	padding : 10px 10px;
+
+}
+
+.listReplyer b{
+	font-size : 16px;
 
 }
 
@@ -283,7 +288,7 @@ img{
 
 .replyBox_reply textarea{
 	height : 80px;
-}
+} */
 
 
  

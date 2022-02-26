@@ -26,7 +26,7 @@
 	
 		<div class="container">
 			<h1 class="titleW">수정내용 입력</h1>
-			<form action="/osulloc/page/modify" method="post" role="form">
+			<form id = "actionForm" action="/osulloc/page/modify" method="post" role="form">
 			
 				<div class = "modifyBtn">
 			    	<button class="write"><input type="submit" value="수정" ></button>
@@ -50,10 +50,14 @@
 				        <input type="file" name="uploadFile" class="file" multiple>
 				    </div>
 				    
+				    
+				    
 		       </div>
 		       
 		       
 			</form>
+			
+
 
 		</div>
 	</div>	

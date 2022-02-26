@@ -12,7 +12,8 @@
   	
   	<insert id="insertSelectKey" >
   		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-  			select max(bno)+1 bno from board
+  			<!-- select max(bno)+1 bno from board -->
+  			select ifnull (MAX(bno), 0 )+1 from board
   		</selectKey>
   		insert into board(bno,title,content,writer)
 		value(#{bno},#{title},#{content},#{writer})
@@ -24,33 +25,34 @@
 				from (select @rownum:=0) as tmp, board as b
 		  	 <choose>
 		  	 	<when test="search == null">
-			      where 1=1
+			      where 1=1 order by bno desc
 			    </when>
 			    <when test="search == 'T'.toString()">
-			      where title like concat('%',#{keyword},'%')
+			      where title like concat('%',#{keyword},'%') order by bno desc
 			    </when>
 			   	<when test="search == 'C'.toString()">
-			      where content like concat('%',#{keyword},'%')
+			      where content like concat('%',#{keyword},'%') order by bno desc
 			    </when>
 			    <when test="search == 'W'.toString()">
-			      where writer like concat('%',#{keyword},'%')
+			      where writer like concat('%',#{keyword},'%') order by bno desc
 			    </when>
 			    <when test="search == 'TC'.toString()">
 			      where title like concat('%',#{keyword},'%') 
-			      or content like concat('%',#{keyword},'%')
+			      or content like concat('%',#{keyword},'%') order by bno desc
 			    </when>
 			    <otherwise>
 			      where title like concat('%',#{keyword},'%') 
 			      or content like concat('%',#{keyword},'%') 
-			      or writer like concat('%',#{keyword},'%')
+			      or writer like concat('%',#{keyword},'%') order by bno desc
 			    </otherwise>
 			</choose>
-		) as boardList
+		) as boardList 
 		<![CDATA[ 
 			where rownum > (#{pageNum}-1)*#{amount} 
-			and rownum <= #{pageNum}*#{amount};
+			and rownum <= #{pageNum}*#{amount} 
 		]]> 
   	</select>
+
   	
   	<select id="detail" resultType="org.osulloc.domain.BoardDTO">
   		select*from board where bno=#{bno}
@@ -90,6 +92,7 @@
 			regdate=now()
 		where bno=#{bno}
   	</update>
+  	
   	<delete id="remove">
   		delete from board where bno=#{bno}
   	</delete>

@@ -18,13 +18,17 @@
 	<script src="../resources/js/header.js"></script>
 </head>
 <body>
+
 	<%@ include file="../Header&Footer/header.jsp" %>
 	<div class="wrap">
 		<div class="container">
 			<h1 class="titleW">게시판 글쓰기</h1>
 			<form action="/osulloc/page/write" method="post" role="form">
+			
+				<input type="hidden" name = "writer" value="${login.id}">
+				
 				<div class = "modifyBtn">
-			    	<button class="write"><input type="submit" value="글쓰기" ></button>
+			    	<button class="write"><input type="submit"value="글쓰기" ></button>
 			    	<button class="list"><a href="/osulloc/page/noticeBoard" >목록으로</a></button>
 			    </div>
 				<div>
