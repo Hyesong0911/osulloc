@@ -33,19 +33,9 @@
 				    <div>
 				    	<textarea rows="30" cols="20" name="content"  class="content" placeholder="내용을 입력하세요">${productreview[0].content}</textarea>
 				    </div>
-				    <!-- <div id="uploadResult">
-				   		<ul></ul>
-				   	</div>
-				    <div>가상의 form태그를 만들어 줌
-				        <input type="file" name="uploadFile" class="file" multiple>
-				    </div> -->
 		       	</div>
 		       	<div class = "writeBtn">
-			    	<button class="write" type="submit">
-			    		<%-- <a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}"> --%>
-			    			수정하기
-			    		<!-- </a> -->	
-			    	</button>
+			    	<button class="write" type="submit">수정하기</button>
 			    	<button class="list">
 			    		<a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}">목록으로</a>
 			    	</button>

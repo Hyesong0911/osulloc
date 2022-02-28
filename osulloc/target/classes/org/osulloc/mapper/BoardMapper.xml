@@ -12,7 +12,6 @@
   	
   	<insert id="insertSelectKey" >
   		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-  			<!-- select max(bno)+1 bno from board -->
   			select ifnull (MAX(bno), 0 )+1 from board
   		</selectKey>
   		insert into board(bno,title,content,writer)

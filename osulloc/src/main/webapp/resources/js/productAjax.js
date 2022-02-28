@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	
-	
 	var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$")  // 자바스크립트 정규식 
 	
 	var maxSize=5242880;  // 5MB
@@ -32,11 +31,6 @@ $(document).ready(function(){
 			console.log(obj);
 			let fileCallPath = encodeURIComponent(obj.uploadpath+"/s_"+obj.uuid+"_"+obj.filename);
 			//img 태그를 사용하여 웹브라우저에 출력
-			/*
-	        str+="<li data-path='"+obj.uploadpath+"'";
-	        str+=" data-uuid='"+obj.uuid+"' data-filename='"+obj.filename+"'>";
-	        str+="<img src='/osulloc/display?fileName="+fileCallPath+"'></li>";
-	        */
 	        str2+="<input type='text' name='filename' value='"+obj.filename+"'>"
 	        str2+="<input type='text' name='uuid' value='"+obj.uuid+"'>"
 	        str2+="<input type='text' name='uploadpath' value='"+obj.uploadpath+"'>"
@@ -49,27 +43,6 @@ $(document).ready(function(){
 	}
 	     
     var cloneObj = $(".uploadDiv").clone();  
-    
-    /*
-    var uploadResult = $(".uploadResult ul");
-    
-    uploadResult.append(str);
-    function showUploadedFile(uploadResultArr){
-    	
-    	var str = "";
-    	
-    	$(uploadResultArr).each(function(i,obj){
-    		console.log(obj)
-    		str+= "<li><img src='../resources/img/fileupload.png'>" + obj.pname + "</li>"
-	    		
-	    		
-	            
-	            
-	            
-
-	    		
-	    		
-	    	});*/
 	    	
     const formObj = $("#productForm");	
 
@@ -79,11 +52,6 @@ $(document).ready(function(){
 		var inputFile=$("input[name='uploadFile']");
 		var files=inputFile[0].files;
 		console.log(inputFile);
-		
-		
-		
-		
-		
 		
 		for(var i = 0 ; i<files.length; i++){
 			
@@ -99,37 +67,21 @@ $(document).ready(function(){
 			
 		}
 		
-	  
-		
 		$.ajax({
 			url:"/osulloc/page/productAjaxAction",
 			type:"POST",
 			processData:false,
 			contentType:false,
-			data:formData,    //서버(MerchandiseController)로 부터 전송된 데이터 타입
+			data:formData,  
 			dataType:"json",
 			success:function(result){
 				console.log(result)
-				/*showUploadedFile(result)*/
 				alert("업로드 되었습니다.")
 				showUploadedFile(result);
 				
 				$(".uploadDiv").html(cloneObj.html()); 
 			} 
 		})
-/*		
-		let str2="";
-	      $(uploadResult).each(function(i,obj){
-	    	  console.log($(uploadResult));
-	    	  console.log(obj);
-	    	  str2+="<input type='text' name='filename' value='"+$(obj).data("filename")+"'>"
-	          str2+="<input type='text' name='uuid' value='"+$(obj).data("uuid")+"'>"
-	          str2+="<input type='text' name='uploadpath' value='"+$(obj).data("path")+"'>"
-	      })
-	      console.log(str2);
-	      formObj.append(str2)
-		//.submit();
-*/		
 	});
 	
 });

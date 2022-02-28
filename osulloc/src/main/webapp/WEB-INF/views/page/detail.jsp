@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="../resources/css/header.css" type="text/css">
     <link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<!-- <script type="text/javascript" src="../resources/js/detail.js"></script> -->
 	<script src="../resources/js/header.js"></script>
 	
     <title>Document</title>
@@ -24,25 +23,6 @@
 <body>
 <%@ include file="../Header&Footer/header.jsp" %>
     <div class="wrap">
-        <!-- <div class="bc_header">
-            <h1>고객센터</h1>
-            <ul>
-                <li class = "line">
-                    <a href="">오설록 뉴스</a>S
-                </li>
-                <li>
-                    <a href="">Event</a>
-                </li>
-                <li>
-                    <a href="">Q&A</a>
-                </li>
-                <li>
-                    <a href="">Membership&Point</a>
-                </li>
-            </ul>
-        </div>본문_헤더 -->
-        
-        
         <div class="board_container">
             <div class="bc_container">
             	<div id="bno">${detail.bno}</div>
@@ -51,7 +31,6 @@
 	                    <h2>${detail.title}</h2>
 	               
 	                </div><!--본문_본문_제목-->
-	                
 	                
 	                <div class="bcc_header2">
 	                
@@ -65,8 +44,7 @@
 	                    </div>
 	                    
 	                </div><!--본문_본문_제목-->
-	                
-	                
+	                 
                 </div>
                 
                 <div class="bbc_container">
@@ -76,41 +54,7 @@
                	<div id="uploadResult">
 			   		<ul></ul>
 			   	</div>
-			   	
-			   	
-                <%-- <div class="replyList">
-                	<button class="rebtn" id="addReplyBtn">
-		               	댓글
-		            </button>
-	                <div class="rewrite">
-	                	<div>
-			            	<ul id="relist"></ul>
-			            </div>
-			            
-			            <div class="replyBox">
-	                       <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-	                       <h4>댓글 쓰기</h4>
-	                       <input type="hidden" name="rno" class="">
-	                       <div class='replyBox_replyer'>
-		                  		<label>Replyer</label><br>
-		                       	<input type="text" name="replyer" value="${login.id}">
-	                       </div>
-	                       <div class='replyBox_reply'>
-	                       		<label>Reply</label><br>
-	                       		<textarea rows="" cols="" name="reply"  }></textarea>
-	                       </div>
-	                       <div class="replyFooter modal-footer">
-			                   	<button type="button" class="rebtn" id="replyRegisterBtn">댓글쓰기</button>
-			                   	<button type="button" class="rebtn" id="replyModBtn">댓글수정</button>
-			                   	<button type="button" class="rebtn" id="replyRemoveBtn">댓글삭제</button>
-		                      	<button type="button" class="rebtn" id="close">Close</button>
-		                   </div>
-	                   </div>	 
-	                                     
-				    </div>
-                </div> --%>
-                
-                
+			   
                 <div class="board_btn">
                     <a href="/osulloc/page/noticeBoard" class="b_btn">목록</a>
                     
@@ -126,11 +70,11 @@
             </div><!--본문_본문-->
             
             <form>
-            <div class="bc_footer">
-                <ul>
-                    <c:if test="${not empty detail2.prebno}">
-                    
-	                    <li>
+	            <div class="bc_footer">
+	                <ul>
+	                    <c:if test="${not empty detail2.prebno}">
+	                    
+		                    <li>
 	                            <p class="footer_title1">이전글</p>
 	                            
 	                            <p class="footer_title">
@@ -138,36 +82,32 @@
 	                            </p>
 	                            
 	                            <p class="footer_title2">${detail2.preregdate}</p>
-	
-	                    </li>
-                    
-                    
-                    </c:if>
-                    
-                    <c:if test="${not empty detail2.nextbno}">
-                    
-	                    <li>
-	
+		
+		                    </li>
+	                    
+	                    
+	                    </c:if>
+	                    
+	                    <c:if test="${not empty detail2.nextbno}">
+	                    
+		                    <li>
+		
 	                            <p class="footer_title1">다음글</p>
 	                            
 								<p class="footer_title">
 	                            	<a href="/osulloc/page/detail?bno=${detail2.nextbno}">${detail2.nexttitle}</a>
 	                            </p>                            
 	                            <p class="footer_title2">${detail2.nextregdate}</p>
-	
-	                    </li>
-                    
-                    </c:if>
-                </ul>
-            </div><!--본문_푸터-->
+		
+		                    </li>
+	                    
+	                    </c:if>
+	                </ul>
+	            </div><!--본문_푸터-->
             </form>
-            
-            
         </div><!--본문-->
     </div>
 <%@ include file="../Header&Footer/footer.jsp" %>
 <script type="text/javascript" src="../resources/js/detail.js"></script>
 </body>
 </html>
-
-<!-- a -->

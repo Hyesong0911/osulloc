@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-    //img는 배열에 저장되어 있어 0부터 시작
-    //자식을 셀 때는 1부터 시작
-    
-    // 자동 pager
-
     let i = 0;
 
     setInterval(function(){
@@ -27,8 +22,6 @@ $(document).ready(function(){
             i = 0;
 
         }
-
-        // $('.on a').css("background", "#cbe0c2");
 
     }, 2000)
 
@@ -62,78 +55,15 @@ $(document).ready(function(){
 
     })
 
-    //gnb hover slide
-//
-//    $(".menus").slideUp();
-//
-//    $(".gnb li").hover(
-//s
-//        function(){
-//
-//        $(".menus").slideDown("slow");
-//    },
-//
-//    function(){
-//
-//        $(".menus").slideUp("slow");
-//
-//    })
-    
-    //===============================================
-	//상품 박스 화살표
-	
-//	$(".main3_a").hide();
-//	
-//	$("#proSubmit").on("click", function(){
-//		
-//			
-//			$(".main3_a").show();
-//			
-//	
-//	})
-	    
-    
-    
-//    $("input[type='submit']").on("click", function(e){
-//    	
-//    	
-//    	e.preventDefault();
-//    
-//    
-//    })
-    
-    
-    
-    
-    
-    
-    
-
 })//jQuery 끝
-
-
-
-//바뀌는 동시에 이미지도 바뀌어야 한다.
-
-//imgslide.js
-
 
 let  msImg = document.querySelector(".msImg");
 let magazine = document.querySelector(".magazine");
 
 function imgslide(c){
 
-    // console.log(c)
     let imgs = ["다운로드 (3).jpg", "차.jpg" ,"tea_time4.jpg","tea_time5.jpg", "tea_time1.jpg"];
 
     magazine.setAttribute("src", "../resources/img/" + imgs[c]);
 
 }
-
-
-
-
-
-
-
-

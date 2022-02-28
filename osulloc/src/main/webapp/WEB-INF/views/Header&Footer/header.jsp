@@ -106,10 +106,4 @@
             </div><!--.headerIn-->
               <div class="gnbBg"></div>
         </div><!--.header-->
-        
-        <!-- <div class="headerBottom">
-                	 <div class="menus">
-	
-		            </div>
-              </div>headerBottom -->
 	</div><!-- .wrap -->

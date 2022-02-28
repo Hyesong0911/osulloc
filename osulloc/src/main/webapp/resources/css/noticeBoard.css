@@ -118,11 +118,6 @@ h2{
 
 }
 
-.blind{
-
-  
-}
-
 .showNum{
   width: 100px;
   height: 30px;
@@ -170,7 +165,6 @@ h2{
   margin-right: 10px;
 
   text-align: center;
-  /*  ddd*/
   
 }
 
@@ -191,80 +185,80 @@ h2{
 }
 
 .good{
-  width: 10%;
-  margin-right: 10px;
-
-  text-align: center;
+	width: 10%;
+	margin-right: 10px;
+	
+	text-align: center;
 
 }
 
 
 
 .conBottom{
-  width: 900px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-
-  display: flex;
-  justify-content: space-between;
+	width: 900px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	
+	display: flex;
+	justify-content: space-between;
 
 
 }
 
 #selectdate{
-  width: 100px;
-  height: 30px;
-
-  border: 1px solid rgb(178, 199, 183);
-
-  margin-top: 20px;
+	width: 100px;
+	height: 30px;
+	
+	border: 1px solid rgb(178, 199, 183);
+	
+	margin-top: 20px;
 
 }
 
 #selectQ{
-  width: 100px;
-  height: 30px;
-
-  border: 1px solid rgb(178, 199, 183);
-
-  position: absolute;
-  right: 120px;
-  bottom : 0px;
+	width: 100px;
+	height: 30px;
+	
+	border: 1px solid rgb(178, 199, 183);
+	
+	position: absolute;
+	right: 120px;
+	bottom : 0px;
 
 }
 
 #keyword{
 
-  height : 30px;
-  border: 1px solid rgb(178, 199, 183);
-  
-  margin-bottom: 35px;
+	height : 30px;
+	border: 1px solid rgb(178, 199, 183);
+	
+	margin-bottom: 35px;
 
 }
 
 
 .conB2{
-  width: 60px;
-  height: 30px;
-
-  border: 1px solid rgb(178, 199, 183);
-
-  
-
-  background-color: rgb(177, 223, 177);
+	width: 60px;
+	height: 30px;
+	
+	border: 1px solid rgb(178, 199, 183);
+	
+	
+	
+	background-color: rgb(177, 223, 177);
 }
 
 .writeB{
 	
-  width: 90px;
-  height: 35px;
-
-  border: 1px solid rgb(178, 199, 183);
-  border-radius: 20px;
-  
-  background-color: rgb(177, 223, 177);
+	width: 90px;
+	height: 35px;
 	
-  margin-top : 10px;
+	border: 1px solid rgb(178, 199, 183);
+	border-radius: 20px;
+	
+	background-color: rgb(177, 223, 177);
+	
+	margin-top : 10px;
 	
 }
 
@@ -298,55 +292,50 @@ h2{
 }
 
 .pageL, .pageR{
-  display: flex;
-  
-  width: 40px;
-  height: 40px;
-  margin: 0 5px 0 5px;
-  /* text-align: center; */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 20px 0px 20px 0px;
-
-  background-color: rgb(199, 185, 145);
+	display: flex;
+	
+	width: 40px;
+	height: 40px;
+	margin: 0 5px 0 5px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 20px 0px 20px 0px;
+	
+	background-color: rgb(199, 185, 145);
 }
 
 .next{
-  width: 40px;
-  height: 40px;
-  text-align: center;
-
-  background-color: darkgrey;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	
+	background-color: darkgrey;
 }
 
 .moreNext{
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  background-color: rgb(226, 219, 219);
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	background-color: rgb(226, 219, 219);
 }
 
 .pageC{
-  display: flex;
+	display: flex;
 }
 
 .pageC .PNum{
-  width: 40px;
-  height: 40px;
-  margin: 0 5px 0 5px;
-  /* text-align: center; */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 20px 0px 20px 0px;
-
-  background-color: rgb(189, 218, 189);
+	width: 40px;
+	height: 40px;
+	margin: 0 5px 0 5px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 20px 0px 20px 0px;
+	
+	background-color: rgb(189, 218, 189);
 }
-
-/* a */
-

@@ -41,7 +41,7 @@
 				    <div id="uploadResult">
 				   		<ul></ul>
 				   	</div>
-				    <div><!--가상의 form태그를 만들어 줌-->
+				    <div>
 				        <input type="file" name="uploadFile" class="file" multiple>
 				    </div>
 		       </div>

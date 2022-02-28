@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service // 서비스 역활 부여
+@Service
 public class BoardServiceImpl implements BoardService{ 
 	@Autowired
 	private BoardMapper bmapper;

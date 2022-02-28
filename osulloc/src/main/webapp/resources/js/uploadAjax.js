@@ -74,19 +74,6 @@ $(document).ready(function(){
 		
 		})//$.ajax끝
 		
-
-		//=======================================================
-		
-//		var str="";
-//		//li태그에 있는
-//		$("#uploadResult ul li").each(function(i,obj){
-//			console.log(obj);
-//			str+="<input type='text' name='attachList["+i+"].fileName' value='"+$(obj).data("filename")+"'>"
-//			str+="<input type='text' name='attachList["+i+"].uuid' value='"+$(obj).data("uuid")+"'>"
-//			str+="<input type='text' name='attachList["+i+"].uploadPath' value='"+$(obj).data("path")+"'>"
-//			str+="<input type='text' name='attachList["+i+"].image' value='"+$(obj).data("type")+"'>"
-//		})
-//		formObj.append(str);
 	})
 
 	var actionForm = $("#actionForm");
@@ -94,13 +81,9 @@ $(document).ready(function(){
 	$("#uploadResult").on("click", "button", function(){
 		
 		console.log("aaa");
-		
-		//let bno = $("#bno").html();
 
 		
 		 if (confirm("파일을 삭제하시겠습니까?")) {
-			/*var targetFile = $(this).data("file");
-			var type = $(this).data("type");*/
 		    var targetLi = $(this).closest("li");
 		    
 		    

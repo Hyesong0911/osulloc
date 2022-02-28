@@ -24,16 +24,6 @@
 			<form action="/osulloc/page/reviewWrite" method="post" role="form">
 				<input type="hidden" name="prodnum" value="${productse.prodnum}">
 				<input type="hidden" name = "writer" value="${login.id}">
-				<%-- <div class = "modifyBtn">
-			    	<button class="write" type="submit">
-			    		<a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}">
-			    			글쓰기
-			    		<!-- </a> -->	
-			    	</button>
-			    	<button class="list">
-			    		<a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}">목록으로</a>
-			    	</button>
-			    </div> --%>
 				<div>
 				    <div>
 				        <input type="text" name="title" class="title" placeholder="제목을 입력해 주세요">
@@ -41,19 +31,9 @@
 				    <div>
 				    	<textarea rows="30" cols="20" name="content"  class="content" placeholder="내용을 입력하세요"></textarea>
 				    </div>
-				    <!-- <div id="uploadResult">
-				   		<ul></ul>
-				   	</div>
-				    <div>가상의 form태그를 만들어 줌
-				        <input type="file" name="uploadFile" class="file" multiple>
-				    </div> -->
 		       	</div>
 		       	<div class = "writeBtn">
-			    	<button class="write" type="submit">
-			    		<%-- <a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}"> --%>
-			    			글쓰기
-			    		<!-- </a> -->	
-			    	</button>
+			    	<button class="write" type="submit">글쓰기</button>
 			    	<button class="list">
 			    		<a href="/osulloc/page/detailProduct?prodnum=${productse.prodnum}">목록으로</a>
 			    	</button>

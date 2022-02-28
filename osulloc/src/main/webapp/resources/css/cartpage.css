@@ -72,8 +72,6 @@ h2{
 
 .cInfo{
 
-   /*  text-align: center; */
-
     margin-top: 100px;
 
     padding: 50px 40px;
@@ -118,12 +116,6 @@ h2{
 
 }
 
-/* .cInfo #other2{
-	margin-left : 10px;
-} */
-
-
-
 .btns{
 
     text-align: center;
@@ -140,8 +132,6 @@ h2{
     border: 1px solid #9ac4a1;
 
 }
-
-
 
 .commodity{
     width: 750px;
@@ -172,17 +162,18 @@ h2{
   /* 스크롤바 너비 조절하는 부분 */
   width: 13px; 
 }
+
 .commodity ul::-webkit-scrollbar,
 .commodity ul::-webkit-scrollbar-thumb {
   overflow:visible;
   border-radius: 4px;
 
 }
+
 .commodity ul::-webkit-scrollbar-thumb {
   background: rgb(232, 241, 237);
   
 }
-
 
 .commodity li{
     width: 212px;
@@ -232,8 +223,6 @@ li .pic2{
     height: 200px;
 
     margin-left: 15px;
-    /* object-position: 15px; */
-    /* background-color: rgb(127, 208, 255); */
 }
 
 .cart-num{
@@ -285,23 +274,3 @@ li .pic2{
     border-radius: 20px;
 
 }
-
-
-
-
-/* .tea{
-    display: block;
-
-    width: 159px;
-    height: 112px;
-
-    background-image: url(../img/찻잔2.png);
-    background-size: 100% auto;
-    background-position: -36px -100px;
-    background-repeat: no-repeat; 
-
-    text-indent: -99999px;
-
-    background-color: rgb(129, 166, 199);
-
-} */

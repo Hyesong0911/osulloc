@@ -13,9 +13,6 @@ public class ReplyReviewServiceImpl implements ReplyReviewService{
 	private ReplyReviewMapper rmapper;
 	//댓글 쓰기 설계된 것을 구현
 	public int write(ReplyReviewDTO rdto) {
-		//insert 성공시 ReplyMapper.java로 부터 1,
-		//insert 실패시 ReplyMapper.java로 부터 0
-		//값을 리턴받는다.
 		return rmapper.write(rdto);
 	}
 	//댓글 목록 리스트 설계된 것을 구현
@@ -30,17 +27,11 @@ public class ReplyReviewServiceImpl implements ReplyReviewService{
 	
 	//댓글 수정 설계된 것을 구현
 	public int update(ReplyReviewDTO rdto) {
-		//update 성공시 ReplyMapper.java로 부터 1,
-		//update 실패시 ReplyMapper.java로 부터 0
-		
-		System.out.println("rdto222="+rdto);
 		return rmapper.update(rdto);
 	}
 	
 	//댓글 삭제 설계된 것을 구현
 	public int remove(ReplyReviewDTO rdto) {
-		//remove 성공시 ReplyMapper.java로 부터 1,
-		//remove 실패시 ReplyMapper.java로 부터 0
 		return rmapper.remove(rdto);
 	}
 }

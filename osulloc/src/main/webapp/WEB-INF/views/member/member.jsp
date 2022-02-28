@@ -128,28 +128,6 @@
                 </div>
     
                 <div style="margin-top: 35px;">
-                    <!--휴대전화-->
-                    <!-- <h3>휴대전화</h3>
-                    <span class="signup-input">
-                        <select id="signup-country" class="selectbox" name="country" onchange="">
-                            <option value="ko">대한민국 +82</option>
-                        </select>
-                    </span>
-                    <div style="display: flex;">
-                        <span class="signup-input" style="width:100%; margin: 10px 0px 0px 0px">
-                            <input id="signup-phone" type="text" placeholder="전화번호 입력"></input>
-                        </span>
-                        <span class="cnum-btn-wrap">
-                            <button id="cnum-btn">인증번호 받기</button>
-                        </span>
-                    </div>
-                    
-                    <span class="signup-input-c" style="margin-top: 10px;">
-                        <input id="signup-cnum" type="text" placeholder="인증번호 입력하세요"></input>
-                    </span>
-                </div>
-    
-                <div> -->
                     <!--가입하기-->
                     <div class="signup-btn-wrap">
                         <button type="submit"  id="signup-btn" name ="submit" class=regist>가입하기</button>
@@ -157,9 +135,7 @@
                 </div>
             </section>           
            </form> 
-    
 
-    
         </div>
     
     </body>

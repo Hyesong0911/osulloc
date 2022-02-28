@@ -73,86 +73,64 @@ $(document).ready(function(){
            }else{
                $('.final_birth-yy_ck').css('display', 'none');
                idCheck = true;
-            }
-            
-        
+           }
         
 	});
-    
-    
-	    		/* 생년월일 (월) */
-	    
-	    
-			$("#signup-birth-mm").focusout(function(){
-			
-			
-			var birthmm = $('#signup-birth-mm').val();
-				
-				  if(birthmm == "월"){
-				   $('.final_birth-mm_ck').css('display','block');
-				       idCheck = false;
-				   }else{
-				       $('.final_birth-mm_ck').css('display', 'none');
-				           idCheck = true;
-				        }
-			        
-			    
-			    
-			});
+
+	    /* 생년월일 (월) */
+
+	$("#signup-birth-mm").focusout(function(){
+	
+	
+		var birthmm = $('#signup-birth-mm').val();
+		
+		  if(birthmm == "월"){
+		   $('.final_birth-mm_ck').css('display','block');
+		       idCheck = false;
+		   }else{
+		       $('.final_birth-mm_ck').css('display', 'none');
+		           idCheck = true;
+		   }
+
+	});
+
+
+		/* 생년월일 (일) */
+
+    $("#signup-birth-dd").focusout(function(){
 		
 		
-				/* 생년월일 (일) */
+    	var birthdd = $('#signup-birth-dd').val();
+    		
+          if(birthdd == ""){
+               $('.final_birth-dd_ck').css('display','block');
+               idCheck = false;
+           }else{
+               $('.final_birth-dd_ck').css('display', 'none');
+               idCheck = true;
+            }
+
+	});
     
-		    $("#signup-birth-dd").focusout(function(){
-				
-				
-		    	var birthdd = $('#signup-birth-dd').val();
-		    		
-		          if(birthdd == ""){
-		               $('.final_birth-dd_ck').css('display','block');
-		               idCheck = false;
-		           }else{
-		               $('.final_birth-dd_ck').css('display', 'none');
-		               idCheck = true;
-		            }
-		            
-		        
-		        
-			});
-		    
-		    /* 생년월일 (일) */
-		    
-		    $("#signup-birth-dd").focusout(function(){
-				
-				
-		    	var birthdd = $('#signup-birth-dd').val();
-		    		
-		          if(birthdd == ""){
-		               $('.final_birth-dd_ck').css('display','block');
-		               idCheck = false;
-		           }else{
-		               $('.final_birth-dd_ck').css('display', 'none');
-		               idCheck = true;
-		            }
-		            
-		        
-		        
-			});
+    /* 생년월일 (일) */
+    
+    $("#signup-birth-dd").focusout(function(){
+		
+		
+    	var birthdd = $('#signup-birth-dd').val();
+    		
+          if(birthdd == ""){
+               $('.final_birth-dd_ck').css('display','block');
+               idCheck = false;
+           }else{
+               $('.final_birth-dd_ck').css('display', 'none');
+               idCheck = true;
+           }
+
+	});
 			
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-        
         /* 성별  검사 */
-		
-	
+
 	$("#signup-gender").focusout(function(){
 		
 		
@@ -166,94 +144,84 @@ $(document).ready(function(){
             $('.final_gender_ck').css('display', 'none');
             idCheck = true;
         }
-        
-        
-		
 	});
 	
 	
-		 /* 이메일 검사 */
-				
+		 /* 이메일 검사 */		
 			
-			$("#signup-email").focusout(function(){
-				
-				
-				var email = $('#signup-email').val();
-				
-			
-		        if(email == ""){
-		            $('.final_mail_ck').css('display','block');
-		            idCheck = false;
-		        }else{
-		            $('.final_mail_ck').css('display', 'none');
-		            idCheck = true;
-		        }
-		        
-		        
-			});
-		        
-		       //  비밀번호 유효성검사 일치, 불일치   
-		        $("#signup-pww").blur(function(){
-		        	var pw = $('#signup-pw').val();
-		        	var pww = $('#signup-pww').val();
-
-		        	if($('#signup-pw').val() == $('#signup-pww').val()){
-			            $('.pw-correct').html("비밀번호가 일치합니다.");
-			            $('.pw-correct').css('color','red')
-			            
-			        }else{
-			        	console.log("bbb")
-			        	$('.pw-correct').html("비밀번호가 불일치합니다.");
-			        	$('.pw-correct').css('color','red')
-			            idCheck = true;
-			        }
-			});
-		        
-		        
-		        /*아이디 정규식*/
-		        
-		        
-		        var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
-		        $("#signup-id").blur(function(){
-		        	
-			        if( !idReg.test( $("input[name=id]").val())) {
-			           $('.id-correct').text("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-			           $('.id-correct').css('color','red')
-			           $(this).focus();
-			           
-			        
-			        }else{
-			        	$("input[name=id]").val() !=(""); 
-			        	$('.id-correct').text("알맞은 아이디입니다.");
-			        	$('.id-correct').css('color','red')
-			        }
-			       
-			        	
-			        	
-			       
-			        
+	$("#signup-email").focusout(function(){
 		
-		        });
-		        
-		        
-		        /* 비밀번호 정규식*/		        
-		        $("#signup-pw").blur(function(){
-		        
-		        	var reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+		var email = $('#signup-email').val();
+		
+	
+	    if(email == ""){
+	        $('.final_mail_ck').css('display','block');
+	        idCheck = false;
+	    }else{
+	        $('.final_mail_ck').css('display', 'none');
+	        idCheck = true;
+	    }
+	    
+	    
+	});
+	    
+	   //  비밀번호 유효성검사 일치, 불일치   
+	    $("#signup-pww").blur(function(){
+	    	var pw = $('#signup-pw').val();
+	    	var pww = $('#signup-pww').val();
+	
+	    	if($('#signup-pw').val() == $('#signup-pww').val()){
+	            $('.pw-correct').html("비밀번호가 일치합니다.");
+	            $('.pw-correct').css('color','red')
+	            
+	        }else{
+	        	console.log("bbb")
+	        	$('.pw-correct').html("비밀번호가 불일치합니다.");
+	        	$('.pw-correct').css('color','red')
+	            idCheck = true;
+	        }
+	});
+    
+    
+    /*아이디 정규식*/
+    
+    
+    var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+    $("#signup-id").blur(function(){
+    	
+        if( !idReg.test( $("input[name=id]").val())) {
+           $('.id-correct').text("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
+           $('.id-correct').css('color','red')
+           $(this).focus();
+           
+        
+        }else{
+        	$("input[name=id]").val() !=(""); 
+        	$('.id-correct').text("알맞은 아이디입니다.");
+        	$('.id-correct').css('color','red')
+        }
 
-		        	if(!reg.test($("#signup-pw").val())){
-		        		 
-		        		 $('.pw-valid').html("'영문, 숫자, 특수문자 혼합하여 8~20자리 이내의 비밀번호 사용해야합니다.'");
-				         $('.pw-valid').css('color','red')
-				        
-				         
-		        	}else{
-		        		
-		        		 $("#signup-pw").val() !=(""); 
-		        		 $('.pw-valid').html("알맞은 비밀번호입니다.")
-		        	}
+    });
+    
+    
+    /* 비밀번호 정규식*/		        
+    $("#signup-pw").blur(function(){
+    
+    	var reg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
-		        });
+    	if(!reg.test($("#signup-pw").val())){
+    		 
+    		 $('.pw-valid').html("'영문, 숫자, 특수문자 혼합하여 8~20자리 이내의 비밀번호 사용해야합니다.'");
+	         $('.pw-valid').css('color','red')
+	        
+	         
+    	}else{
+    		
+    		 $("#signup-pw").val() !=(""); 
+    		 $('.pw-valid').html("알맞은 비밀번호입니다.")
+    	}
+
+    });
 
 		        
 	/* 가입하기 버튼 눌럿을 때  빈칸 alert창  띄우기 */
@@ -315,8 +283,6 @@ $(document).ready(function(){
 			$("#signup-email").focus();
 			return false;
 		}
-		
-		
-		
+
 	});
 });

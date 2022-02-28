@@ -37,71 +37,46 @@ img{
     position: relative;
     right: -280px;
     top: 40px;
-    /*background-image: url(/resources/img/logo_m.png);
-    background-repeat: no-repeat;
-    background-size: 58px;
-    text-indent: -999999px; */
-
 }
 .homeback img{
 	 width: 250px;
 }
 
 
-.headerBox{
-   
+.headerBox{ 
     width: 602px;
     height: 54px;
-    /* margin-bottom: 20px; */
-    /* margin: 0 auto; */
-    /* position: relative; */
-    /* border-bottom: 1px solid #000 ; */
-    
-    position : relative;
-    
-
-    
+    position : relative;  
 }
+
 hr{
     color: rgba(224, 219, 219, 0.712);
 }
 
 .headerBox h1{
-    /* text-align: center; */
     font-size: 16px;
     line-height: 54px;
     font-weight: 500;
     display: flex;
-    justify-content: center;
-    
-    
-    
-    
-    /* background-color: aqua; */
-    
+    justify-content: center; 
 }
 
 .btn_close{
     position: absolute;
     top: 15px;
     right: 30px;
-
     border-style: none;
     background-color: rgba(255, 255, 255, 0.5);
     background-image: url(../img/btn_title_close.png);
     background-size: 25px;
-
     background-repeat: no-repeat;
     
 }
 
 .btn_close a{
-    
     display : inline-block;
 	width : 100%;
-	height : 100%;
-
-    
+	height : 100%; 
 }
 
 #notice{
@@ -114,15 +89,11 @@ hr{
     letter-spacing: -1px;
     color: #000;
     margin: 0 auto;
-    margin-top: 40px;
-    
-    /* background-color: blue; */
-    
+    margin-top: 40px;    
 }
 
 #login_box{
     width: 800px;
-    /* background-color: #EEEFF1; */
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
@@ -138,10 +109,8 @@ hr{
     border: 1px solid #e6e6e6;
     margin-bottom: 10px;
     cursor: text;
-    
     padding : 0 10px;
     box-sizing : border-box;
-    /* border: none; */
 }
 #loginpw{
     width: 500px;
@@ -154,6 +123,7 @@ hr{
     padding : 0 10px;
     box-sizing : border-box;
 }
+
 #dologin{
     width: 500px;
     height: 54px;
@@ -169,9 +139,7 @@ hr{
 
 .id_saved{
    display: block;
-   /* text-align: center; */
    margin-left:30%;
-   /* background-color:aqua; */
    margin-bottom: 20px;
 }
 
@@ -184,14 +152,11 @@ hr{
     margin-bottom: 20px;
     width: 45px;
     height: 45px;
-    /* border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0; */
 }
 
 button{
     
     background: transparent;
-    
     padding: 0;
     color: #252525;
     font-size: 13px;
@@ -199,8 +164,6 @@ button{
     height: 50px;
     line-height: 1.23;
     letter-spacing: -0.65px;
-
-    /* background-color: tomato; */
     border: none;
   
 }
@@ -216,8 +179,6 @@ button{
     height: 25px;
     line-height: 1.23;
     letter-spacing: -0.65px;
-
-    /* background-color: tomato; */
     border: none;
   
 }
@@ -226,12 +187,6 @@ button{
     display: block;
     width: 45px;
     height: 45px;
-
-    
-  
-    /* background-color: tomato; */
-    /* margin-bottom: 20px; */
-    /* vertical-align: top; */
 }
 
 .etc_login li{
@@ -240,7 +195,6 @@ button{
 
 .etc_login span{
    line-height: 20px;
-    /* background-color: #1BBC9B; */
 }
 
 
@@ -248,27 +202,18 @@ button{
     display: flex;
     margin-top: 80px;
     margin-bottom: 20px;
-    /* background-color: #1BBC9B; */
-
 }
 .bottom_menu a{
-    
     margin-right: 25px;
-    
-    
 }
 
 .bottom_menu li::before{
-/*    
-    position: absolute;
-    left: 0;
-    top: 50%; */
-    /* margin-top: -6px; */
     width: 1px;
     height: 12px;
     background-color: #c6c6c6;
     content: "";
 }
+
 .bottom_menu li a{
    
     font-size: 15px;
@@ -289,7 +234,6 @@ button{
     border: solid 1px #d3d3d3;
     background-color: #fff;
     border-radius: 10px;
-    /* letter-spacing: -0.7px; */
     position: relative;
 
 
@@ -297,15 +241,10 @@ button{
 
 
 .join_membership em{
-    
-    /* position: absolute; */
     padding-right: 12px;
-    /* background-color: sandybrown; */
     font-weight: bold;
     margin-left: 230px;
-    
-   
-    
+    cursor: pointer;
 }
 
 .join_membership .arrow{
@@ -314,14 +253,5 @@ button{
     background-repeat: no-repeat;
     content: "";
     width: 7px;
-    height: 12px;
-    /* background-color: salmon; */
-   
+    height: 12px;  
 }
-
-
-
-
-
-
-     

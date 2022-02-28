@@ -42,12 +42,6 @@
           
          
          </form>
-    
-     
-                                              
-
-
-        <!--  <label class="id_saved"> <input type="checkbox">아이디 저장</label>-->
 
           <ul class="etc_login">
             <li>

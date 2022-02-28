@@ -76,7 +76,6 @@
 	                        </div>
 	                        <div class="button_b">
 	                            <button type="button" name="cart" id="cart">
-	                                <!-- <a href="/osulloc/page/cartPage" class="btn"> -->
 	                                <p class="btn">
 	                                    <span>장바구니</span>
 	                                </p>
@@ -92,7 +91,6 @@
 	            </div><!--.product-->
             </form> 
             
-     
             <div id="reviewD">
             	<div class="reviewDS">
             		<strong>리뷰</strong>
@@ -105,20 +103,17 @@
             	</c:if>
             	
             	<ul>
-					<%-- ${productse.prodnum} --%>
             		<c:forEach items="${productcri}" var="productreview">
             		
             			<c:if test="${productreview.prodnum == productse.prodnum}">
             			
             				<input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
-		            		<%-- <input type="text" class="pageNum" name="prodnum" value="${productse.prodnum}"> --%>
 		            		
 			            		<li>
 
 			            			<input type="hidden" class="relistPno" value="0">
 
 			            			<div id="r_detail">
-			            				<%-- <input class="pno" value="${productreview.pno}"> --%>
 			            				<input type="hidden" id="pno${productreview.pno}" value="${productreview.pno}">
 			            				<div class="pno" hidden>${productreview.pno}</div>
 			            				<div class="uploadResult"><img src="/osulloc/display?fileName=${productse.filename}" alt=""></div>
@@ -144,48 +139,11 @@
 							 
 							        <ul  class="relist" id="relist${productreview.pno}" data-pno="${productreview.pno}"></ul></div>
 							        <div class="rewrite" id="rewrite${productreview.pno}" data-pno="${productreview.pno}"></div>
-			            			
-			            			
-			            			
-			            			<%-- <div class="replyList">
-					                	
-							            
-							            <div class="rerewrite" id="rerewrite${productreview.pno}" data-pno="${productreview.pno}">
-							           	
-		
-					                </div>
-					                 --%>
 			            		</li>
             			</c:if>
             			
             		</c:forEach>
-            		
-            			<!--  <div class="rewrite">
-				                	<div>
-						            	<ul id="relist"></ul>
-						            </div>
-						            
-						            <div class="replyBox">
-				                       <h4>댓글 쓰기</h4>
-				                       <input type="hidden" name="rno" class="">
-				                       <div class='replyBox_replyer'>
-					                  		<label>Replyer</label><br>
-					                       	<input type="text" name="replyer">
-				                       </div>
-				                       <div class='replyBox_reply'>
-				                       		<label>Reply</label><br>
-				                       		<textarea rows="" cols="" name="reply"></textarea>
-				                       </div>
-				                       <div class="replyFooter modal-footer">
-						                   	<button type="button" class="rebtn" id="replyRegisterBtn">댓글쓰기</button>
-						                   	<button type="button" class="rebtn" id="replyModBtn">댓글수정</button>
-						                   	<button type="button" class="rebtn" id="replyRemoveBtn">댓글삭제</button>
-					                      	<button type="button" class="rebtn" id="close">Close</button>
-					                   </div>
-				                   </div>	 
-				                                     
-							    </div> -->
-            		
+	
             	</ul>
             	
             	<form id = "actionForm" action="/osulloc/page/detailProduct" method="get">
@@ -195,8 +153,6 @@
 
 	                <div class="page">    
 	                    <ul class="pagination">
-							 <!-- 조건문을 넣어주어 true일 떄 동작하도록 한다. test="조건" -->
-							 <!-- 기본값이 1,10인것을 참고 (pageDTO.java, Criteria.java) -->
 							<c:if test="${pageMaker.prev}">
 								<li class="paginate_button page-item pageL " id="dataTable_previous">
 									<a href="${pageMaker.startPage-1}" class="page-link PNum">prev</a>
@@ -205,23 +161,16 @@
 							
 							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 								<li class="paginate_button page-item pageC">
-								
-									<!-- form태그 사용 안할 시 .ver (js를 작성하고 사용하면 2번 적히게 되어 오류발생) -->
 									<a href="${num}" class="page-link PNum">${num}</a>
 								</li>
 							</c:forEach>
-							
-							<!-- 조건문을 넣어주어 true일 떄 동작하도록 한다. test="조건" -->
 							<c:if test="${pageMaker.next}">
 								<li class="paginate_button page-item pageR" id="dataTable_next">
 									<a href="${pageMaker.endPage+1}" class="page-link PNum">next</a>
 								</li>
 							</c:if>
-							
-						</ul>
-							
+						</ul>	
 	                </div><!--.page-->
-                
             	</form>
             </div><!-- #reviewD -->
         </div><!--.container-->

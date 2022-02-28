@@ -7,7 +7,6 @@
 	<title>subPage </title>
 
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <!-- <script src="../resources/js/subpage.js"></script> -->
      <script src="../resources/js/header.js"></script>
      
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +16,6 @@
     <link rel="stylesheet" href="../resources/css/subpage.css" type="text/css">
      <link rel="stylesheet" href="../resources/css/header.css" type="text/css">
      <link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
-
-     
 </head>
 <body>
 
@@ -35,114 +32,80 @@
 
                 <div class="box">
 
-                        <ul>
-                            <li>
-                                <div class="view">
-                                <!-- a태그는 어디로 보내기 때문에 query에서 show가 되지 않는다. -->
-                                	<input type="hidden" value="1">
-                                    <img src="../resources/img/아기.png" alt="">
-                                    <!-- <p class="story"><span>오설록 직원들이</span><span>차를 즐기는 시간</span></p> -->
-                                    <p class="story">여름철 햇차로 즐기는 아이스티</p>
-                                    
-                                </div>
-  
-                            </li>
+	                 <ul>
+	                     <li>
+	                         <div class="view">
+	                         	<input type="hidden" value="1">
+	                             <img src="../resources/img/아기.png" alt="">
+	                             <p class="story">여름철 햇차로 즐기는 아이스티</p>
+	                         </div>
+	                     </li>
 
-
-                            <li>
-                                <div class="view">
-                                <input type="hidden" value="2">
-                                <img src="../resources/img/산책과 아침.png" alt="">
-                                <p class="story">오설록 직원들이 차를 즐기는 시간</p>
-                                
-                                 
-                                </div>
-                           
-					
-                                
-                            </li>
-
-                            <li>
-                                <div class="view">
-								<input type="hidden" value="3">
-                                <img src="../resources/img/공예가 가족.png" alt="">
-                                <p class="story">좋지 아니한家·유어예</p>
-                                
-                                </div>
-
-                               
-								
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                <input type="hidden" value="4">
-                                <img src="../resources/img/제주녹차.jpg" alt="">
-                                <p class="story">오설록 월출산차밭</p>
-								
-                                </div>
-
-
-
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                <input type="hidden" value="5">
-                                <img src="../resources/img/운중산책.jpg" alt="">
-                                <p class="story">운중산책</p>
-
-                                </div>
-
-
-
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                <input type="hidden" value="6">
-                                <img src="../resources/img/일상 반사.jpg" alt="">
-                                <p class="story">일상茶반사</p>								
-                                </div>
-
-
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                	<input type="hidden" value="7">
-                                    <img src="../resources/img/장인.jpg" alt="">
-                                    <p class="story">장인</p>
-                                </div>
-
-				
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                	<input type="hidden" value="8">
-                                    <img src="../resources/img/녹차 빵.png" alt="">
-                                    <p class="story">Tea & Tea Food</p> 
-                                </div>
- 
+	                     <li>
+	                         <div class="view">
+		                         <input type="hidden" value="2">
+		                         <img src="../resources/img/산책과 아침.png" alt="">
+		                         <p class="story">오설록 직원들이 차를 즐기는 시간</p>
+	                         </div>
+	                     </li>
 	
-								
-                            </li>
-
-                            <li>
-                                <div class="view">
-                                	<input type="hidden" value="9">     
-                                    <img src="../resources/img/티하우스..png" alt="">
-                                    <p class="story">좋은 친구들</p>
-                                </div>   
-
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
+	                     <li>
+	                         <div class="view">
+								<input type="hidden" value="3">
+	                         	<img src="../resources/img/공예가 가족.png" alt="">
+	                         	<p class="story">좋지 아니한家·유어예</p>
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+		                         <input type="hidden" value="4">
+		                         <img src="../resources/img/제주녹차.jpg" alt="">
+		                         <p class="story">오설록 월출산차밭</p>
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+		                         <input type="hidden" value="5">
+		                         <img src="../resources/img/운중산책.jpg" alt="">
+		                         <p class="story">운중산책</p>
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+		                         <input type="hidden" value="6">
+		                         <img src="../resources/img/일상 반사.jpg" alt="">
+		                         <p class="story">일상茶반사</p>								
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+	                         	<input type="hidden" value="7">
+	                             <img src="../resources/img/장인.jpg" alt="">
+	                             <p class="story">장인</p>
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+	                         	<input type="hidden" value="8">
+	                             <img src="../resources/img/녹차 빵.png" alt="">
+	                             <p class="story">Tea & Tea Food</p> 
+	                         </div>
+	                     </li>
+	
+	                     <li>
+	                         <div class="view">
+	                         	<input type="hidden" value="9">     
+	                             <img src="../resources/img/티하우스..png" alt="">
+	                             <p class="story">좋은 친구들</p>
+	                         </div>   
+	                     </li>
+	                 </ul>
+	             </div>
             </div><!--.magazine-->
             
             <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -151,81 +114,79 @@
 			        <div class="modal-content">
 			            <div class="modal-header">
 	
-			             <h4 class="modal-title" id="myModalLabel">여름철 햇차로 즐기는 아이스티</h4>
+			             	<h4 class="modal-title" id="myModalLabel">여름철 햇차로 즐기는 아이스티</h4>
 			            </div>
 			            <div class="modal-body" style="overflow:scroll">
 			            
 			            	<div class="article-cont">
-									<div class="featured-item">
-									    <img src="?quality=80" alt="여름철 햇차로 즐기는 아이스티">
-									</div>
-									
-									<div class="sticky-pad">
-									    <header class="article-header" data-position="sticky" data-top="120">
-									        <div class="article-header-pad">
-									            <span class="add-on">2021 GOLDEN MOMENT <i class="date">2021 summer</i></span>
-									            <h1 class="h1 break-word">여름철 햇차로 즐기는 아이스티</h1>
-									
-									            <div class="article-share">
-									                <a href="#" class="article-share-link x-share-facebook" data-href="https://www.facebook.com/sharer/sharer.php?u=http://www.osulloc.com/kr/ko/guide/magazine/2021-summer/73" data-track-name="페이스북 공유">
-									                    <i class="icon-facebook-circle" style=""></i>
-									                    <span class="blind" hidden>페이스북으로 공유하기</span>
-									                </a>
-									            </div>
-									        </div>
-									    </header>
-									</div>
-									<!--  컨텐츠  -->
-									<style type="text/css">
-									.featured-item {display:none;}
-									.article-cont .article-section * {letter-spacing:-0.05em;}
-									</style>
-									<div class="article-wrap">
-									    <div class="article-section loca_magazine">
-									        <h2 class="h">여름에는 주로 과일향이 나는 블렌딩 차를 탄산수나 사이다에 냉침하여 즐기는 경우가 많은 것 같습니다. 더운 날씨에 블렌딩 차의 달콤하고 상큼한 향이 기분을 좋게 만들어주기 때문이겠죠?</h2>
-									    </div>
-									    <div class="article-img">
-									        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_01.jpg" alt="">
-									    </div>
-									    <div class="article-section">
-									        <p>그래서 이번 글에서는 블렌딩 아이스티와는 또다른 매력을 지닌 순수차(녹차나 발효차)를 냉침하여 아이스티를 만드는 방법을 소개해드리고자 합니다. 순수차로 만드는 아이스티는 갈증 해소는 물론, 사계절 내내 생수 대신 마시기에도 더없이 좋답니다. 그럼 올해 갓 채엽한 햇차를 이용해 아이스티 만드는 방법을 소개해 드릴게요. </p>
-									    </div>
-									</div>
-									<div class="article-wrap">
-									    <div class="article-img">
-									        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_02.jpg" alt="">
-									    </div>
-									    <div class="article-section">
-									        <p>1. 차가운 생수 한 병(500ml)과 세작 티백 1개를 준비해주세요. 집에서 사용하는 일반 물병을 사용해도 좋아요.
-									           <br>2. 세작 티백 1개를 생수에 담그고 냉장고에 넣어 8시간 정도 기다려주세요.
-									           <br>3. 충분히 우려진 아이스티를 얼음 등과 함께 시원하게 즐겨주세요.
-									        </p>
-									        <p style="font-weight:700;color:#333;">Tip! 
-									           <br>조금 더 진하게 드시고 싶으시다면 물의 양을 줄이거나, 티백의 개수를 늘려보세요. 이때, 우리는 시간이 너무 길어질 경우, 차에서 쓴맛이 우러날 수 있으니 유의하세요.
-									        </p>
-									    </div>
-									</div>
-									<div class="article-wrap">
-									    <div class="article-img">
-									        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_03.jpg" alt="">
-									    </div>
-									    <div class="article-section">
-									        <p>기다리는 시간이 지루하다면, 잠들기 전에 티백 1개만 넣어주세요! 아침에 일어난 후, 시원한 녹차 한잔으로 산뜻한 하루를 시작하실 수 있답니다. 차를 냉침하여 우리면, 쓰고 떫은 맛을 내는 성분이 덜 우러나기 때문에 조금 더 편하게 즐기실 수 있답니다. 
-									            <br><br>매년 봄마다 출시되는 햇차를 여름에 즐기기에 부담스러우시다면, 잠들기 전에 냉침을 한번 시도해보면 어떨까요?
-									        </p>
-									    </div>
-									</div>
-												                    <!--  //컨텐츠 -->
-									</div>
-		
-		
+								<div class="featured-item">
+								    <img src="?quality=80" alt="여름철 햇차로 즐기는 아이스티">
+								</div>
+								
+								<div class="sticky-pad">
+								    <header class="article-header" data-position="sticky" data-top="120">
+								        <div class="article-header-pad">
+								            <span class="add-on">2021 GOLDEN MOMENT <i class="date">2021 summer</i></span>
+								            <h1 class="h1 break-word">여름철 햇차로 즐기는 아이스티</h1>
+								
+								            <div class="article-share">
+								                <a href="#" class="article-share-link x-share-facebook" data-href="https://www.facebook.com/sharer/sharer.php?u=http://www.osulloc.com/kr/ko/guide/magazine/2021-summer/73" data-track-name="페이스북 공유">
+								                    <i class="icon-facebook-circle" style=""></i>
+								                    <span class="blind" hidden>페이스북으로 공유하기</span>
+								                </a>
+								            </div>
+								        </div>
+								    </header>
+								</div>
+								<!--  컨텐츠  -->
+								<style type="text/css">
+								.featured-item {display:none;}
+								.article-cont .article-section * {letter-spacing:-0.05em;}
+								</style>
+								<div class="article-wrap">
+								    <div class="article-section loca_magazine">
+								        <h2 class="h">여름에는 주로 과일향이 나는 블렌딩 차를 탄산수나 사이다에 냉침하여 즐기는 경우가 많은 것 같습니다. 더운 날씨에 블렌딩 차의 달콤하고 상큼한 향이 기분을 좋게 만들어주기 때문이겠죠?</h2>
+								    </div>
+								    <div class="article-img">
+								        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_01.jpg" alt="">
+								    </div>
+								    <div class="article-section">
+								        <p>그래서 이번 글에서는 블렌딩 아이스티와는 또다른 매력을 지닌 순수차(녹차나 발효차)를 냉침하여 아이스티를 만드는 방법을 소개해드리고자 합니다. 순수차로 만드는 아이스티는 갈증 해소는 물론, 사계절 내내 생수 대신 마시기에도 더없이 좋답니다. 그럼 올해 갓 채엽한 햇차를 이용해 아이스티 만드는 방법을 소개해 드릴게요. </p>
+								    </div>
+								</div>
+								<div class="article-wrap">
+								    <div class="article-img">
+								        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_02.jpg" alt="">
+								    </div>
+								    <div class="article-section">
+								        <p>1. 차가운 생수 한 병(500ml)과 세작 티백 1개를 준비해주세요. 집에서 사용하는 일반 물병을 사용해도 좋아요.
+								           <br>2. 세작 티백 1개를 생수에 담그고 냉장고에 넣어 8시간 정도 기다려주세요.
+								           <br>3. 충분히 우려진 아이스티를 얼음 등과 함께 시원하게 즐겨주세요.
+								        </p>
+								        <p style="font-weight:700;color:#333;">Tip! 
+								           <br>조금 더 진하게 드시고 싶으시다면 물의 양을 줄이거나, 티백의 개수를 늘려보세요. 이때, 우리는 시간이 너무 길어질 경우, 차에서 쓴맛이 우러날 수 있으니 유의하세요.
+								        </p>
+								    </div>
+								</div>
+								<div class="article-wrap">
+								    <div class="article-img">
+								        <img src="../resources/img/여름철 햇차로 즐기는 아이스티_03.jpg" alt="">
+								    </div>
+								    <div class="article-section">
+								        <p>기다리는 시간이 지루하다면, 잠들기 전에 티백 1개만 넣어주세요! 아침에 일어난 후, 시원한 녹차 한잔으로 산뜻한 하루를 시작하실 수 있답니다. 차를 냉침하여 우리면, 쓰고 떫은 맛을 내는 성분이 덜 우러나기 때문에 조금 더 편하게 즐기실 수 있답니다. 
+								            <br><br>매년 봄마다 출시되는 햇차를 여름에 즐기기에 부담스러우시다면, 잠들기 전에 냉침을 한번 시도해보면 어떨까요?
+								        </p>
+								    </div>
+								</div>
+												                    
+							</div><!--  //컨텐츠 -->
+	
 			            </div><!-- modal-body -->
 			            
 			            <div class="modal-footer">
 			               <button type="button" class="btn btn-default modalBtn" data-dismiss="modal">Close</button>
 			            </div>
-			        </div><!-- /.modal-content -->
-
+			      </div><!-- /.modal-content -->
 			</div><!-- modal fade --> 
 
 			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -233,7 +194,7 @@
 			        <div class="modal-content">
 			            <div class="modal-header">
 	
-			             <h4 class="modal-title" id="myModalLabel">오설록 직원들이 차를 즐기는 시간</h4>
+			             	<h4 class="modal-title" id="myModalLabel">오설록 직원들이 차를 즐기는 시간</h4>
 			            </div>
 			            
 			            <div class="modal-body" style="overflow:scroll">

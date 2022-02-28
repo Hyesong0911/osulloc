@@ -25,29 +25,14 @@ img{
     border: 0;
 }
 
-
-
-.wrap{
-
-
-}
-
-
-
 .wrap h3{
 	text-align : center;
 	margin-bottom : 20px;
 }
 
-
-
-
 .uploadDiv{
 	width:1200px;
 	margin : 30px auto;
-
-	
-	/* background-color : yellow; */
 	
 }
 
@@ -65,17 +50,9 @@ img{
     border: 1px solid #ccc;
     border-collapse : collapse;
     border: none;
-    
-    
+
 }
 
-/* #table tr{
-
-	border-top : none;
-	border-bottom : none;
-    
-    
-} */
 
 #table tr td:first-child{
 
@@ -99,7 +76,6 @@ img{
 	padding : 5px;
 	
 	background-color: #fff;
-	/* background-color: rgb(248, 248, 248); */
 	
     border: 1px solid #ccc;
     border-collapse : collapse;
@@ -119,7 +95,7 @@ img{
 #table #uploadBtn{
 	width : 100px;
 	height : 30px;
-	
+	cursor: pointer;
 	margin :20px auto;
 }
 
@@ -148,7 +124,6 @@ img{
 
 .uploadResult ul li{
 	list-style:none;
-	/* padding : 10px; */
 }
 
 .uploadResult ul li img{

@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 body{
     background-color: #f5f6f7;
 }
@@ -27,9 +25,7 @@ input{
 /* 로고  */
 .image{
    height: 250px;
-    width: 250px;
-    /* padding: 20px; */
-    /* margin-bottom: 40px; */
+   width: 250px;
 
 }
 
@@ -51,40 +47,42 @@ h3{
     font-size: 14px;
     font-family: Dotum,'돋움',Helvetica,sans-serif;
 }
+
 .signup-input{
     display:flex;
-    /* margin: 0px 10px 8px 10px; */
     padding: 10px;
     border: solid 1px #dadada;
     background: #fff;
     cursor: pointer;
 }
+
 .signup-input-c{
     display:flex;
-    /* margin: 0px 10px 8px 10px; */
     padding: 10px;
     border: solid 1px #dadada;
     background: #f5f6f7;
     cursor: pointer;
 }
+
 .signup-input-c input{
     background: #f5f6f7;
 }
+
 #signup-id, #signup-pw, #signup-pww{
     height: 29px;
     border: none;
     outline:none;
     width:100%;
 }
+
 .signup-at{
     color: rgb(150, 150, 150);
     font-size: 15px;
     font-family: Dotum,'돋움',Helvetica,sans-serif;
     margin-top: 8px;
 }
+
 .pw-lock{
-    /* content: ''; */
-    /* display: inline-block; */
     top: 50%;
     right: 13px;
     width: 24px;
@@ -94,9 +92,8 @@ h3{
     background-size: 125px 75px;
     cursor: pointer;
 }
+
 .pww-lock{
-    /* content: ''; */
-    /* display: inline-block; */
     top: 50%;
     right: 13px;
     width: 24px;
@@ -117,37 +114,45 @@ h3{
     background: #fff;
     box-sizing: border-box;
 }
+
 #signup-birth-yy, #signup-birth-mm, #signup-birth-dd{
     width: 113px;
     height: 29px;
     border: none;
     outline:none;
 }
+
 #signup-name, #signup-gender, #signup-email, #signup-country, #signup-phone, #signup-cnum{
     width:100%;
     height: 29px;
     border: none;
     outline:none;
 }
+
 #signup-gender{
     background-color: white;
 }
+
 #signup-country{
     background-color: white;
 }
+
 #signup-birth-mm{
     background-color: white;
 }
+
 /*본인 확인 이메일*/
 .choice{
     display: flex;
 }
+
 .choice span{
     margin-top: 20px;
     color: rgb(150, 150, 150);
     font-size: 13px;
     font-family: Dotum,'돋움',Helvetica,sans-serif;
 }
+
 /*회원가입버튼박스*/
 .signup-btn-wrap{
     height: 52px;
@@ -158,6 +163,7 @@ h3{
     color: #fff;
     cursor: pointer;
 }
+
 /*회원가입버튼*/
 #signup-btn{
     width:100px;
@@ -168,6 +174,7 @@ h3{
     outline:none;
     cursor: pointer;
 }
+
 /*인증번호버튼박스*/
 .cnum-btn-wrap{    
     height: 52px;
@@ -178,6 +185,7 @@ h3{
     color: #fff;
     cursor: pointer;
 }
+
 /*인증번호버튼*/
 #cnum-btn{
     width:115px;
@@ -189,34 +197,41 @@ h3{
     cursor: pointer;
 }
 
-
 /* 유효성 검사 문구 */
 
 .final_id_ck{
     display: none;
     color: red;
 } 
+
 .final_pw_ck{
     display: none;
 }
+
 .final_pwck_ck{
     display: none;
 }
+
 .final_name_ck{
     display: none;
 }
+
 .final_mail_ck{
     display: none;
 }
+
 .final_birth-yy_ck{
 	display : none;
 }
+
 .final_birth-mm_ck{
 	display : none;
 } 
+
 .final_birth-dd_ck{
 	display : none;
 }
+
 .final_gender_ck{
 	display : none;
 }

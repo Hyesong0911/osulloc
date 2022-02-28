@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     font-family: 'Gowun Dodum', sans-serif;
        color: #333;
@@ -42,8 +43,6 @@ a{
 
 }
 
-
-
 .title{
 	width : 100%;
 	height: 40px;
@@ -71,14 +70,6 @@ a{
 
 }
 
-/* #file-upload-button{
-	background-color: rgb(232, 241, 237);
-    color: #333;
-    border-radius: 20px;
-    border: 1px solid #9ac4a1;
-	
-} */
-
 #uploadResult li{
 	position: relative;
 }
@@ -101,8 +92,6 @@ a{
 }
 
 .modifyBtn button{
-	
-	/*display : inline-block;*/
 	width: 100px;
     height: 40px;
     
@@ -131,9 +120,6 @@ a{
 		
 }
 
-
-
-
 .write{
 	position: absolute;
 	bottom: 50px;
@@ -160,7 +146,3 @@ a{
 	width: 100%;
 	height: 100%;
 }
-
-
-
-

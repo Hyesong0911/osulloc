@@ -18,7 +18,6 @@
 	<link href="../resources/css/header.css" rel="stylesheet" type="text/css">
 	<link href="../resources/css/footer.css" rel="stylesheet" type="text/css">
 	
-	<!-- <script src="../resources/js/mainpage.js"></script> -->
 	<script src="../resources/js/header.js"></script>
 	
 
@@ -205,13 +204,10 @@
 				                <a href="#">오른쪽으로 가기</a>
 				            </div>
 		        		</div>
-			                
-		                
+
 		            </ul>
 
-
 		        </div><!--item-->
-		        
 
 		    </section><!--.main3-->
 		
@@ -235,7 +231,6 @@
 			                        </p>
 		                    	</div>
 
-			                    
 			                    <div class="num_cart">
 			                        <form action="/osulloc/page/mainpage" method="post">
 			                        
@@ -281,21 +276,15 @@
 		            </ul>
 		            
 		        </div><!--m4_item-->
-		        
 
-		        
-
-		        
 		    </section><!--.main4-->
 		</div><!--#container-->
 		
 	</div>
 	
 	<script src="../resources/js/mainpage.js"></script>
-	
+	<%@ include file="../Header&Footer/footer.jsp" %>
 </body>
-
-<%@ include file="../Header&Footer/footer.jsp" %>
 </html>
 
 
