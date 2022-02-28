@@ -31,9 +31,11 @@ public class ReplyController {
 	//.jsp파일이 없기 때문에 이렇게 작성한다.
 	@PostMapping(value="new",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})//MediaType.TEXT_PLAIN_VALUE:문자열로 반환해라
 	public ResponseEntity<String> create(@RequestBody ReplyDTO rdto){
+		
 		System.out.println("ReplyDTO="+rdto);
 		//insert 성공시 ReplyServiceImpl.java로 부터 1,
 		//insert 실패시 ReplyServiceImpl.java로 부터 0
+		
 		//값을 리턴받는다.
 		int result = rservice.write(rdto);
 								//insert가 정상적으로 처리되었을 때 1          :              insert가 비정상적으로 처리되었을 때 0 
@@ -49,12 +51,15 @@ public class ReplyController {
 		return new ResponseEntity<>(rservice.list(bno),HttpStatus.OK);//자바스크립트의 sucess부분으로 간다.//"success"는 String타입지만, 위에는 ReplyDTO타입이여서 에러가 난다.
 		//<ArrayList<ReplyDTO>>타입과 rservice.list(bno)가 일치
 	}
+	
+	
 	//댓글 수정을 하기 위해 댓글 내용 가져오는 함수 선언
 	@GetMapping(value="{rno}",produces= {MediaType.APPLICATION_JSON_UTF8_VALUE})
 	public ResponseEntity<ReplyDTO> getDetail(@PathVariable int rno){
 		System.out.println(rno);
 		return new ResponseEntity<>(rservice.detail(rno),HttpStatus.OK);
 	}
+	
 	
 	@PutMapping(value="update",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})//같은 value값을 사용해도 된다. insert==update
 	public ResponseEntity<String> update(@RequestBody ReplyDTO rdto){//댓글 번호, 댓글 내용

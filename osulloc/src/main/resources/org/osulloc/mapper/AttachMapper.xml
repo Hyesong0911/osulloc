@@ -32,16 +32,5 @@
 		where bno=#{bno}
 	</update>
   	
-  	
-<!--  	<update id="modify">
- 		update attach
-		set 
-        uuid=#{uuid}, 
-		uploadPath=#{uploadPath}, 
-		fileName=#{fileName},
-		image=#{image}
-		where bno = #{bno}
-  	</update> -->
-  	
-  	
+
 </mapper>

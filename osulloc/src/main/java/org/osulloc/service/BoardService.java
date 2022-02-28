@@ -33,16 +33,9 @@ public interface BoardService {
 	
 	public ArrayList<AttachFileDTO> fileListPost(int bno);
 	
-	
-	
-	
-	
-	
-	
+
 	public void delete(AttachFileDTO aboard);
-	
-	
-	
+
 	
 	public boolean fileDelete(AttachFileDTO attach);
 

@@ -28,7 +28,7 @@
             <h1>고객센터</h1>
             <ul>
                 <li class = "line">
-                    <a href="">오설록 뉴스</a>
+                    <a href="">오설록 뉴스</a>S
                 </li>
                 <li>
                     <a href="">Event</a>
@@ -78,7 +78,7 @@
 			   	</div>
 			   	
 			   	
-                <div class="replyList">
+                <%-- <div class="replyList">
                 	<button class="rebtn" id="addReplyBtn">
 		               	댓글
 		            </button>
@@ -93,11 +93,11 @@
 	                       <input type="hidden" name="rno" class="">
 	                       <div class='replyBox_replyer'>
 		                  		<label>Replyer</label><br>
-		                       	<input type="text" name="replyer">
+		                       	<input type="text" name="replyer" value="${login.id}">
 	                       </div>
 	                       <div class='replyBox_reply'>
 	                       		<label>Reply</label><br>
-	                       		<textarea rows="" cols="" name="reply"></textarea>
+	                       		<textarea rows="" cols="" name="reply"  }></textarea>
 	                       </div>
 	                       <div class="replyFooter modal-footer">
 			                   	<button type="button" class="rebtn" id="replyRegisterBtn">댓글쓰기</button>
@@ -108,7 +108,7 @@
 	                   </div>	 
 	                                     
 				    </div>
-                </div>
+                </div> --%>
                 
                 
                 <div class="board_btn">
@@ -125,7 +125,7 @@
                 </div><!--본문_본문_푸터-->
             </div><!--본문_본문-->
             
-            <form >
+            <form>
             <div class="bc_footer">
                 <ul>
                     <c:if test="${not empty detail2.prebno}">
@@ -169,3 +169,5 @@
 <script type="text/javascript" src="../resources/js/detail.js"></script>
 </body>
 </html>
+
+<!-- a -->

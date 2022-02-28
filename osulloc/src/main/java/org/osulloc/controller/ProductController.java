@@ -39,53 +39,7 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
-	
-	 
-/*	@GetMapping("merchandise")
-	public void merchandise() {
-	
-	System.out.println("占쎈쐻占쎈짗占쎌굲占쎈�뱄옙�쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�");
-	
-	
-	}	  
-	*/
-	
-	
-	
-	
-	
-	
-	// post 占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�
-	/*
-	@PostMapping("uploadActionForm")
-	public void uploadActionPost(MultipartFile[] uploadFile, Model model) {
-		String uploadFolder ="C:\\upload";
-		
-		
-		
-		
-		
-		for(MultipartFile multipartFile : uploadFile) {
-			System.out.println("--------------------------------");
-			System.out.println("Upload File Name: " +multipartFile.getOriginalFilename());
-			System.out.println("Upload File Size: " +multipartFile.getSize());
-			
-			File saveFile = new File(uploadFolder,multipartFile.getOriginalFilename());
-		
-			
-			try {
-				multipartFile.transferTo(saveFile);
-			}catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
-		}
-	}
-	*/
-	
-	
-	////////////////////////////
-	
-	
+
 	
 	@PostMapping("product")
 	public void addProduct(ProductDTO product) {
@@ -97,8 +51,6 @@ public class ProductController {
 		
 	}
 	
-
-	// ajax get(�솕�뜝�룞�삕)
 	@GetMapping("product")
 	public void product() {
 	
@@ -109,22 +61,19 @@ public class ProductController {
 	
 	
 	private String getFolder() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); // 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲筌욎뭿�쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
-		Date date = new Date();  // 占쎈쐻占쎈뻿�ⓦ끉�굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲, 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈쑟占쎄텊筌욎뭿�쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뻻�ⓦ끉�굲
+		Date date = new Date(); 
 		
-	    String str=sdf.format(date);   //占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈쑟占쎄텊筌욎뭿�쐻占쎈짗占쎌굲 占쎈쐻占쎈쑆占쎈즲4占쎈쐻占쎈솓筌뤿슣�굲 占쎈쐻占쎈짗占쎌굲2占쎈쐻占쎈솓筌뤿슣�굲 占쎈쐻占쎈짗占쎌굲2占쎈쐻占쎈솓筌뤿슣�굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 str占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
+	    String str=sdf.format(date); 
 	    
 	    return str.replace("-", File.separator);
-	    // replace 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솓占쎌뒻占쎌굲 燁살꼹�넎 占쎈쐻占쎈솭占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲   File.separator : \ /  占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲�뇾癒⑤쐻�뜝占� 占쎈쐻占쎈뼦筌뤿슣�굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈솂占쎈솇占쎌굲 占쎈쐻占쎈솭占쎈꺖占쎈쿈占쎌굲
 	
 	}
-	
-		// 占쎈쐻占쎈뼓獄�袁⑹굲占쎈쐻占쎈짗占쎌굲 占쏙옙占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼄占쎈솇占쎌굲  
+
 	
 	private boolean checkImageType(File file) {
 		try {
-		//  probeContentType :占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쏙옙占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼑占쎈툡占쎈꺋占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솭占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲
 			String contentType = Files.probeContentType(file.toPath());  
 			return contentType.startsWith("image");
 		} catch (IOException e) {
@@ -133,7 +82,7 @@ public class ProductController {
 		return false;
 	}
 	
-	// ajax post (占쎌넅占쎈쐻占쎈짗占쎌굲)
+
 	@PostMapping(value="productAjaxAction",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	
 	@ResponseBody
@@ -148,14 +97,12 @@ public class ProductController {
 		
 		
 				// make Folder......
-		
 				String uploadFolderPath = getFolder();
 				
 				File uploadPath = new File(uploadFolder, getFolder());
 				
 				if(uploadPath.exists()==false) {
-					// exists 占쎈쐻占쎈솭占쎈닰占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占� 占쎈쐻占쎈솋占쎈솇占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈솂占쎈솇占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼢筌뤿슣�굲 占쎈쐻占쎈뼄占쎈솇占쎌굲占쎈쐻占쎈뼣占쎈솇占쎌굲 占쎈쐻占쎈솭占쎈꺖占쎈쿈占쎌굲(true/false)
-					uploadPath.mkdirs();  // yyyy/MM/dd 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
+					uploadPath.mkdirs(); 
 					
 				}
 				System.out.println("upload path: " + uploadPath);
@@ -168,24 +115,18 @@ public class ProductController {
 			ProductDTO ProductDTO = new ProductDTO();
 			System.out.println("Upload File Name: " +multipartFile.getOriginalFilename());
 			System.out.println("Upload File Size: " +multipartFile.getSize());
-			System.out.println("占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼢占쎈쿈占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 = " + multipartFile.getContentType());//占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲耶껓옙占쎈쐻�뜝占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼢占쎈쿈占쎌굲 占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
+			System.out.println("Upload File Content Type = " + multipartFile.getContentType());
 			
 			String uploadFileName = multipartFile.getOriginalFilename();
 			
-			/*// IE
-			uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\")+1);*/
+			/*uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\")+1);*/
 			ProductDTO.setFilename(uploadFileName);
 			
 			
-			//uuid 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 			UUID uuid = UUID.randomUUID();
 		
 			uploadFileName = uuid.toString() + "_" + uploadFileName;
-			
-			// 占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
-			
-			//File saveFile = new File(uploadFolder,multipartFile.getOriginalFilename());
-			/*File saveFile = new File(uploadPath,uploadFileName);*/
+
 			
 			try {
 				File saveFile = new File(uploadPath,uploadFileName);
@@ -200,14 +141,13 @@ public class ProductController {
 				
 				ProductDTO.setUploadpath(uploadFolderPath);
 				ProductDTO.setUuid(uuid.toString());
-				//check image type file 
 				
+				//check image type file 
 				if(checkImageType(saveFile)) {
 					
 					ProductDTO.setImage(true);
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath,"s_"+uploadFileName));
 					Thumbnailator.createThumbnail(multipartFile.getInputStream(),thumbnail,300,300);
-					// 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼓獄�袁⑹굲占쎈쐻占쎈짗占쎌굲 占쎄쾿占쎈쐻占쎈쑆�몴占� 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲100 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 100占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 
 					
 					thumbnail.close(); 
 				}

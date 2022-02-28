@@ -7,8 +7,8 @@
 	<head>
 	    <meta charset="UTF-8">
 		<title>Insert title here</title>
-	    <link rel="preconnect" href="https://fonts.googleapis.com">
-	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 	    
 	    <link rel="preconnect" href="https://fonts.googleapis.com">
 	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +26,9 @@
         <!-- 게시판 목록리스트 -->
        	<%@ include file="../Header&Footer/header.jsp" %>
         <div id="wrap">
-
             <div id="container">
             	<h2>공지사항</h2>
+
 			<form id = "actionForm" action="/osulloc/page/noticeBoard" method="get">
               <div class="find">
                 
@@ -36,13 +36,15 @@
                    <input id="keyword" type="text" name="keyword" value="${pageMaker.cri.keyword}" placeholder="검색어를 작성해주세요">
                   <button class="searchB">검색</button>
                   
-                  <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-				<%-- <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
-				<select name="amount" class="showNum">
+                  <select name="amount" class="showNum">
                     <option value="5" <c:if test="${pageMaker.cri.amount=='5'}"> selected</c:if>>5개씩</option>
                     <option value="10" <c:if test="${pageMaker.cri.amount=='10'}"> selected</c:if>>10개씩</option>
                     <option value="15" <c:if test="${pageMaker.cri.amount=='15'}"> selected</c:if>>15개씩</option>
-               </select>
+               	 </select>
+                  
+                  <input type="hidden" class="pageNum" name="pageNum" value="${pageMaker.cri.pageNum}">
+				<%-- <input type="hidden" name="amount" value="${pageMaker.cri.amount}"> --%>
+               
                <select name="search" id="selectQ">
                     <option value="T" <c:if test="${pageMaker.cri.search=='T'}"> selected </c:if>>제목</option>
 					<option value="C" <c:if test="${pageMaker.cri.search=='C'}"> selected </c:if>>내용</option>
@@ -50,18 +52,20 @@
 					<option value="TC" <c:if test="${pageMaker.cri.search=='TC'}"> selected </c:if>>제목 + 내용</option>
 					<option value="TCW" <c:if test="${pageMaker.cri.search=='TCW'}"> selected </c:if>>제목 + 내용 + 작성자</option>
                 </select>
+                
                 </div>
               </div>
               
               <div class="conTop">
-                    <p class="totalCon">2</p>개의 글
+                    <!-- <p class="totalCon"><span>2</span>개의 글</p> -->
+                    <p class="totalCon"> <input type="text" value="0"> 개의 글</p>
 
                     <p class="blind"><input type="checkbox"></input> 공지 숨기기</p>
 
                </div>
 			</form>
-                
-
+			
+			
                 <table class="contain">
                 
                     <th>
@@ -96,9 +100,9 @@
 				
                 <c:if test="${login!=null}">
 	                <button class="writeB">
-	 					<div class="write">
+
 	 						<a href="/osulloc/page/write"  class="page-link b_write">글쓰기</a>
-	 					</div>
+
 	 				</button>
                	</c:if>
 				
@@ -144,3 +148,5 @@
     </body>
 
 </html>
+
+<!-- a -->

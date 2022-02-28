@@ -11,8 +11,7 @@
 	</insert> 
 	
 	<select id="login" resultType="org.osulloc.domain.MemberDTO">
-	
-		
+
 				select * 
 				from member
 				where id=#{id} 
@@ -21,5 +20,3 @@
 	</select>
 
 </mapper>
-
-<!-- a -->

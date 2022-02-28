@@ -23,7 +23,7 @@
     
         <div class="headerBox">
             <h1>로그인</h1>
-            <button class="btn_close">닫기</button>
+            <button class="btn_close"><a href = "../page/mainpage"></a></button>
 
         </div><!--.headerBox-->
     
@@ -34,7 +34,7 @@
 		 	  
            <input name ="id"  type="text" id="loginid" placeholder="아이디 입력"> 
            
-           <input name="password" type="password" id="loginpw"  placeholder="비밀번호 입력(영문,숫자,특수문자 조합)">
+           <input name="password" type="password" id="loginpw"  placeholder="비밀번호 입력(영문,숫자 조합)">
             
            <input type="submit" class="btn btn-primary" value="Login" id="dologin">
             
@@ -70,7 +70,7 @@
                 <p>
                     <a href="#">아이디 찾기</a>
                     <a href="#">비밀번호 찾기</a>
-                    <a href="#">비회원 주문/조희</a>
+                    <a href="#">비회원 주문/조회</a>
                     
                 </p>
                 

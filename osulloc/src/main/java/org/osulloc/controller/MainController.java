@@ -26,10 +26,7 @@ public class MainController {
 		
 		System.out.println("maincontroller1="+service.product(prod));
 		System.out.println("maincontroller2="+service.product2(prod));
-		
-		//상품 전체를 가져오는 model
-/*		model.addAttribute("productall", service.productall(prod));
-*/	}
+	}
 	
 	@PostMapping("mainpage")
 	public String mainpagePost(ProductDTO prod) {
@@ -45,9 +42,6 @@ public class MainController {
 	
 	@GetMapping("cartPage")
 	public void cartpagePost(Model model, ProductDTO prod) {
-		
-		System.out.println("dkjslkjlsf=" + service.product3se(prod));
-		
 		
 		model.addAttribute("product3", service.product3se(prod));
 
