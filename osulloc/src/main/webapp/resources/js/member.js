@@ -186,7 +186,7 @@ $(document).ready(function(){
     /*아이디 정규식*/
     
     
-    var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+    var idReg = /^[a-z0-9]{5,19}$/g;
     $("#signup-id").blur(function(){
     	
         if( !idReg.test( $("input[name=id]").val())) {
@@ -196,7 +196,7 @@ $(document).ready(function(){
            
         
         }else{
-        	$("input[name=id]").val() !=(""); 
+        	
         	$('.id-correct').text("알맞은 아이디입니다.");
         	$('.id-correct').css('color','red')
         }
